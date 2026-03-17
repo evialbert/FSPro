@@ -7,7 +7,7 @@ import {
   BookOpen,
   CheckCircle 
 } from 'lucide-react';
-import ContactForm from '@/components/ContactForm'; // Presupunem că l-ai salvat anterior
+import ContactForm from '@/components/cards/ContactForm'; // Presupunem că l-ai salvat anterior
 
 const ServiceSection = ({ id, title, intro, items, icon: Icon, ctaText }: any) => (
   <section id={id} className="py-20 border-b border-slate-100 last:border-0 scroll-mt-20">
