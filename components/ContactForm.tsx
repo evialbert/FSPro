@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 
-// 1. Schema de validare (Zod) - Trebuie să se potrivească cu destructuring-ul din API
+// 1. Schema de validare
 const formSchema = z.object({
   nume: z.string().min(2, "Numele este prea scurt"),
   email: z.string().email("Adresă de email invalidă"),
@@ -33,20 +33,24 @@ export default function ContactForm() {
     },
   });
 
-  // 2. Funcția de trimitere către /api/send
+  // 2. Funcția de trimitere către Formspree
   const onSubmit = async (data: FormData) => {
     setStatus("loading");
     try {
-      const response = await fetch("/api/send", {
+      // INLOCUIEȘTE 'ID_UL_TAU_AICI' CU CODUL DE LA FORMSPREE (ex: mqkazpww)
+      const response = await fetch("https://formspree.io/f/xnjogvqv", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
         body: JSON.stringify(data),
       });
 
       if (response.ok) {
         setStatus("success");
         reset();
-        setTimeout(() => setStatus("idle"), 5000); // Revine la normal după 5 secunde
+        setTimeout(() => setStatus("idle"), 5000); 
       } else {
         setStatus("error");
       }
