@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ShieldCheck, Zap, Star, FileText, CheckCircle2 } from "lucide-react";
+import { ArrowRight, ShieldCheck, Zap, Star, CheckCircle2 } from "lucide-react";
 import Link from 'next/link';
 
 export default function Home() {
@@ -43,14 +43,14 @@ export default function Home() {
       <section className="py-24 bg-slate-50/50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="md:col-span-2 bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden group">
+            <div className="md:col-span-2 bg-white p-12 rounded-[2.5rem] border border-slate-100 shadow-sm relative overflow-hidden group text-left">
               <ShieldCheck size={40} className="text-blue-600 mb-8" />
               <h3 className="text-3xl font-black mb-4 text-[#003366]">Management Achiziții</h3>
               <p className="text-slate-600 text-lg leading-relaxed max-w-xl">
                 Suport tehnic complet pentru SEAP. De la documentație la contractare finală, asigurăm conformitatea juridică a fiecărui pas.
               </p>
             </div>
-            <div className="bg-blue-600 p-10 rounded-[2.5rem] text-white flex flex-col justify-between">
+            <div className="bg-blue-600 p-10 rounded-[2.5rem] text-white flex flex-col justify-between text-left">
               <Zap size={40} className="fill-white/20" />
               <div>
                 <h3 className="text-2xl font-black mb-2">Finanțări</h3>
@@ -62,4 +62,4 @@ export default function Home() {
       </section>
     </main>
   );
-  
+}
