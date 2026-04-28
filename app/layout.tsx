@@ -3,11 +3,14 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 
+// Configurarea fontului oficial pentru un aspect modern
 const inter = Inter({ subsets: ["latin"] });
 
+// Meta-datele pentru Google (SEO) - Importante pentru 2026
 export const metadata: Metadata = {
-  title: "Fine Solutions Pro | Consultanță Fonduri Nerambursabile 2026",
-  description: "Expertiză în finanțări nerambursabile, achiziții publice, ESG și digitalizare pentru IMM-uri.",
+  title: "Fine Solutions Pro | Consultanță Fonduri Europene & SEAP",
+  description: "Expertiză în accesarea fondurilor nerambursabile, digitalizare și managementul achizițiilor publice în România.",
+  keywords: ["fonduri europene", "PNRR", "SEAP", "consultanta afaceri", "digitalizare", "2026"],
 };
 
 export default function RootLayout({
@@ -17,40 +20,29 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ro" className="scroll-smooth">
-      <body className={`${inter.className} antialiased bg-white text-slate-900`}>
-        {/* Navigația principală */}
+      <body className={`${inter.className} bg-white text-slate-900 antialiased`}>
+        {/* Navbar-ul apare automat pe toate paginile */}
         <Navbar />
         
-        {/* Conținutul paginilor */}
-        <main className="min-h-screen">
+        {/* Aici se randează conținutul fiecărei pagini (page.tsx) */}
+        <main>
           {children}
         </main>
 
-        {/* Footer profesional */}
-        <footer className="bg-slate-900 text-white py-12 px-4">
-          <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="font-bold text-xl mb-4 text-blue-400">Fine Solutions Pro</h3>
-              <p className="text-slate-400 text-sm">
-                Partenerul tău strategic pentru obținerea și implementarea finanțărilor europene și guvernamentale.
-              </p>
+        {/* Footer-ul (opțional, dar recomandat) */}
+        <footer className="bg-slate-900 text-white py-12 border-t border-slate-800">
+          <div className="max-w-7xl mx-auto px-4 text-center">
+            <div className="mb-6">
+              <span className="text-xl font-black tracking-tighter">
+                FINE SOLUTIONS <span className="text-blue-500">PRO</span>
+              </span>
             </div>
-            <div>
-              <h4 className="font-semibold mb-4">Link-uri Rapide</h4>
-              <ul className="text-slate-400 text-sm space-y-2">
-                <li><Link href="/despre" className="hover:text-blue-300">Despre Noi</Link></li>
-                <li><Link href="/portofoliu" className="hover:text-blue-300">Portofoliu</Link></li>
-                <li><Link href="/contact" className="hover:text-blue-300">Contact</Link></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <p className="text-slate-400 text-sm">Email: contact@fspro.ro</p>
-              <p className="text-slate-400 text-sm">Consultanță specializată 2026</p>
-            </div>
-          </div>
-          <div className="border-t border-slate-800 mt-8 pt-8 text-center text-slate-500 text-xs">
-            <p>© {new Date().getFullYear()} Fine Solutions Pro. Toate drepturile rezervate.</p>
+            <p className="text-slate-400 text-sm">
+              &copy; {new Date().getFullYear()} Fine Solutions Pro. Toate drepturile rezervate.
+            </p>
+            <p className="text-slate-500 text-xs mt-2 italic">
+              Profesionalism. Integritate. Succes.
+            </p>
           </div>
         </footer>
       </body>
