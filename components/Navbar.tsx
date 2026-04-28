@@ -1,21 +1,18 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link"; // IMPORTUL CRITIC PENTRU REPARAREA ERORII
-import { Menu, X, ChevronDown, Phone } from "lucide-react";
+// IMPORTUL CRITIC - Fără acesta build-ul va eșua cu "Link is not defined"
+import Link from "next/link"; 
+import { Menu, X, Phone, ArrowRight } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  // Efect pentru a schimba aspectul navbar-ului la scroll
+  // Schimbăm aspectul navbar-ului când utilizatorul dă scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -32,17 +29,19 @@ export default function Navbar() {
   return (
     <nav 
       className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-white shadow-md py-3" : "bg-white/90 backdrop-blur-md py-5"
+        scrolled 
+          ? "bg-white/90 backdrop-blur-md shadow-lg py-3" 
+          : "bg-white py-5"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           
-          {/* LOGO */}
+          {/* --- LOGO --- */}
           <Link href="/" className="flex items-center space-x-2 group">
-            <div className="bg-blue-600 p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
-              <div className="w-6 h-6 border-2 border-white rounded-sm flex items-center justify-center">
-                <span className="text-white font-bold text-xs font-serif italic uppercase">F</span>
+            <div className="bg-blue-600 p-1.5 rounded-lg group-hover:rotate-6 transition-transform">
+              <div className="w-6 h-6 border-2 border-white rounded-sm flex items-center justify-center font-bold text-white text-xs">
+                FS
               </div>
             </div>
             <span className="text-xl font-black text-slate-900 tracking-tighter">
@@ -50,65 +49,66 @@ export default function Navbar() {
             </span>
           </Link>
 
-          {/* DESKTOP MENU */}
+          {/* --- DESKTOP NAVIGATION --- */}
           <div className="hidden md:flex items-center space-x-8">
-            <div className="flex space-x-6">
+            <div className="flex space-x-8">
               {navLinks.map((link) => (
                 <Link 
                   key={link.name} 
                   href={link.href} 
-                  className="text-slate-600 hover:text-blue-600 font-semibold text-sm uppercase tracking-wider transition-colors"
+                  className="text-slate-600 hover:text-blue-600 font-bold text-sm tracking-tight transition-colors"
                 >
                   {link.name}
                 </Link>
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* Buton CTA */}
             <Link 
               href="/contact" 
-              className="bg-blue-600 text-white px-6 py-3 rounded-full font-bold text-sm hover:bg-blue-700 transition-all shadow-lg shadow-blue-100 flex items-center space-x-2"
+              className="bg-blue-600 text-white px-6 py-2.5 rounded-full font-bold text-sm hover:bg-blue-700 transition-all flex items-center space-x-2 shadow-md shadow-blue-100"
             >
-              <Phone size={16} />
-              <span>CERE OFERTĂ</span>
+              <Phone size={14} />
+              <span>CONSULTANȚĂ GRATUITĂ</span>
             </Link>
           </div>
 
-          {/* MOBILE TOGGLE */}
-          <div className="md:hidden flex items-center">
+          {/* --- MOBILE TOGGLE --- */}
+          <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="text-slate-900 hover:text-blue-600 transition-colors"
+              className="text-slate-900 p-2"
             >
-              {isOpen ? <X size={30} /> : <Menu size={30} />}
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* MOBILE MENU */}
+      {/* --- MOBILE MENU --- */}
       <div 
-        className={`md:hidden absolute w-full bg-white border-t border-slate-100 transition-all duration-300 overflow-hidden ${
-          isOpen ? "max-h-screen py-6 shadow-xl" : "max-h-0"
+        className={`md:hidden absolute w-full bg-white border-t border-slate-100 transition-all duration-300 ease-in-out overflow-hidden ${
+          isOpen ? "max-h-screen shadow-2xl" : "max-h-0"
         }`}
       >
-        <div className="flex flex-col space-y-4 px-6">
+        <div className="flex flex-col space-y-4 p-6 bg-white">
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-slate-700 font-bold text-lg hover:text-blue-600 transition-colors"
+              className="text-slate-800 font-bold text-lg flex justify-between items-center border-b border-slate-50 pb-2"
             >
               {link.name}
+              <ArrowRight size={16} className="text-blue-600" />
             </Link>
           ))}
           <Link
             href="/contact"
             onClick={() => setIsOpen(false)}
-            className="bg-blue-600 text-white text-center py-4 rounded-xl font-bold"
+            className="bg-blue-600 text-white text-center py-4 rounded-xl font-bold mt-4"
           >
-            VREAU CONSULTANȚĂ
+            SOLICITĂ OFERTĂ ACUM
           </Link>
         </div>
       </div>
