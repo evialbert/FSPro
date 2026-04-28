@@ -1,130 +1,104 @@
-import React from 'react';
+"use client";
+
+import React from "react";
+import Link from "next/link";
 import { 
   ArrowRight, 
+  CheckCircle2, 
+  BarChart3, 
   ShieldCheck, 
   Zap, 
-  Star, 
-  LayoutGrid, 
-  MousePointer2, 
-  Menu,
-  ChevronRight
+  Globe, 
+  ChevronRight,
+  Star
 } from "lucide-react";
-import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-white font-sans text-slate-900">
+    <div className="flex flex-col min-h-screen bg-white">
       
-      {/* --- 1. NAVBAR MODERN (Floating Glassmorphism) --- */}
-      <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6">
-        <div className="w-full max-w-5xl bg-white/70 backdrop-blur-xl border border-white/20 shadow-lg shadow-blue-900/5 rounded-3xl px-6 py-3 flex items-center justify-between">
-          {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
-            <div className="bg-cyan-500 p-1.5 rounded-lg group-hover:rotate-12 transition-transform">
-              <Zap size={20} className="text-white fill-white" />
-            </div>
-            <span className="font-black text-xl tracking-tighter text-[#003366]">
-              FS<span className="text-cyan-500">PRO</span>
-            </span>
-          </Link>
-
-          {/* Nav Links - Desktop */}
-          <div className="hidden md:flex items-center gap-8 text-sm font-bold text-slate-600">
-            <Link href="/" className="hover:text-cyan-500 transition-colors">Acasă</Link>
-            <Link href="/servicii" className="hover:text-cyan-500 transition-colors">Servicii</Link>
-            <Link href="/despre" className="hover:text-cyan-500 transition-colors">Despre</Link>
-          </div>
-
-          {/* Buton Contact Navbar */}
-          <Link 
-            href="/contact" 
-            className="bg-[#003366] text-white px-5 py-2.5 rounded-2xl text-sm font-bold hover:bg-cyan-500 hover:shadow-lg hover:shadow-cyan-200 transition-all active:scale-95"
-          >
-            Cere Ofertă
-          </Link>
-
-          {/* Mobile Menu Icon */}
-          <div className="md:hidden text-slate-900">
-            <Menu size={24} />
-          </div>
-        </div>
-      </nav>
-
-      {/* --- FUNDAL DECORATIV --- */}
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-10 pointer-events-none">
-        <div className="absolute top-[-10%] right-[-10%] w-[600px] h-[600px] bg-cyan-100/40 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[20%] left-[-5%] w-[400px] h-[400px] bg-blue-50/50 rounded-full blur-[100px]" />
-      </div>
-
-      {/* --- 2. HERO SECTION --- */}
-      <section className="relative pt-44 pb-20 md:pt-56 md:pb-32">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          
-          {/* Badge cu efect de puls */}
-          <div className="inline-flex items-center gap-2 py-2 px-5 rounded-full bg-cyan-50 border border-cyan-100 text-cyan-700 text-xs md:text-sm font-black mb-10 tracking-wide uppercase">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
-            </span>
-            Partener Strategic de Business
-          </div>
-
-          <h1 className="text-5xl md:text-8xl font-black tracking-tight text-slate-900 leading-[0.95] mb-8">
-            Expertiză care <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-blue-600">
-              Transformă Viitorul.
-            </span>
-          </h1>
-
-          <p className="max-w-2xl mx-auto text-lg md:text-xl text-slate-500 leading-relaxed mb-12">
-            Fine Solutions Professional: Structurăm idei, gestionăm SEAP și securizăm finanțări europene pentru afacerea ta.
-          </p>
-
-          {/* Butoane Hero "Drăguțe" */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
-            <Link 
-              href="/contact" 
-              className="group relative overflow-hidden bg-[#003366] text-white px-10 py-5 rounded-2xl font-black text-lg flex items-center gap-2 transition-all hover:shadow-[0_20px_50px_rgba(8,_112,_184,_0.2)] active:scale-95"
-            >
-              <span className="relative z-10">Începe Proiectul</span>
-              <ArrowRight size={20} className="relative z-10 group-hover:translate-x-2 transition-transform" />
-              <div className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-blue-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            </Link>
+      {/* --- HERO SECTION --- */}
+      <section className="relative pt-16 pb-24 lg:pt-32 lg:pb-40 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 relative z-10">
+          <div className="flex flex-col lg:flex-row items-center gap-16">
             
-            <Link 
-              href="/servicii" 
-              className="group px-10 py-5 rounded-2xl font-bold text-lg text-slate-700 border-2 border-slate-100 hover:border-cyan-200 hover:bg-cyan-50/30 transition-all flex items-center gap-2"
-            >
-              Vezi Servicii
-              <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform text-cyan-500" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* --- 3. BENTO GRID SERVICII --- */}
-      <section className="py-20 px-6">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-            {/* Card Principal */}
-            <div className="md:col-span-2 bg-gradient-to-br from-white to-cyan-50/20 p-10 md:p-14 rounded-[3rem] border border-slate-100 shadow-sm group hover:border-cyan-200 transition-all relative overflow-hidden text-left">
-              <div className="bg-cyan-500 text-white w-14 h-14 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-cyan-100">
-                <ShieldCheck size={30} />
+            {/* Partea Stângă: Text și CTA */}
+            <div className="lg:w-1/2 text-left">
+              <div className="inline-flex items-center space-x-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-bold mb-8 animate-fade-in">
+                <Zap size={16} className="fill-current" />
+                <span>Consultanță Fonduri Europene 2026</span>
               </div>
-              <h3 className="text-3xl font-black mb-4 text-[#003366]">Management Achiziții</h3>
-              <p className="text-slate-500 text-lg leading-relaxed max-w-lg">
-                Oferim consultanță completă pentru SEAP și achiziții publice. 
-                Siguranță procedurală și succes garantat.
+              
+              <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8">
+                Finanțăm <span className="text-blue-600">Succesul</span> Afacerii Tale.
+              </h1>
+              
+              <p className="text-xl text-slate-600 mb-10 leading-relaxed max-w-xl">
+                Fine Solutions Pro transformă complexitatea fondurilor nerambursabile în oportunități reale de creștere. Expertiză locală, viziune europeană.
               </p>
-            </div>
+              
+              <div className="flex flex-col sm:flex-row gap-5">
+                <Link href="/contact" className="bg-blue-600 text-white px-10 py-5 rounded-full font-bold text-lg hover:bg-blue-700 transition-all flex items-center justify-center space-x-3 shadow-xl shadow-blue-200">
+                  <span>Începe un Proiect</span>
+                  <ArrowRight size={22} />
+                </Link>
+                <Link href="/servicii" className="border-2 border-slate-200 text-slate-700 px-10 py-5 rounded-full font-bold text-lg hover:bg-slate-50 transition-all text-center">
+                  Vezi Serviciile
+                </Link>
+              </div>
 
-            {/* Card Mic Colorat */}
-            <div className="bg-cyan-500 p-10 rounded-[3rem] text-white flex flex-col justify-between shadow-xl shadow-cyan-100 hover:-translate-y-2 transition-transform text-left">
-              <Zap size={40} className="fill-white/20" />
-              <div>
-                <h3 className="text-2xl font-black mb-2 italic">Fonduri UE</h3>
-                <p className="text-white/80 font-medium text-sm tracking-wide">Transformăm birocrația în resurse reale pentru creștere.</p>
+              {/* Trust markers sub butoane */}
+              <div className="mt-10 flex items-center space-x-6 text-slate-400">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle2 size={18} className="text-green-500" />
+                  <span className="text-sm font-medium">Analiză Gratuită</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle2 size={18} className="text-green-500" />
+                  <span className="text-sm font-medium">Suport SEAP/SICAP</span>
+                </div>
+              </div>
+            </div>
+            
+            {/* Partea Dreaptă: POZA TA (Bărbatul la cravată) */}
+            <div className="lg:w-1/2 relative">
+              <div className="relative w-full max-w-md mx-auto">
+                {/* Decor fundal poza */}
+                <div className="absolute -top-6 -right-6 w-32 h-32 bg-blue-100 rounded-full -z-10 animate-pulse"></div>
+                <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-slate-100 rounded-full -z-10"></div>
+                
+                {/* Container Poza */}
+                <div className="relative rounded-[2.5rem] overflow-hidden shadow-2xl border-[12px] border-white ring-1 ring-slate-100 transform lg:rotate-2 transition-transform hover:rotate-0 duration-500">
+                  <img 
+                    src="/consultant.jpg" 
+                    alt="Consultant Fine Solutions Pro" 
+                    className="w-full h-[550px] object-cover"
+                  />
+                  {/* Overlay gradient peste poza */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+                  
+                  {/* Text pe poza */}
+                  <div className="absolute bottom-8 left-8 text-white">
+                    <div className="flex space-x-1 mb-2">
+                      {[1,2,3,4,5].map(i => <Star key={i} size={14} className="fill-yellow-400 text-yellow-400" />)}
+                    </div>
+                    <p className="text-2xl font-bold">Albert</p>
+                    <p className="text-blue-300 text-sm font-medium">Expert Consultanță Fonduri</p>
+                  </div>
+                </div>
+
+                {/* Card mic "Floating" peste poza */}
+                <div className="absolute -right-8 top-1/4 bg-white p-4 rounded-2xl shadow-xl hidden md:block animate-bounce-slow">
+                  <div className="flex items-center space-x-3">
+                    <div className="bg-green-100 p-2 rounded-lg">
+                      <BarChart3 className="text-green-600" size={24} />
+                    </div>
+                    <div>
+                      <p className="text-xs text-slate-500 font-bold uppercase tracking-tighter">Rată de Succes</p>
+                      <p className="text-xl font-bold text-slate-900">94%</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -132,10 +106,66 @@ export default function Home() {
         </div>
       </section>
 
-      {/* --- FOOTER --- */}
-      <footer className="py-12 text-center text-slate-400 text-sm border-t border-slate-50">
-        <p>© 2026 Fine Solutions Professional • Excellence in Consulting</p>
-      </footer>
-    </main>
+      {/* --- SERVICES SHORT SECTION --- */}
+      <section className="py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16">
+            <div className="max-w-2xl">
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Expertiză care produce rezultate</h2>
+              <p className="text-slate-600 text-lg">De la digitalizare la achiziții publice, suntem alături de tine în fiecare etapă a finanțării.</p>
+            </div>
+            <Link href="/servicii" className="text-blue-600 font-bold flex items-center hover:underline mt-4 md:mt-0">
+              Vezi toate serviciile <ChevronRight size={20} />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { 
+                title: "Digitalizare IMM", 
+                desc: "Pregătim dosarul pentru granturi de tehnologizare și soluții software avansate.", 
+                icon: <BarChart3 className="text-blue-600" size={32} /> 
+              },
+              { 
+                title: "Achiziții Publice", 
+                desc: "Consultanță de specialitate pentru câștigarea licitațiilor prin SEAP/SICAP.", 
+                icon: <ShieldCheck className="text-blue-600" size={32} /> 
+              },
+              { 
+                title: "Energie Verde", 
+                desc: "Finanțări pentru panouri fotovoltaice și sustenabilitate industrială.", 
+                icon: <Globe className="text-blue-600" size={32} /> 
+              }
+            ].map((s, i) => (
+              <div key={i} className="bg-white p-10 rounded-3xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="mb-6 p-4 bg-blue-50 rounded-2xl inline-block text-blue-600">
+                  {s.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{s.title}</h3>
+                <p className="text-slate-600 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* --- CTA SECTION --- */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto bg-blue-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-200">
+          <div className="relative z-10">
+            <h2 className="text-3xl md:text-5xl font-bold mb-8 leading-tight">Gata să obții finanțarea de care ai nevoie?</h2>
+            <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
+              Nu lăsa oportunitățile anului 2026 să treacă pe lângă tine. Hai să discutăm despre eligibilitatea firmei tale.
+            </p>
+            <Link href="/contact" className="bg-white text-blue-600 px-12 py-5 rounded-full font-extrabold text-xl hover:bg-slate-50 transition-all inline-block shadow-lg">
+              Solicită Evaluare Gratuită
+            </Link>
+          </div>
+          {/* Cercuri decorative fundal */}
+          <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-500 rounded-full opacity-50"></div>
+          <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-64 h-64 bg-blue-700 rounded-full opacity-50"></div>
+        </div>
+      </section>
+    </div>
   );
 }
