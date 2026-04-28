@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+
+// Importul componentelor create
 import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer"; // Importăm noul Footer client-side
+import Footer from "@/components/Footer";
+import CookieBanner from "@/components/CookieBanner";
+import FloatingContact from "@/components/FloatingContact";
 
 const inter = Inter({ subsets: ["latin"] });
 
+// Metadate optimizate pentru SEO România 2026
 export const metadata: Metadata = {
-  title: "Fine Solutions Pro | Consultanță Fonduri Europene & SEAP 2026",
-  description: "Expertiză în finanțări nerambursabile, digitalizare și achiziții publice în România.",
-  keywords: ["fonduri europene", "PNRR", "SEAP", "consultanta afaceri", "digitalizare", "2026"],
+  title: "Fine Solutions Pro | Consultanță Fonduri Europene & SEAP",
+  description: "Expertiză în finanțări nerambursabile, digitalizare și managementul achizițiilor publice în România. Soluții inteligente pentru succesul afacerii tale.",
+  viewport: "width=device-width, initial-scale=1",
+  robots: "index, follow",
 };
 
 export default function RootLayout({
@@ -21,17 +27,23 @@ export default function RootLayout({
     <html lang="ro" className="scroll-smooth">
       <body className={`${inter.className} flex flex-col min-h-screen bg-white text-slate-900 antialiased`}>
         
-        {/* Navbar-ul global */}
+        {/* Navigația principală (Sticky) */}
         <Navbar />
-        
-        {/* Conținutul dinamic al paginilor */}
+
+        {/* Banner discret pentru Cookies (Conformitate GDPR) */}
+        <CookieBanner />
+
+        {/* Buton flotant pentru Contact Rapid (WhatsApp, Messenger, Telefon) */}
+        <FloatingContact />
+
+        {/* Zona principală de conținut */}
         <main className="flex-grow">
           {children}
         </main>
 
-        {/* Footer-ul extras (rezolvă eroarea de build) */}
+        {/* Footer cu link-uri legale și buton Revisit Consent */}
         <Footer />
-        
+
       </body>
     </html>
   );
