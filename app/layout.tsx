@@ -11,7 +11,7 @@ import FloatingContact from "@/components/FloatingContact";
 
 const inter = Inter({ subsets: ["latin"] });
 
-// SEO & Metadate 2026
+// SEO & Metadate pentru 2026
 export const metadata: Metadata = {
   title: "Fine Solutions Pro | Consultanță Fonduri Europene & SEAP",
   description: "Servicii de elită în consultanță pentru finanțări nerambursabile și managementul achizițiilor publice în România.",
@@ -28,13 +28,13 @@ export default function RootLayout({
     <html lang="ro" className="scroll-smooth">
       <body className={`${inter.className} flex flex-col min-h-screen bg-white text-slate-900 antialiased`}>
         
-        {/* Meniul Principal (Sticky) */}
+        {/* Meniul Principal */}
         <Navbar />
 
-        {/* Banner GDPR (Apare dinamic) */}
+        {/* Banner GDPR */}
         <CookieBanner />
 
-        {/* CONTAINER FLOTANT (Glassmorphism & Squirkle Shapes)
+        {/* CONTAINER FLOTANT 
             Folosim pointer-events-none pe containerul părinte pentru a nu bloca 
             conținutul site-ului, activând pointer-events doar pe butoane.
         */}
