@@ -1,78 +1,87 @@
+// app/page.tsx
+import FloatingContact from "@/components/FloatingContact";
+import CookieSettings from "@/components/CookieSettings";
+import GuaranteesSection from "@/components/GuaranteesSection";
 import ConsultantProfile from "@/components/ConsultantProfile";
-import TrustSection from "@/components/TrustSection";
-import { ArrowRight, CheckCircle, Target, Zap } from "lucide-react";
-import Link from "next/link";
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="bg-stone-50 min-h-screen text-stone-800">
       
-      {/* 1. HERO SECTION - Albastru Pastel (Calm, Încredere) */}
-      <section className="bg-blue-50 text-blue-950 py-24 md:py-32 px-6">
-        <div className="max-w-5xl mx-auto text-center">
-          <span className="inline-block bg-blue-100 text-blue-700 font-bold px-4 py-1 rounded-full text-xs uppercase tracking-widest mb-6 border border-blue-200">
-            Consultanță Fonduri Europene 2026
-          </span>
-          <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 leading-[0.9]">
-            TRANSFORMĂ IDEILE <br />
-            <span className="text-emerald-700">ÎN FINANȚĂRI DE SUCCES</span>
-          </h1>
-          <p className="text-lg md:text-xl text-blue-900/70 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Expertiză completă în accesarea fondurilor nerambursabile și managementul achizițiilor publice. 
-            Soluții strategice pentru digitalizarea și scalarea afacerii tale.
+      {/* 1. HERO SECTION */}
+      <section className="px-6 py-24 md:py-32 text-center bg-white/50">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 text-stone-900 leading-[0.95]">
+          TRANSFORMĂM IDEILE TALE <br />
+          <span className="text-stone-600">ÎN PROIECTE CÂȘTIGĂTOARE</span>
+        </h1>
+        <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+          Fine Solutions Professional – Specialist în structurarea și protejarea investițiilor publice și europene, 
+          cu expertiză reală în achiziții publice.
+        </p>
+        <a 
+          href="#contact" 
+          className="bg-stone-800 text-white px-8 py-4 rounded-full font-bold hover:bg-stone-900 transition-all hover:scale-105 inline-block shadow-lg"
+        >
+          Solicită ofertă
+        </a>
+      </section>
+
+      {/* 2. INTRO & STATEMENT */}
+      <section className="px-6 py-20 bg-white">
+        <div className="max-w-4xl mx-auto">
+          <p className="text-xl md:text-2xl leading-relaxed text-stone-700 mb-12">
+            Bine ați venit la Fine Solutions Professional – partenerul dvs. în transformarea ideilor în proiecte 
+            implementate corect și eficient. Oferim suport end-to-end, indiferent dacă sunteți la primul demers 
+            de finanțare sau aveți nevoie de consultanță recurentă, prin abonamente lunare.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact" className="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 px-8 rounded-full transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-emerald-200">
-              Solicită Consultanță <ArrowRight size={20} />
-            </Link>
-            <Link href="/servicii" className="bg-white hover:bg-slate-50 text-blue-900 font-bold py-4 px-8 rounded-full transition-all border border-blue-100">
-              Vezi Servicii
-            </Link>
+          
+          <div className="p-10 bg-stone-50 rounded-3xl border border-stone-100 shadow-sm">
+            <h3 className="font-bold text-stone-900 mb-4 text-lg">Statement de business:</h3>
+            <p className="text-stone-600 italic text-lg leading-relaxed">
+              "Transformăm provocările birocratice în oportunități reale de creștere. Maximizăm controlul total 
+              al riscului în proiectele finanțate din fonduri europene și achiziții publice."
+            </p>
           </div>
         </div>
       </section>
 
-      {/* 2. TRUST SECTION - Verde Măsliniu (Autoritate) */}
-      <TrustSection />
+      {/* 3. GARANȚII */}
+      <GuaranteesSection />
 
-      {/* 3. SERVICII PREVIEW - Curat, Minimalist */}
-      <section className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-black text-blue-950 tracking-tighter mb-4">Servicii de Elită</h2>
-          <p className="text-blue-900/60">Soluții adaptate nevoilor tale de business.</p>
-        </div>
-        
-        <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { icon: <Target className="text-emerald-600" />, title: "Fonduri Europene", desc: "Suport cap-coadă pentru accesarea și implementarea finanțărilor PNRR și a programelor operaționale." },
-            { icon: <Zap className="text-emerald-600" />, title: "Digitalizare", desc: "Transformare digitală accelerată și optimizarea proceselor interne prin tehnologii moderne." },
-            { icon: <CheckCircle className="text-emerald-600" />, title: "Achiziții Publice", desc: "Consultantă expertă pentru participarea la licitații SEAP/SICAP și asistență juridică." },
-          ].map((item, i) => (
-            <div key={i} className="p-8 bg-white rounded-2xl border border-blue-50 hover:border-emerald-200 transition-all hover:shadow-xl shadow-sm">
-              <div className="mb-6 p-3 bg-emerald-50 rounded-xl inline-block">{item.icon}</div>
-              <h3 className="text-xl font-bold text-blue-950 mb-4">{item.title}</h3>
-              <p className="text-blue-900/70 leading-relaxed">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      {/* 4. PROFIL CONSULTANT */}
+      <ConsultantProfile />
 
-      {/* 4. CONSULTANT PROFILE */}
-      <section className="py-16 px-6 max-w-5xl mx-auto">
-        <ConsultantProfile />
-      </section>
-
-      {/* 5. CTA FINAL - Olive Green (Conversie) */}
-      <section className="py-20 px-6 bg-emerald-600">
-        <div className="max-w-4xl mx-auto text-center text-white">
-          <h2 className="text-3xl md:text-4xl font-black mb-6 tracking-tighter">Pregătit să începi un proiect de succes?</h2>
-          <p className="text-emerald-100 mb-10 text-lg">Contactează-ne astăzi pentru o evaluare preliminară gratuită a eligibilității firmei tale.</p>
-          <Link href="/contact" className="bg-white text-emerald-700 font-bold py-4 px-10 rounded-full hover:bg-emerald-50 transition-all shadow-xl">
-            Programează o discuție
-          </Link>
+      {/* 5. FORMULAR CONTACT */}
+      <section id="contact" className="py-20 px-6 max-w-3xl mx-auto">
+        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-stone-100">
+          <h2 className="text-3xl font-black text-stone-900 mb-6 tracking-tight">Solicită evaluare eligibilitate</h2>
+          <p className="text-stone-600 mb-8">
+            Completează formularul și revenim cu un plan de lucru și o ofertă adaptată obiectivului tău.
+          </p>
+          
+          <form className="space-y-4">
+            <input type="text" placeholder="Nume și prenume" className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-stone-400" />
+            <input type="email" placeholder="Email (Îți trimitem aici oferta și pașii următori)" className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-stone-400" />
+            <input type="tel" placeholder="Telefon (Opțional, pentru ofertare mai precisă)" className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-stone-400" />
+            <select className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-stone-400 text-stone-600">
+                <option>Serviciu de interes</option>
+                <option>Fonduri Europene</option>
+                <option>Achiziții Publice</option>
+                <option>Consultantă Recurentă</option>
+            </select>
+            <textarea placeholder="Scrie pe scurt: obiectiv, termen, context (ex. apel de finanțare / procedură SEAP)" className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 h-32 focus:outline-none focus:ring-2 focus:ring-stone-400"></textarea>
+            
+            <button className="w-full bg-stone-800 text-white p-4 rounded-xl font-bold hover:bg-stone-900 transition-all hover:scale-[1.01] active:scale-[0.99]">
+              Trimite solicitarea
+            </button>
+            <p className="text-xs text-stone-400 text-center pt-2">Datele tale sunt confidențiale. Te contactăm în cel mai scurt timp.</p>
+          </form>
         </div>
       </section>
 
+      {/* Componente Globale */}
+      <FloatingContact />
+      <CookieSettings />
     </main>
   );
 }

@@ -1,28 +1,37 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  // Aici definim unde se află fișierele care folosesc clase Tailwind
-  // Este vital să avem toate aceste rute pentru ca stilurile să fie generate
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
-    // Adăugăm și fișierul de layout și globals pentru siguranță
-    "./app/layout.tsx",
-    "./app/globals.css",
   ],
   theme: {
     extend: {
-      // Culorile tale personalizate pentru Fine Solutions Pro
       colors: {
+        // Paleta "Pudrată" (Muted Stone & Olive)
+        // Am setat nuanțe de la 50 (foarte deschis) la 900 (foarte închis)
+        stone: {
+          50: '#f5f5f4',  // Fundaluri foarte deschise
+          100: '#e7e5e4', // Borduri subtile
+          200: '#d6d3d1',
+          300: '#a8a29e',
+          400: '#78716c',
+          500: '#57534e', // Olive/Măsliniu pudrat (Accent)
+          600: '#44403c',
+          700: '#292524', // Text/Elemente de autoritate
+          800: '#1c1917',
+          900: '#0c0a09',
+        },
+        // Branding integrat pentru a păstra consistența în cod
         brand: {
-          dark: "#003366",    // Albastru închis profesional
-          light: "#06b6d4",   // Cyan/Albastru deschis pentru accente
-          gray: "#f8fafc",    // Fundal gri foarte deschis
+          dark: "#292524",   // Folosește stone-700
+          accent: "#57534e", // Folosește stone-500
+          light: "#f5f5f4",  // Folosește stone-50
         },
       },
-      // Am adăugat animații pentru un aspect modern
+      // Am păstrat animațiile pentru un aspect modern și fluid
       animation: {
         'fade-in': 'fadeIn 0.5s ease-out forwards',
       },
