@@ -1,8 +1,21 @@
 // app/page.tsx
+import type { Metadata } from 'next';
 import FloatingContact from "@/components/FloatingContact";
 import CookieSettings from "@/components/CookieSettings";
 import GuaranteesSection from "@/components/GuaranteesSection";
 import ConsultantProfile from "@/components/ConsultantProfile";
+
+// Configurare Metadata pentru SEO
+export const metadata: Metadata = {
+  title: 'Fine Solutions Professional | Investiții și Fonduri Europene',
+  description: 'Specialist în structurarea și protejarea investițiilor publice și europene, cu expertiză reală în achiziții publice.',
+};
+
+// Configurare Viewport (necesară pentru Next.js 15)
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+};
 
 export default function Home() {
   return (

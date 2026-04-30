@@ -1,4 +1,5 @@
-// components/ConsultantProfile.tsx
+'use client'; // Aceasta este linia critică pentru a rezolva eroarea de build
+
 import React from 'react';
 
 export default function ConsultantProfile() {
@@ -7,9 +8,8 @@ export default function ConsultantProfile() {
       <div className="max-w-5xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center gap-12 p-8 md:p-12 bg-stone-50 rounded-3xl border border-stone-100 shadow-sm">
           
-          {/* Zona Foto - Am prevăzut un container pentru poza lui Claudiu */}
+          {/* Zona Foto */}
           <div className="w-48 h-48 md:w-64 md:h-64 bg-stone-200 rounded-2xl overflow-hidden shrink-0 shadow-lg relative group">
-             {/* Dacă ai o poză, înlocuiește src-ul. Dacă nu, am pus un placeholder */}
              <img 
                 src="/claudiu.jpg" 
                 alt="Claudiu - Consultant Senior" 
