@@ -28,27 +28,34 @@ export default function RootLayout({
     <html lang="ro" className="scroll-smooth">
       <body className={`${inter.className} flex flex-col min-h-screen bg-white text-slate-900 antialiased`}>
         
-        {/* 1. Meniul Principal */}
+        {/* Meniul Principal (Sticky) */}
         <Navbar />
 
-        {/* 2. Elementele de tip Banner/Overlay (GDPR) */}
+        {/* Banner GDPR (Apare dinamic) */}
         <CookieBanner />
 
-        {/* 3. Elementele Flotante (UI deasupra conținutului) */}
-        <div className="relative">
-          {/* Partea Stângă: Control Confidențialitate */}
-          <CookieSettings />
-          
-          {/* Partea Dreaptă: Canale de Contact Animante */}
-          <FloatingContact />
+        {/* CONTAINER FLOTANT (Glassmorphism & Squirkle Shapes)
+            Folosim pointer-events-none pe containerul părinte pentru a nu bloca 
+            conținutul site-ului, activând pointer-events doar pe butoane.
+        */}
+        <div className="fixed inset-0 pointer-events-none z-[100] p-6 flex items-end justify-between">
+           {/* Partea Stângă: Control Confidențialitate */}
+           <div className="pointer-events-auto">
+             <CookieSettings />
+           </div>
+           
+           {/* Partea Dreaptă: Canale de Contact */}
+           <div className="pointer-events-auto">
+             <FloatingContact />
+           </div>
         </div>
 
-        {/* 4. Conținutul Paginii */}
+        {/* Conținutul Paginii */}
         <main className="flex-grow">
           {children}
         </main>
 
-        {/* 5. Subsolul Paginii (Informații Legale & Harta Site-ului) */}
+        {/* Subsolul Paginii */}
         <Footer />
 
       </body>
