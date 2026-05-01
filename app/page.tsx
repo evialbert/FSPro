@@ -7,11 +7,11 @@ import ConsultantProfile from "@/components/ConsultantProfile";
 
 // Configurare Metadata pentru SEO
 export const metadata: Metadata = {
-  title: 'Fine Solutions Professional | Investiții și Fonduri Europene',
-  description: 'Specialist în structurarea și protejarea investițiilor publice și europene, cu expertiză reală în achiziții publice.',
+  title: 'Fine Solutions Professional | Expertiză în Fonduri Europene și Achiziții Publice',
+  description: 'Specialist în structurarea și protejarea investițiilor publice și europene. Partenerul tău pentru succesul proiectelor.',
 };
 
-// Configurare Viewport (necesară pentru Next.js 15)
+// Configurare Viewport (Next.js 15+)
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -19,38 +19,38 @@ export const viewport = {
 
 export default function Home() {
   return (
-    <main className="bg-stone-50 min-h-screen text-stone-800">
+    <main className="bg-white min-h-screen text-blue-950">
       
-      {/* 1. HERO SECTION */}
-      <section className="px-6 py-24 md:py-32 text-center bg-white/50">
-        <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 text-stone-900 leading-[0.95]">
+      {/* 1. HERO SECTION - Gradient discret albastru */}
+      <section className="px-6 py-24 md:py-32 text-center bg-gradient-to-b from-blue-50 to-white">
+        <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 text-blue-950 leading-[0.95]">
           TRANSFORMĂM IDEILE TALE <br />
-          <span className="text-stone-600">ÎN PROIECTE CÂȘTIGĂTOARE</span>
+          <span className="text-blue-600">ÎN PROIECTE CÂȘTIGĂTOARE</span>
         </h1>
-        <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-lg md:text-xl text-blue-800/80 max-w-2xl mx-auto mb-12 leading-relaxed">
           Fine Solutions Professional – Specialist în structurarea și protejarea investițiilor publice și europene, 
-          cu expertiză reală în achiziții publice.
+          cu expertiză reală în achiziții publice și management de proiect.
         </p>
         <a 
           href="#contact" 
-          className="bg-stone-800 text-white px-8 py-4 rounded-full font-bold hover:bg-stone-900 transition-all hover:scale-105 inline-block shadow-lg"
+          className="bg-blue-900 text-white px-8 py-4 rounded-full font-bold hover:bg-blue-800 transition-all hover:scale-105 inline-block shadow-lg shadow-blue-200"
         >
           Solicită ofertă
         </a>
       </section>
 
-      {/* 2. INTRO & STATEMENT */}
-      <section className="px-6 py-20 bg-white">
+      {/* 2. INTRO & STATEMENT - Aspect curat, profesional */}
+      <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto">
-          <p className="text-xl md:text-2xl leading-relaxed text-stone-700 mb-12">
+          <p className="text-xl md:text-2xl leading-relaxed text-blue-900 mb-12">
             Bine ați venit la Fine Solutions Professional – partenerul dvs. în transformarea ideilor în proiecte 
             implementate corect și eficient. Oferim suport end-to-end, indiferent dacă sunteți la primul demers 
-            de finanțare sau aveți nevoie de consultanță recurentă, prin abonamente lunare.
+            de finanțare sau aveți nevoie de consultanță recurentă.
           </p>
           
-          <div className="p-10 bg-stone-50 rounded-3xl border border-stone-100 shadow-sm">
-            <h3 className="font-bold text-stone-900 mb-4 text-lg">Statement de business:</h3>
-            <p className="text-stone-600 italic text-lg leading-relaxed">
+          <div className="p-10 bg-blue-50/50 rounded-3xl border border-blue-100 shadow-sm">
+            <h3 className="font-bold text-blue-950 mb-4 text-lg tracking-wide uppercase">Statement de business:</h3>
+            <p className="text-blue-800 italic text-lg leading-relaxed">
               "Transformăm provocările birocratice în oportunități reale de creștere. Maximizăm controlul total 
               al riscului în proiectele finanțate din fonduri europene și achiziții publice."
             </p>
@@ -64,30 +64,32 @@ export default function Home() {
       {/* 4. PROFIL CONSULTANT */}
       <ConsultantProfile />
 
-      {/* 5. FORMULAR CONTACT */}
+      {/* 5. FORMULAR CONTACT - Paletă Blue */}
       <section id="contact" className="py-20 px-6 max-w-3xl mx-auto">
-        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-stone-100">
-          <h2 className="text-3xl font-black text-stone-900 mb-6 tracking-tight">Solicită evaluare eligibilitate</h2>
-          <p className="text-stone-600 mb-8">
+        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-blue-50 border border-blue-100">
+          <h2 className="text-3xl font-black text-blue-950 mb-6 tracking-tight">Solicită evaluare eligibilitate</h2>
+          <p className="text-blue-700 mb-8">
             Completează formularul și revenim cu un plan de lucru și o ofertă adaptată obiectivului tău.
           </p>
           
           <form className="space-y-4">
-            <input type="text" placeholder="Nume și prenume" className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-stone-400" />
-            <input type="email" placeholder="Email (Îți trimitem aici oferta și pașii următori)" className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-stone-400" />
-            <input type="tel" placeholder="Telefon (Opțional, pentru ofertare mai precisă)" className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-stone-400" />
-            <select className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 focus:outline-none focus:ring-2 focus:ring-stone-400 text-stone-600">
+            <input type="text" placeholder="Nume și prenume" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all" />
+            <input type="email" placeholder="Email (Îți trimitem aici oferta)" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all" />
+            <input type="tel" placeholder="Telefon (Opțional)" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all" />
+            
+            <select className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all text-blue-800">
                 <option>Serviciu de interes</option>
                 <option>Fonduri Europene</option>
                 <option>Achiziții Publice</option>
                 <option>Consultantă Recurentă</option>
             </select>
-            <textarea placeholder="Scrie pe scurt: obiectiv, termen, context (ex. apel de finanțare / procedură SEAP)" className="w-full p-4 rounded-xl border border-stone-200 bg-stone-50 h-32 focus:outline-none focus:ring-2 focus:ring-stone-400"></textarea>
             
-            <button className="w-full bg-stone-800 text-white p-4 rounded-xl font-bold hover:bg-stone-900 transition-all hover:scale-[1.01] active:scale-[0.99]">
+            <textarea placeholder="Scrie pe scurt: obiectiv, termen, context (ex. apel de finanțare / procedură SEAP)" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 h-32 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all"></textarea>
+            
+            <button className="w-full bg-blue-900 text-white p-4 rounded-xl font-bold hover:bg-blue-800 transition-all hover:scale-[1.01] active:scale-[0.99] shadow-lg shadow-blue-200">
               Trimite solicitarea
             </button>
-            <p className="text-xs text-stone-400 text-center pt-2">Datele tale sunt confidențiale. Te contactăm în cel mai scurt timp.</p>
+            <p className="text-xs text-blue-400 text-center pt-2">Datele tale sunt confidențiale. Te contactăm în cel mai scurt timp.</p>
           </form>
         </div>
       </section>
