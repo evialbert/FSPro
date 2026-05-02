@@ -7,11 +7,11 @@ import ConsultantProfile from "@/components/ConsultantProfile";
 
 // Configurare Metadata pentru SEO
 export const metadata: Metadata = {
-  title: 'Fine Solutions Professional | Expertiză în Fonduri Europene și Achiziții Publice',
+  title: 'Fine Solutions Professional | Expert Strateg în Fonduri Europene și Achiziții Publice',
   description: 'Specialist în structurarea și protejarea investițiilor publice și europene. Partenerul tău pentru succesul proiectelor.',
 };
 
-// Configurare Viewport (Next.js 15+)
+// Configurare Viewport
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -19,16 +19,16 @@ export const viewport = {
 
 export default function Home() {
   return (
-    <main className="bg-white min-h-screen text-blue-950">
+    <main className="bg-white min-h-screen text-blue-950 overflow-x-hidden">
       
-      {/* 1. HERO SECTION - Cu ajustări de responsivitate pentru mobil */}
+      {/* 1. HERO SECTION - Ajustată pentru mobil (text adaptiv) */}
       <section className="px-6 py-20 md:py-32 text-center bg-gradient-to-b from-blue-50 to-white">
-        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-8 text-blue-950 leading-tight md:leading-[0.95] break-words">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-8 text-blue-950 leading-tight md:leading-[0.95] break-words max-w-5xl mx-auto">
           TRANSFORMĂM IDEILE TALE <br className="hidden md:block" />
           <span className="text-blue-600">ÎN PROIECTE CÂȘTIGĂTOARE</span>
         </h1>
         <p className="text-base md:text-xl text-blue-800/80 max-w-2xl mx-auto mb-12 leading-relaxed">
-          Fine Solutions Professional – Specialist în structurarea și protejarea investițiilor publice și europene, 
+          Fine Solutions Professional – Expert Strateg în structurarea și protejarea investițiilor publice și europene, 
           cu expertiză reală în achiziții publice și management de proiect.
         </p>
         <a 
@@ -61,7 +61,7 @@ export default function Home() {
       {/* 3. GARANȚII */}
       <GuaranteesSection />
 
-      {/* 4. PROFIL CONSULTANT */}
+      {/* 4. PROFIL CONSULTANT (Poza Color & Titlu actualizat) */}
       <ConsultantProfile />
 
       {/* 5. FORMULAR CONTACT */}
@@ -74,8 +74,8 @@ export default function Home() {
           
           <form className="space-y-4">
             <input type="text" placeholder="Nume și prenume" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all" />
-            <input type="email" placeholder="Email (Îți trimitem aici oferta)" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all" />
-            <input type="tel" placeholder="Telefon (Opțional)" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all" />
+            <input type="email" placeholder="Email" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all" />
+            <input type="tel" placeholder="Telefon" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all" />
             
             <select className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all text-blue-800">
                 <option>Serviciu de interes</option>
@@ -84,12 +84,12 @@ export default function Home() {
                 <option>Consultantă Recurentă</option>
             </select>
             
-            <textarea placeholder="Scrie pe scurt: obiectiv, termen, context (ex. apel de finanțare / procedură SEAP)" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 h-32 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all"></textarea>
+            <textarea placeholder="Scrie pe scurt: obiectiv, termen, context" className="w-full p-4 rounded-xl border border-blue-100 bg-blue-50/50 h-32 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:bg-white transition-all"></textarea>
             
             <button className="w-full bg-blue-900 text-white p-4 rounded-xl font-bold hover:bg-blue-800 transition-all hover:scale-[1.01] active:scale-[0.99] shadow-lg shadow-blue-200">
               Trimite solicitarea
             </button>
-            <p className="text-xs text-blue-400 text-center pt-2">Datele tale sunt confidențiale. Te contactăm în cel mai scurt timp.</p>
+            <p className="text-xs text-blue-400 text-center pt-2">Datele tale sunt confidențiale.</p>
           </form>
         </div>
       </section>
