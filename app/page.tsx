@@ -21,13 +21,13 @@ export default function Home() {
   return (
     <main className="bg-white min-h-screen text-blue-950">
       
-      {/* 1. HERO SECTION - Gradient discret albastru */}
-      <section className="px-6 py-24 md:py-32 text-center bg-gradient-to-b from-blue-50 to-white">
-        <h1 className="text-5xl md:text-7xl font-black tracking-tighter mb-8 text-blue-950 leading-[0.95]">
-          TRANSFORMĂM IDEILE TALE <br />
+      {/* 1. HERO SECTION - Cu ajustări de responsivitate pentru mobil */}
+      <section className="px-6 py-20 md:py-32 text-center bg-gradient-to-b from-blue-50 to-white">
+        <h1 className="text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-8 text-blue-950 leading-tight md:leading-[0.95] break-words">
+          TRANSFORMĂM IDEILE TALE <br className="hidden md:block" />
           <span className="text-blue-600">ÎN PROIECTE CÂȘTIGĂTOARE</span>
         </h1>
-        <p className="text-lg md:text-xl text-blue-800/80 max-w-2xl mx-auto mb-12 leading-relaxed">
+        <p className="text-base md:text-xl text-blue-800/80 max-w-2xl mx-auto mb-12 leading-relaxed">
           Fine Solutions Professional – Specialist în structurarea și protejarea investițiilor publice și europene, 
           cu expertiză reală în achiziții publice și management de proiect.
         </p>
@@ -39,7 +39,7 @@ export default function Home() {
         </a>
       </section>
 
-      {/* 2. INTRO & STATEMENT - Aspect curat, profesional */}
+      {/* 2. INTRO & STATEMENT */}
       <section className="px-6 py-20">
         <div className="max-w-4xl mx-auto">
           <p className="text-xl md:text-2xl leading-relaxed text-blue-900 mb-12">
@@ -64,7 +64,7 @@ export default function Home() {
       {/* 4. PROFIL CONSULTANT */}
       <ConsultantProfile />
 
-      {/* 5. FORMULAR CONTACT - Paletă Blue */}
+      {/* 5. FORMULAR CONTACT */}
       <section id="contact" className="py-20 px-6 max-w-3xl mx-auto">
         <div className="bg-white p-8 md:p-12 rounded-3xl shadow-xl shadow-blue-50 border border-blue-100">
           <h2 className="text-3xl font-black text-blue-950 mb-6 tracking-tight">Solicită evaluare eligibilitate</h2>
