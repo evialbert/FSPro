@@ -1,63 +1,44 @@
-// components/ConsultantSection.tsx
 import React from 'react';
-import Image from 'next/image';
 
 export default function ConsultantSection() {
   return (
-    <section className="py-20 bg-blue-50/30 overflow-hidden">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section id="consultant" className="py-20 bg-stone-50">
+      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+        
+        {/* Imaginea - asigură-te că fișierul este în folderul /public */}
+        <div className="relative rounded-2xl overflow-hidden shadow-xl border border-stone-200">
+          <img 
+            src="/claudiu.jpg" 
+            alt="Claudiu - Consultant Fonduri Europene" 
+            className="w-full h-[500px] object-cover"
+          />
+        </div>
+
+        {/* Textul - Conținut profesionist și prietenos */}
+        <div className="space-y-6">
+          <span className="text-stone-500 font-semibold uppercase tracking-widest text-sm">
+            Expertiză & Parteneriat
+          </span>
           
-          {/* Imaginea */}
-          <div className="relative group">
-            {/* Element decorativ în spate */}
-            <div className="absolute inset-0 bg-blue-600 rounded-2xl rotate-3 opacity-10 transition-transform group-hover:rotate-6"></div>
-            
-            <Image 
-              src="/claudiu.jpg" 
-              alt="Claudiu - Consultant Fonduri Europene" 
-              width={600} 
-              height={750} 
-              className="relative z-10 rounded-2xl shadow-2xl object-cover w-full aspect-[4/5]"
-              priority // Prioritizează încărcarea pozei
-            />
-          </div>
-
-          {/* Textul - Autoritate și Încredere */}
-          <div className="space-y-6">
-            <div className="inline-block px-4 py-1.5 bg-blue-100 text-blue-700 rounded-full font-bold text-sm tracking-wide uppercase">
-              Partener Strategic
-            </div>
-            
-            <h2 className="text-4xl md:text-5xl font-black text-blue-950 leading-tight">
-              Salut, sunt Claudiu.
-            </h2>
-            
-            <p className="text-lg text-blue-900/70 leading-relaxed">
-              Fondurile europene și investițiile publice necesită mai mult decât simplă documentație; necesită o viziune clară și o strategie riguroasă. Cu experiența mea, transform ideile tale în proiecte eligibile, protejându-ți în același timp investiția.
+          <h2 className="text-4xl font-bold text-stone-900 leading-tight">
+            Claudiu, partenerul tău în atragerea fondurilor europene.
+          </h2>
+          
+          <div className="text-stone-700 space-y-4 text-lg">
+            <p>
+              Navigarea prin labirintul birocratic al fondurilor europene necesită mai mult decât cunoștințe tehnice; necesită o strategie clară și un partener de încredere.
             </p>
-
-            <ul className="space-y-3">
-              {[
-                "Expertiză în accesare fonduri nerambursabile",
-                "Structurare proiecte complexe",
-                "Protejarea investițiilor publice și private"
-              ].map((item, index) => (
-                <li key={index} className="flex items-center gap-3 text-blue-950 font-medium">
-                  <span className="text-blue-600">✓</span> {item}
-                </li>
-              ))}
-            </ul>
-            
-            <div className="pt-6">
-              <a 
-                href="#contact" 
-                className="inline-flex items-center bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-900/20 active:scale-95"
-              >
-                Programează o consultanță gratuită
-              </a>
-            </div>
+            <p>
+              Scopul meu este să transform complexitatea reglementărilor în oportunități concrete pentru afacerea ta. Abordez fiecare proiect cu seriozitatea și rigoarea pe care le impune acest domeniu, menținând în același timp o comunicare deschisă și transparentă cu tine.
+            </p>
           </div>
+
+          <a 
+            href="#contact" 
+            className="inline-block bg-stone-900 text-white px-8 py-4 rounded-lg font-bold hover:bg-stone-700 transition-colors"
+          >
+            Hai să discutăm despre proiectul tău
+          </a>
         </div>
       </div>
     </section>

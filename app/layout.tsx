@@ -1,12 +1,12 @@
-// app/layout.tsx
-// @ts-ignore
-import "./globals.css";
-import type { Metadata } from "next";
-import FloatingButton from "@/components/FloatingButton";
+import type { Metadata } from 'next';
+import './globals.css'; // Asigură-te că importul CSS este corect
+import Footer from '@/components/Footer';
+import ContactSwitcher from '@/components/ContactSwitcher';
+import CookieButton from '@/components/CookieButton';
 
 export const metadata: Metadata = {
-  title: "Fine Solutions Professional | Consultant Fonduri Europene",
-  description: "Consultant specializat în atragerea fondurilor europene. Transformăm birocrația în resurse reale pentru dezvoltarea afacerii tale.",
+  title: 'Fine Solutions Professional',
+  description: 'Fine Solutions Professional - Soluții profesionale pentru afacerea ta',
 };
 
 export default function RootLayout({
@@ -16,14 +16,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ro">
-      <body className="font-sans antialiased text-blue-950 bg-white">
+      <body className="min-h-screen flex flex-col">
         {/* Conținutul paginii tale */}
-        <main>
+        <main className="flex-grow">
           {children}
         </main>
 
-        {/* Butonul plutitor va fi disponibil pe toate paginile */}
-        <FloatingButton />
+        {/* Footer-ul rămâne la baza paginii */}
+        <Footer />
+
+        {/* Butoanele Floating (Se vor afișa peste tot) */}
+        <ContactSwitcher />
+        <CookieButton />
       </body>
     </html>
   );
