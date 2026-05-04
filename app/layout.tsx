@@ -1,22 +1,12 @@
 // app/layout.tsx
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+// @ts-ignore
 import "./globals.css";
-
-// Importă componentele globale
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import FloatingContact from "@/components/FloatingContact";
-import CookieSettings from "@/components/CookieSettings";
-
-const inter = Inter({ subsets: ["latin"] });
+import type { Metadata } from "next";
+import FloatingButton from "@/components/FloatingButton";
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Fine Solutions Professional | Expert Strateg în Fonduri Europene',
-    template: '%s | Fine Solutions Professional'
-  },
-  description: 'Specialist în structurarea și protejarea investițiilor publice și europene. Partenerul tău pentru succesul proiectelor.',
+  title: "Fine Solutions Professional | Consultant Fonduri Europene",
+  description: "Consultant specializat în atragerea fondurilor europene. Transformăm birocrația în resurse reale pentru dezvoltarea afacerii tale.",
 };
 
 export default function RootLayout({
@@ -25,24 +15,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ro" className="scroll-smooth">
-      <body className={`${inter.className} bg-white text-blue-950 antialiased`}>
-        
-        {/* 1. Header & Navigare */}
-        <Navbar />
-        
-        {/* 2. Conținutul dinamic (fiecare pagină) */}
-        <main className="min-h-screen">
+    <html lang="ro">
+      <body className="font-sans antialiased text-blue-950 bg-white">
+        {/* Conținutul paginii tale */}
+        <main>
           {children}
         </main>
-        
-        {/* 3. Footer (Legal & ANPC) */}
-        <Footer />
-        
-        {/* 4. Interacțiune & Cookies */}
-        <FloatingContact />
-        <CookieSettings />
-        
+
+        {/* Butonul plutitor va fi disponibil pe toate paginile */}
+        <FloatingButton />
       </body>
     </html>
   );
