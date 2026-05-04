@@ -1,3 +1,6 @@
+'use client';
+
+import React from 'react';
 import { ShieldCheck, Target, CheckCircle, TrendingUp } from "lucide-react";
 
 export default function GuaranteesSection() {
@@ -9,7 +12,7 @@ export default function GuaranteesSection() {
     },
     {
       title: "Conformitate Integrală",
-      desc: "Controlăm fiecare etapă: documentație, achiziții publice și standarde SEAP, eliminând riscurile.",
+      desc: "Controlăm fiecare etapă: documentație, achiziții publice și standarde, eliminând riscurile.",
       icon: <ShieldCheck className="w-8 h-8 text-blue-600" />
     },
     {

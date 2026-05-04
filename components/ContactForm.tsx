@@ -1,173 +1,85 @@
-"use client";
-
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import * as z from "zod";
-import { Send, CheckCircle2, AlertCircle } from "lucide-react";
-
-// 1. Schema de validare
-const formSchema = z.object({
-  nume: z.string().min(2, "Numele este prea scurt"),
-  email: z.string().email("Adresă de email invalidă"),
-  telefon: z.string().min(10, "Număr de telefon invalid"),
-  companie: z.string().optional(),
-  serviciu: z.string().min(1, "Selectează un serviciu"),
-  mesaj: z.string().min(10, "Mesajul trebuie să aibă minim 10 caractere"),
-});
-
-type FormData = z.infer<typeof formSchema>;
+// components/ContactForm.tsx
+import React from 'react';
+import { Send, User, Mail, MessageSquare } from 'lucide-react';
 
 export default function ContactForm() {
-  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
-
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm<FormData>({
-    resolver: zodResolver(formSchema),
-    defaultValues: {
-      serviciu: "Finantari",
-    },
-  });
-
-  // 2. Funcția de trimitere către Formspree
-  const onSubmit = async (data: FormData) => {
-    setStatus("loading");
-    try {
-      // INLOCUIEȘTE 'ID_UL_TAU_AICI' CU CODUL DE LA FORMSPREE (ex: mqkazpww)
-      const response = await fetch("https://formspree.io/f/xnjogvqv", {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        setStatus("success");
-        reset();
-        setTimeout(() => setStatus("idle"), 5000); 
-      } else {
-        setStatus("error");
-      }
-    } catch (error) {
-      console.error("Eroare trimitere:", error);
-      setStatus("error");
-    }
-  };
-
   return (
-    <div className="w-full max-w-2xl mx-auto">
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="space-y-6 bg-white p-8 rounded-3xl shadow-xl border border-slate-100"
-      >
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Nume */}
-          <div>
-            <label className="block text-sm font-bold text-[#003366] mb-2">Nume Complet</label>
-            <input
-              {...register("nume")}
-              placeholder="Ex: Ion Popescu"
-              className={`w-full p-3 rounded-xl border outline-none transition-all ${
-                errors.nume ? "border-red-500 bg-red-50" : "border-slate-200 focus:border-blue-600 shadow-sm"
-              }`}
-            />
-            {errors.nume && <p className="text-red-500 text-xs mt-1">{errors.nume.message}</p>}
+    <section className="py-20 bg-white" id="contact">
+      <div className="max-w-4xl mx-auto px-6">
+        <div className="bg-blue-50/50 rounded-3xl p-8 md:p-12 border border-blue-100 shadow-sm">
+          
+          {/* Header Secțiune */}
+          <div className="mb-10 text-center">
+            <h2 className="text-3xl font-black text-blue-950 mb-4">
+              Ești gata să discutăm despre viitorul afacerii tale?
+            </h2>
+            <p className="text-blue-800/70 text-lg">
+              O primă discuție poate fi punctul de cotitură pentru investiția ta.
+            </p>
           </div>
 
-          {/* Email */}
-          <div>
-            <label className="block text-sm font-bold text-[#003366] mb-2">Email Business</label>
-            <input
-              {...register("email")}
-              placeholder="contact@companie.ro"
-              className={`w-full p-3 rounded-xl border outline-none transition-all ${
-                errors.email ? "border-red-500 bg-red-50" : "border-slate-200 focus:border-blue-600 shadow-sm"
-              }`}
-            />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
-          </div>
-        </div>
+          {/* Formular */}
+          <form className="space-y-6" action="#" method="POST">
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Nume */}
+              <div className="space-y-2">
+                <label htmlFor="name" className="text-sm font-bold text-blue-950 ml-1">Numele tău</label>
+                <div className="relative">
+                  <User className="absolute left-3 top-3.5 w-5 h-5 text-blue-400" />
+                  <input 
+                    type="text" 
+                    id="name"
+                    name="name"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-blue-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-white"
+                    placeholder="Ion Popescu"
+                    required
+                  />
+                </div>
+              </div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {/* Telefon */}
-          <div>
-            <label className="block text-sm font-bold text-[#003366] mb-2">Telefon</label>
-            <input
-              {...register("telefon")}
-              placeholder="07xx xxx xxx"
-              className={`w-full p-3 rounded-xl border outline-none transition-all ${
-                errors.telefon ? "border-red-500 bg-red-50" : "border-slate-200 focus:border-blue-600 shadow-sm"
-              }`}
-            />
-            {errors.telefon && <p className="text-red-500 text-xs mt-1">{errors.telefon.message}</p>}
-          </div>
+              {/* Email */}
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-bold text-blue-950 ml-1">Email</label>
+                <div className="relative">
+                  <Mail className="absolute left-3 top-3.5 w-5 h-5 text-blue-400" />
+                  <input 
+                    type="email" 
+                    id="email"
+                    name="email"
+                    className="w-full pl-10 pr-4 py-3 rounded-xl border border-blue-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-white"
+                    placeholder="exemplu@mail.ro"
+                    required
+                  />
+                </div>
+              </div>
+            </div>
 
-          {/* Serviciu */}
-          <div>
-            <label className="block text-sm font-bold text-[#003366] mb-2">Serviciu dorit</label>
-            <select
-              {...register("serviciu")}
-              className="w-full p-3 rounded-xl border border-slate-200 focus:border-blue-600 outline-none bg-white shadow-sm"
+            {/* Mesaj */}
+            <div className="space-y-2">
+              <label htmlFor="message" className="text-sm font-bold text-blue-950 ml-1">Mesaj</label>
+              <div className="relative">
+                <MessageSquare className="absolute left-3 top-3.5 w-5 h-5 text-blue-400" />
+                <textarea 
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="w-full pl-10 pr-4 py-3 rounded-xl border border-blue-200 focus:ring-2 focus:ring-blue-600 focus:border-transparent outline-none transition-all bg-white"
+                  placeholder="Povestește-ne pe scurt despre proiectul tău..."
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            {/* Buton Submit */}
+            <button 
+              type="submit"
+              className="w-full flex items-center justify-center gap-2 bg-blue-900 hover:bg-blue-800 text-white py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-900/20 active:scale-95"
             >
-              <option value="Finantari">Finanțări Nerambursabile</option>
-              <option value="Achizitii">Achiziții Publice (SEAP)</option>
-              <option value="Publicitate">Publicitate & Anunțuri</option>
-              <option value="Abonamente">Abonament Consultanță</option>
-            </select>
-          </div>
+              Trimite solicitarea <Send className="w-4 h-4" />
+            </button>
+          </form>
         </div>
-
-        {/* Mesaj */}
-        <div>
-          <label className="block text-sm font-bold text-[#003366] mb-2">Mesaj / Detalii Proiect</label>
-          <textarea
-            {...register("mesaj")}
-            rows={4}
-            placeholder="Descrie scurt nevoia ta..."
-            className={`w-full p-3 rounded-xl border outline-none transition-all ${
-              errors.mesaj ? "border-red-500 bg-red-50" : "border-slate-200 focus:border-blue-600 shadow-sm"
-            }`}
-          />
-          {errors.mesaj && <p className="text-red-500 text-xs mt-1">{errors.mesaj.message}</p>}
-        </div>
-
-        {/* Buton Submit */}
-        <button
-          type="submit"
-          disabled={status === "loading"}
-          className={`w-full py-4 rounded-xl font-black text-white transition-all flex items-center justify-center gap-2 shadow-lg ${
-            status === "loading" ? "bg-slate-400 cursor-wait" : "bg-blue-600 hover:bg-[#003366] active:scale-95"
-          }`}
-        >
-          {status === "loading" ? (
-            "Se trimite..."
-          ) : status === "success" ? (
-            <span className="flex items-center gap-2 italic">
-              <CheckCircle2 size={20} /> Mesaj trimis!
-            </span>
-          ) : status === "error" ? (
-            <span className="flex items-center gap-2 italic">
-              <AlertCircle size={20} /> Reîncearcă
-            </span>
-          ) : (
-            <>
-              Trimite solicitarea <Send size={18} />
-            </>
-          )}
-        </button>
-
-        {status === "success" && (
-          <p className="text-green-600 text-center font-bold text-sm animate-bounce">
-            Te vom contacta în maxim 24 de ore!
-          </p>
-        )}
-      </form>
-    </div>
+      </div>
+    </section>
   );
 }
