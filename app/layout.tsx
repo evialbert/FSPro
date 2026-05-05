@@ -1,12 +1,17 @@
 import type { Metadata } from 'next';
-import './globals.css'; // Asigură-te că importul CSS este corect
+import './globals.css';
+
+// Importăm componentele
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ContactSwitcher from '@/components/ContactSwitcher';
 import CookieButton from '@/components/CookieButton';
+import CookieBanner from '@/components/CookieBanner';
 
+// Metadata pentru SEO
 export const metadata: Metadata = {
   title: 'Fine Solutions Professional',
-  description: 'Fine Solutions Professional - Soluții profesionale pentru afacerea ta',
+  description: 'Soluții profesionale pentru afacerea ta',
 };
 
 export default function RootLayout({
@@ -16,18 +21,28 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ro">
-      <body className="min-h-screen flex flex-col">
-        {/* Conținutul paginii tale */}
-        <main className="flex-grow">
+      <body className="min-h-screen flex flex-col bg-white">
+        
+        {/* Navigația (Fixed la top) */}
+        <Navbar />
+
+        {/* Conținutul paginii: 
+          'pt-20' este esențial pentru a preveni suprapunerea conținutului 
+          peste Navbar-ul care are poziție 'fixed'.
+        */}
+        <main className="flex-grow pt-20">
           {children}
         </main>
 
-        {/* Footer-ul rămâne la baza paginii */}
+        {/* Footer-ul la baza paginii */}
         <Footer />
 
-        {/* Butoanele Floating (Se vor afișa peste tot) */}
+        {/* Elemente Floating (sunt 'fixed' în componentele lor, 
+            deci vor apărea mereu deasupra conținutului) */}
         <ContactSwitcher />
         <CookieButton />
+        <CookieBanner />
+        
       </body>
     </html>
   );
