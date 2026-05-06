@@ -1,51 +1,53 @@
-// components/ConsultantSection.tsx
+"use client";
 import Image from 'next/image';
-import { CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export default function ConsultantSection() {
-  const expertiza = [
-    'Strategie și Consultanță',
-    'Optimizarea proceselor',
-    'Management operațional',
-    'Soluții personalizate'
-  ];
-
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
+    <section className="py-24 bg-white overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
           
-          {/* Poza - Apare o singură dată aici */}
-          <div className="relative">
-            <div className="absolute -inset-4 bg-blue-50 rounded-3xl -z-10" />
-            <Image 
-              src="/poza-claudiu.jpg" // Asigură-te că ai poza în folderul public
-              alt="Claudiu - Consultant Fine Solutions"
-              width={600}
-              height={700}
-              className="rounded-2xl shadow-xl w-full h-auto object-cover"
-            />
-          </div>
+          {/* Poza - Design "Glass-Border" */}
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            className="lg:col-span-5 relative"
+          >
+            <div className="aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl bg-slate-100">
+              <Image 
+                src="/poza-claudiu.jpg" 
+                alt="Claudiu - Expert Consultanță"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700 ease-in-out"
+              />
+            </div>
+          </motion.div>
 
-          {/* Textul combinat */}
-          <div className="space-y-6">
-            <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight">
-              Expertiză și viziune cu <span className="text-blue-600">Claudiu</span>
+          {/* Text - Stil Minimalist */}
+          <div className="lg:col-span-7 space-y-8">
+            <span className="text-sm font-semibold tracking-[0.2em] uppercase text-stone-500">
+              Profil Profesional
+            </span>
+            <h2 className="text-5xl md:text-6xl font-extrabold text-stone-900 tracking-tighter">
+              Expert Consultanță: <span className="text-stone-600">Claudiu</span>
             </h2>
-            <p className="text-slate-600 text-lg leading-relaxed">
-              Cu o abordare pragmatică și orientată spre rezultate, Claudiu te ajută să identifici 
-              punctele slabe ale afacerii și să le transformi în avantaje competitive. 
-              Fiecare soluție este adaptată nevoilor tale specifice.
+            
+            <p className="text-xl text-stone-600 leading-relaxed max-w-2xl">
+              Într-o lume a afacerilor în continuă schimbare, succesul depinde de claritate. 
+              Prin expertiza mea, transform complexitatea operațională în vectori de creștere predictibili.
             </p>
 
-            <ul className="space-y-3">
-              {expertiza.map((item) => (
-                <li key={item} className="flex items-center gap-3 text-slate-700">
-                  <CheckCircle className="w-5 h-5 text-blue-600" />
-                  {item}
-                </li>
-              ))}
-            </ul>
+            <div className="flex gap-8 pt-4">
+              <div>
+                <p className="text-3xl font-bold text-stone-900">15+</p>
+                <p className="text-sm text-stone-500 uppercase tracking-widest">Ani Experiență</p>
+              </div>
+              <div>
+                <p className="text-3xl font-bold text-stone-900">100%</p>
+                <p className="text-sm text-stone-500 uppercase tracking-widest">Focus Strategie</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

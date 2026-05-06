@@ -2,36 +2,36 @@ import Image from 'next/image';
 
 export default function AnpcIcons() {
   return (
-    <div className="flex gap-6 items-center justify-center mt-6">
-      {/* Link SAL (ANPC) */}
-      <a 
-        href="https://anpc.ro/ce-este-sal/" 
-        target="_blank" 
-        rel="noopener noreferrer"
-        className="transition hover:opacity-80"
-      >
-        <Image 
-          src="/anpc/sal.png" 
-          alt="ANPC SAL" 
-          width={120} 
-          height={40} 
-          className="object-contain"
-        />
-      </a>
-
-      {/* Link SOL (Comisia Europeană) */}
+    <div className="flex items-center justify-center gap-4 py-4 md:py-8 border-t border-stone-800/50 mt-8">
+      {/* SOL */}
       <a 
         href="https://ec.europa.eu/consumers/odr" 
         target="_blank" 
-        rel="noopener noreferrer"
-        className="transition hover:opacity-80"
+        rel="noopener noreferrer" 
+        className="block w-24 h-auto md:w-32 transition-transform hover:scale-105"
       >
         <Image 
-          src="/anpc/sol.png" 
-          alt="Platforma SOL" 
-          width={120} 
-          height={40} 
-          className="object-contain"
+          src="/sol.png" 
+          alt="SOL" 
+          width={200} 
+          height={200} 
+          className="w-full h-auto object-contain"
+        />
+      </a>
+      
+      {/* SAL */}
+      <a 
+        href="https://anpc.ro/" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="block w-24 h-auto md:w-32 transition-transform hover:scale-105"
+      >
+        <Image 
+          src="/sal.png" 
+          alt="SAL" 
+          width={200} 
+          height={200} 
+          className="w-full h-auto object-contain"
         />
       </a>
     </div>
