@@ -7,6 +7,8 @@ import Footer from '@/components/Footer';
 import ContactSwitcher from '@/components/ContactSwitcher';
 import CookieButton from '@/components/CookieButton';
 import CookieBanner from '@/components/CookieBanner';
+import CookieSettings from '@/components/CookieSettings';
+import AnpcIcons from '@/components/AnpcIcons';
 
 // Metadata pentru SEO
 export const metadata: Metadata = {
@@ -42,6 +44,7 @@ export default function RootLayout({
         <ContactSwitcher />
         <CookieButton />
         <CookieBanner />
+        <CookieSettings />
         
       </body>
     </html>

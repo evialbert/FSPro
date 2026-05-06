@@ -1,45 +1,36 @@
-// components/ConsultantSection.tsx
-import React from 'react';
-import Image from 'next/image';
-
-export default function ConsultantSection() {
+export default function Hero() {
   return (
-    <section className="py-20 bg-blue-50/30">
-      <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+    <section className="relative w-full py-24 md:py-32 px-6 bg-stone-50">
+      <div className="max-w-4xl mx-auto text-center space-y-8">
         
-        {/* Imaginea */}
-        <div className="relative">
-          <div className="absolute inset-0 bg-blue-600 rounded-2xl rotate-3 opacity-10"></div>
-          <Image 
-            src="/claudiu.jpg" 
-            alt="Claudiu - Consultant Fonduri Europene" 
-            width={600} 
-            height={750} 
-            className="relative z-10 rounded-2xl shadow-2xl object-cover w-full aspect-[4/5]"
-          />
-        </div>
+        {/* Etichetă mică (opțional, pentru autoritate) */}
+        <span className="inline-block py-1 px-3 rounded-full bg-stone-200 text-stone-700 text-xs font-semibold tracking-widest uppercase">
+          Consultanță și Strategie
+        </span>
 
-        {/* Text */}
-        <div className="space-y-6">
-          <h2 className="text-4xl md:text-5xl font-black text-blue-950 leading-tight">
-            Salut, sunt Claudiu.
-          </h2>
-          <p className="text-lg text-blue-900/70 leading-relaxed">
-            În spatele fiecărui proiect de succes stă o strategie bine definită. Nu sunt doar consultantul tău, sunt partenerul care se asigură că investiția ta primește finanțarea meritată.
-          </p>
-          <p className="text-lg text-blue-900/70 leading-relaxed">
-            Am observat că mulți antreprenori renunță din cauza birocrației. Misiunea mea este să elimin această barieră, structurând ideile tale pentru a îndeplini toate criteriile de eligibilitate.
-          </p>
-          
-          <div className="pt-4">
-            <a 
-              href="#contact" 
-              className="inline-block bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-900/20"
-            >
-              Programează o discuție
-            </a>
-          </div>
+        {/* Titlu Impactant */}
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-stone-900 leading-[1.1]">
+          Transformăm provocările în <br />
+          <span className="text-stone-500">rezultate măsurabile.</span>
+        </h1>
+
+        {/* Text explicativ */}
+        <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed">
+          Nu oferim doar soluții, ci parteneriate strategice construite pe rigoare, 
+          expertiză și o înțelegere profundă a nevoilor tale de business. 
+          Eficiența începe aici.
+        </p>
+
+        {/* Buton de acțiune */}
+        <div className="pt-4">
+          <a 
+            href="#contact" 
+            className="inline-block bg-stone-900 text-white px-8 py-4 rounded-full font-medium hover:bg-stone-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+          >
+            Discută cu un consultant
+          </a>
         </div>
+        
       </div>
     </section>
   );
