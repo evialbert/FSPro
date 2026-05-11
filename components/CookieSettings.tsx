@@ -1,34 +1,54 @@
 "use client";
 
 import React from "react";
-import { ShieldCheck } from "lucide-react";
+import { ShieldCheck, Settings2 } from "lucide-react";
 
 export default function CookieSettings() {
+  // Funcția care resetează consimțământul și permite re-afișarea bannerului
   const handleOpenSettings = () => {
     if (typeof window !== "undefined") {
-      // Logica de resetare a consimțământului
+      // Ștergem alegerea din localStorage
       localStorage.removeItem("cookie-consent");
+      // Reîncărcăm pagina pentru a declanșa logica din CookieBanner
       window.location.reload();
     }
   };
 
   return (
-    <div className="fixed bottom-6 left-6 z-[100]">
+    <div className="fixed bottom-6 left-6 z-[9999]">
       <button
         onClick={handleOpenSettings}
-        className="group relative flex items-center bg-white/60 backdrop-blur-xl border border-stone-100 p-3 rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:bg-stone-50 transition-all duration-300 hover:scale-105"
+        className="group flex items-center bg-white/70 backdrop-blur-md border border-slate-200 p-1.5 rounded-full shadow-lg hover:shadow-xl hover:bg-slate-900 transition-all duration-500 ease-in-out"
         aria-label="Setări Cookies"
       >
-        {/* Gradient Măsliniu-Pudrat (Stone) - Autoritate subtilă */}
-        <div className="bg-gradient-to-br from-stone-600 to-stone-800 p-2 rounded-xl text-white shadow-md">
-          <ShieldCheck size={20} />
+        {/* Iconița cu fundal animat */}
+        <div className="bg-blue-600 p-2 rounded-full text-white shadow-inner group-hover:rotate-[360deg] transition-transform duration-700">
+          <ShieldCheck size={18} strokeWidth={2.5} />
         </div>
-        
-        {/* Text cu ton neutru, discret */}
-        <span className="ml-3 text-[10px] font-bold text-stone-700 uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
-          Privacy Center
-        </span>
+
+        {/* Text care apare la hover pe desktop / Vizibil pe mobil */}
+        <div className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-in-out">
+          <span className="px-3 text-[10px] font-black text-slate-700 group-hover:text-white whitespace-nowrap tracking-widest uppercase">
+            Cookie Settings
+          </span>
+        </div>
+
+        {/* Indicator vizual secundar (Settings icon) */}
+        <div className="pr-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+          <Settings2 size={12} className="text-blue-400 animate-spin-slow" />
+        </div>
       </button>
+
+      {/* Stil pentru animația lentă a iconiței de setări */}
+      <style jsx global>{`
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 8s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }
