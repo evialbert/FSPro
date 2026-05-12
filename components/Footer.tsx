@@ -1,6 +1,5 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
-import AnpcIcons from './AnpcIcons';
 
 export default function Footer() {
   const startYear = 2024;
@@ -54,10 +53,14 @@ export default function Footer() {
           </div>
 
           <div className="space-y-4 border-t border-blue-200/50 pt-4">
-            <AnpcIcons />
             <a href="/politica-confidentialitate" className="block text-xs font-medium text-blue-800 underline underline-offset-4 hover:text-blue-950">
               GDPR / Politica de confidențialitate
             </a>
+            {/* Am adăugat aici link-urile ANPC ca text/link-uri simple pentru a evita erorile de import */}
+            <div className="flex flex-col gap-2 pt-2">
+               <a href="https://anpc.ro/" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-700 hover:underline">SOL - Soluționarea Online a Litigiilor</a>
+               <a href="https://anpc.ro/" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-700 hover:underline">SAL - Soluționarea Alternativă a Litigiilor</a>
+            </div>
           </div>
         </div>
 
@@ -68,7 +71,7 @@ export default function Footer() {
           </h4>
           <div className="h-32 w-full overflow-hidden rounded-xl border border-blue-200 shadow-sm">
             <iframe
-              src="https://maps.google.com/maps?width=352&amp;height=651&amp;hl=en&amp;q=Str.%20Ciocanului%20nr.%2015B%20Cluj-Napoca+(FINE%20SOLUTIONS%20PROFESSIONAL%20S.R.L.)&amp;t=h&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2732.5!2d23.6!3d46.77!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDbCsDQ2JzEyLjAiTiAyM8KwMzYnMDAuMCJF!5e0!3m2!1sro!2sro!4v1700000000000!5m2!1sro!2sro"
               width="100%"
               height="100%"
               style={{ border: 0 }}
