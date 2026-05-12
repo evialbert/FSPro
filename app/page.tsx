@@ -1,31 +1,38 @@
 // app/page.tsx
-import Hero from '@/components/Hero'; // Asigură-te că ai creat acest fișier
-import Services from '@/components/Services'; // Asigură-te că ai creat acest fișier
-import ConsultantSection from '@/components/ConsultantSection'; // Secțiunea unitară cu Claudiu
+import Hero from '@/components/Hero';
+import Services from '@/components/Services';
+import ConsultantSection from '@/components/ConsultantSection';
 
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen">
       
-      {/* 1. Hero Section - Prima impresie (Header-ul paginii) */}
+      {/* 1. Hero Section - Impact vizual maxim la intrare */}
       <Hero />
 
-      {/* 2. Servicii - Ce oferi */}
+      {/* 2. Servicii - Prezentarea ofertelor */}
       <Services />
 
-      {/* 3. Despre/Consultant - Claudiu (Apare O SINGURĂ DATĂ) */}
+      {/* 3. Despre/Consultant - Secțiunea dedicată lui Claudiu */}
       <ConsultantSection />
 
-      {/* 4. Contact/CTA - Un apel final la acțiune */}
-      <section className="py-16 bg-blue-600 text-white text-center">
-        <h2 className="text-3xl font-bold mb-4">Ești gata să duci afacerea la nivelul următor?</h2>
-        <p className="mb-8 opacity-90">Contactează-ne pentru o discuție fără obligații.</p>
-        <a 
-          href="/contact" 
-          className="bg-white text-blue-600 px-8 py-3 rounded-full font-bold hover:bg-slate-100 transition"
-        >
-          Solicită o ofertă
-        </a>
+      {/* 4. Contact/CTA - Apelul la acțiune final */}
+      <section className="py-20 bg-stone-700 text-white text-center">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+            Ești gata să duci afacerea la nivelul următor?
+          </h2>
+          <p className="text-lg mb-10 text-stone-200">
+            Expertiza noastră în consultanță este la un mesaj distanță. 
+            Hai să stabilim o discuție despre obiectivele tale.
+          </p>
+          <a 
+            href="/contact" 
+            className="inline-block bg-white text-stone-700 px-10 py-4 rounded-full font-bold text-lg hover:bg-stone-100 transition-all shadow-lg hover:shadow-xl active:scale-95"
+          >
+            Solicită o ofertă
+          </a>
+        </div>
       </section>
 
     </main>

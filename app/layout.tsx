@@ -1,18 +1,13 @@
 import type { Metadata } from 'next';
 import './globals.css';
 
-// Importăm componentele
+// Importăm DOAR componentele finale și funcționale
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import ContactSwitcher from '@/components/ContactSwitcher';
-import CookieButton from '@/components/CookieButton';
 import CookieBanner from '@/components/CookieBanner';
 import CookieSettings from '@/components/CookieSettings';
-import AnpcIcons from '@/components/AnpcIcons';
-import FloatingButton from '@/components/FloatingButton';
 import FloatingContact from '@/components/FloatingContact';
 
-// Metadata pentru SEO
 export const metadata: Metadata = {
   title: 'Fine Solutions Professional',
   description: 'Soluții profesionale pentru afacerea ta',
@@ -27,27 +22,29 @@ export default function RootLayout({
     <html lang="ro">
       <body className="min-h-screen flex flex-col bg-white">
         
-        {/* Navigația (Fixed la top) */}
+        {/* Navigația rămâne fixă sus */}
         <Navbar />
 
-        {/* Conținutul paginii: 
-          'pt-20' este esențial pentru a preveni suprapunerea conținutului 
-          peste Navbar-ul care are poziție 'fixed'.
-        */}
+        {/* Conținutul paginii cu padding-top pentru a nu intra sub Navbar */}
         <main className="flex-grow pt-20">
           {children}
         </main>
 
-        {/* Footer-ul la baza paginii */}
+        {/* Footer-ul site-ului */}
         <Footer />
 
-        {/* Elemente Floating (sunt 'fixed' în componentele lor, 
-            deci vor apărea mereu deasupra conținutului) */}
-        <ContactSwitcher />
-        <CookieButton />
+        {/* ELEMENTE GLOBALE DE FUNCȚIONALITATE 
+            Am păstrat doar versiunile "Premium" care nu se suprapun:
+        */}
+        
+        {/* 1. Logica pentru consimțământ (Bannerul principal) */}
         <CookieBanner />
-        <FloatingButton />
+
+        {/* 2. Butonul "Scut" (stânga jos) - permite resetarea cookies oricând */}
         <CookieSettings />
+
+        {/* 3. Butonul de Contact (dreapta jos) - cel cu animație de 3s și multiple rețele */}
+        <FloatingContact />
         
       </body>
     </html>
