@@ -33,7 +33,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-semibold text-slate-900">Telefon</p>
-                <p className="text-slate-600">+40 7xx xxx xxx</p>
+                <p className="text-slate-600">+40 746 061 243</p>
               </div>
             </div>
 
@@ -43,7 +43,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-semibold text-slate-900">Email</p>
-                <p className="text-slate-600">contact@fspro.ro</p>
+                <p className="text-slate-600">contact@finesolutionspro.ro</p>
               </div>
             </div>
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-semibold text-slate-900">Adresă</p>
-                <p className="text-slate-600">București, România (Sediul Central)</p>
+                <p className="text-slate-600">Strada Ciocanului nr. 15B, Cluj-Napoca</p>
               </div>
             </div>
 
@@ -63,7 +63,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-semibold text-slate-900">Program</p>
-                <p className="text-slate-600">Luni - Vineri: 09:00 - 18:00</p>
+                <p className="text-slate-600">Luni - Vineri: 12:30–19:30</p>
               </div>
             </div>
           </div>
@@ -85,10 +85,11 @@ export default function ContactPage() {
             <div>
               <label className="block text-sm font-medium text-slate-700 mb-1">Subiect</label>
               <select className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 outline-none transition-all">
-                <option>Finanțări Nerambursabile</option>
-                <option>Achiziții Publice</option>
-                <option>Digitalizare / IT</option>
-                <option>Alte Servicii</option>
+                <option>Cere ofertă personalizată</option>
+                <option>Programează o consultare</option>
+                <option>Primește analiza inițială</option>
+                <option>Solicită evaluare eligibilitate</option>
+                <option>Discută cu un consultant</option>
               </select>
             </div>
             <div>
