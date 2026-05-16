@@ -1,34 +1,90 @@
+"use client";
+
+import React from "react";
+import { CheckCircle2, ArrowRight } from "lucide-react";
+
 export default function Hero() {
   return (
-    <section className="relative w-full py-24 md:py-32 px-6 bg-stone-50">
-      <div className="max-w-4xl mx-auto text-center space-y-8">
+    <section className="relative w-full py-20 md:py-28 px-6 bg-stone-50 border-b border-stone-100">
+      <div className="max-w-6xl mx-auto space-y-16">
         
-        {/* Etichetă mică (opțional, pentru autoritate) */}
-        <span className="inline-block py-1 px-3 rounded-full bg-stone-200 text-stone-700 text-xs font-semibold tracking-widest uppercase">
-          Consultanță și Strategie
-        </span>
+        {/* --- ANTET HERO (Titlu & Subtitlu) --- */}
+        <div className="text-center space-y-6 max-w-4xl mx-auto">
+          {/* Etichetă autoritate */}
+          <span className="inline-block py-1 px-4 rounded-full bg-stone-200 text-stone-700 text-xs font-semibold tracking-widest uppercase">
+            Consultanță și Strategie
+          </span>
 
-        {/* Titlu Impactant */}
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-stone-900 leading-[1.1]">
-          Transformăm provocările în <br />
-          <span className="text-stone-500">rezultate măsurabile.</span>
-        </h1>
+          {/* Titlu Impactant */}
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-stone-900 leading-[1.1]">
+            Transformăm ideile tale în <br />
+            <span className="text-stone-500">proiecte câștigătoare!</span>
+          </h1>
 
-        {/* Text explicativ */}
-        <p className="text-lg md:text-xl text-stone-600 max-w-2xl mx-auto leading-relaxed">
-          Nu oferim doar soluții, ci parteneriate strategice construite pe rigoare, 
-          expertiză și o înțelegere profundă a nevoilor tale de business. 
-          Eficiența începe aici.
-        </p>
+          {/* Subtitlu */}
+          <p className="text-lg md:text-xl font-medium text-stone-700 max-w-3xl mx-auto leading-relaxed">
+            Fine Solutions Professional – Specialist în structurarea și protejarea investițiilor 
+            publice și europene, cu expertiză reală în achiziții publice.
+          </p>
 
-        {/* Buton de acțiune */}
-        <div className="pt-4">
-          <a 
-            href="#contact" 
-            className="inline-block bg-stone-900 text-white px-8 py-4 rounded-full font-medium hover:bg-stone-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
-          >
-            Discută cu un consultant
-          </a>
+          {/* Buton de acțiune vizibil permanent (Albastru Închis) */}
+          <div className="pt-4">
+            <a 
+              href="/contact" 
+              className="inline-flex items-center gap-2 bg-[#002B5B] text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-[#001f42] transition-all duration-300 transform hover:scale-105 shadow-xl"
+            >
+              Solicită ofertă <ArrowRight size={20} />
+            </a>
+          </div>
+        </div>
+
+        {/* --- CORP HERO (Intro, Statement & Beneficii) --- */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 pt-8 border-t border-stone-200/60 items-start">
+          
+          {/* Coloana Stângă: Intro & Statement */}
+          <div className="lg:col-span-7 space-y-6 text-stone-600 text-base md:text-lg leading-relaxed text-left">
+            <p>
+              Bine ați venit la <strong>Fine Solutions Professional</strong> – partenerul dvs. în transformarea ideilor în proiecte 
+              implementate corect și eficient. Oferim suport end-to-end, indiferent dacă 
+              sunteți la primul demers de finanțare sau aveți nevoie de consultanță 
+              recurentă, prin abonamente lunare.
+            </p>
+            <p>
+              Lucrăm cu instituții publice, companii și persoane fizice pentru identificarea apelurilor potrivite, 
+              analiza eligibilității, elaborarea și depunerea cererilor de finanțare, precum 
+              și pentru management financiar și raportare conform cerințelor finanțatorilor 
+              și standardelor UE. În zona de achiziții publice, oferim suport complet, 
+              inclusiv pentru proceduri derulate în SEAP.
+            </p>
+            
+            {/* Statement Evidențiat */}
+            <div className="p-6 bg-white border-l-4 border-stone-500 rounded-r-2xl shadow-sm italic text-stone-800 font-medium">
+              "Transformăm provocările birocratice în oportunități reale de creștere. Maximizăm controlul 
+              total al riscului în proiectele finanțate din fonduri europene și achiziții publice."
+            </div>
+          </div>
+
+          {/* Coloana Dreaptă: Beneficii */}
+          <div className="lg:col-span-5 bg-white p-8 rounded-[2rem] border border-stone-200 shadow-sm space-y-6 text-left">
+            <h3 className="text-xl font-bold text-stone-900 tracking-tight">
+              De ce să lucrăm împreună:
+            </h3>
+            <ul className="space-y-4">
+              {[
+                "Analiză rapidă și obiectivă a nevoilor dvs.",
+                "Strategie integrată pentru fiecare proiect / procedură",
+                "Asistență permanentă, de la idee până la raportarea finală"
+              ].map((beneficiu, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <CheckCircle2 className="text-stone-500 shrink-0 mt-1" size={20} />
+                  <span className="text-stone-700 font-medium text-sm md:text-base">
+                    {beneficiu}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
         
       </div>
