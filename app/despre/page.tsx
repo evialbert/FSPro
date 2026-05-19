@@ -1,9 +1,9 @@
 "use client";
 
-import React from 'react';
-import { CheckCircle2, ShieldCheck, ArrowRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { CheckCircle2, ShieldCheck, ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function DespreNoi() {
   const diferentiatori = [
@@ -60,6 +60,27 @@ export default function DespreNoi() {
     }
   ];
 
+  // Stare pentru indexul de pornire al caruselului
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Funcții de navigare pentru carusel
+  const nextSlide = () => {
+    setCurrentIndex((prev) => (prev + 1 >= diferentiatori.length ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentIndex((prev) => (prev - 1 < 0 ? diferentiatori.length - 1 : prev - 1));
+  };
+
+  // Obținem cardurile vizibile în funcție de index (afișăm 3 pe desktop, rotativ)
+  const getVisibleItems = () => {
+    const items = [];
+    for (let i = 0; i < 3; i++) {
+      items.push(diferentiatori[(currentIndex + i) % diferentiatori.length]);
+    }
+    return items;
+  };
+
   return (
     <div className="bg-white overflow-x-hidden">
       {/* Hero Section */}
@@ -86,12 +107,11 @@ export default function DespreNoi() {
 
       {/* Intro Section */}
       <section className="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
-        {/* TEXTUL GLISEAZĂ DIN STÂNGA */}
         <motion.div 
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-         transition={{ duration: 0.7, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="text-slate-700 space-y-6 text-lg leading-relaxed"
         >
           <p className="font-semibold text-blue-700 uppercase tracking-wider text-sm">Despre Noi</p>
@@ -106,7 +126,6 @@ export default function DespreNoi() {
           </p>
         </motion.div>
         
-        {/* CARDUL ALBASTRU GLISEAZĂ DIN DREAPTA */}
         <motion.div 
           initial={{ opacity: 0, x: 60 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -135,32 +154,74 @@ export default function DespreNoi() {
         </motion.div>
       </section>
 
-      {/* Diferentiatori (Grid 7 Puncte) */}
-      <section className="py-24 bg-white px-6 border-y border-slate-100">
+      {/* --- CARUSEL: Diferențiatori Competitivi --- */}
+      <section className="py-24 bg-slate-50 px-6 border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">Avantajul nostru</h2>
-            <h3 className="text-3xl font-bold text-slate-900">Diferențiatori Competitivi</h3>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {diferentiatori.map((item, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.5, delay: (idx % 3) * 0.15 }}
-                className={`p-8 border-t-4 border-blue-600 bg-slate-50 hover:bg-white hover:shadow-xl transition-all duration-300 ${idx === 6 ? 'md:col-span-2 lg:col-span-1' : ''}`}
+          
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+            <div>
+              <h2 className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-3">Avantajul nostru</h2>
+              <h3 className="text-3xl font-bold text-slate-900">Diferențiatori Competitivi</h3>
+            </div>
+            {/* Butoanele de control stânga/dreapta */}
+            <div className="flex gap-3 mt-6 md:mt-0">
+              <button 
+                onClick={prevSlide}
+                className="w-12 h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm"
+                aria-label="Anteriorul"
               >
-                <h4 className="font-bold text-lg text-slate-900 mb-3">{item.title}</h4>
-                <p className="text-slate-600 leading-relaxed text-sm">{item.desc}</p>
-              </motion.div>
+                <ChevronLeft size={24} />
+              </button>
+              <button 
+                onClick={nextSlide}
+                className="w-12 h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm"
+                aria-label="Următorul"
+              >
+                <ChevronRight size={24} />
+              </button>
+            </div>
+          </div>
+
+          {/* Zona de afișare a cardurilor active */}
+          <div className="overflow-hidden py-4">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <AnimatePresence mode="popLayout">
+                {getVisibleItems().map((item, index) => (
+                  <motion.div
+                    key={`${item.title}-${index}`}
+                    layout
+                    initial={{ opacity: 0, scale: 0.9, x: 30 }}
+                    animate={{ opacity: 1, scale: 1, x: 0 }}
+                    exit={{ opacity: 0, scale: 0.9, x: -30 }}
+                    transition={{ duration: 0.4 }}
+                    className="p-8 border-t-4 border-blue-600 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between h-full"
+                  >
+                    <div>
+                      <h4 className="font-bold text-lg text-slate-900 mb-3">{item.title}</h4>
+                      <p className="text-slate-600 leading-relaxed text-sm">{item.desc}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </AnimatePresence>
+            </div>
+          </div>
+
+          {/* Indicatori puncte (dots) dedesubt */}
+          <div className="flex justify-center gap-2 mt-8">
+            {diferentiatori.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setCurrentIndex(idx)}
+                className={`h-2 rounded-full transition-all ${currentIndex === idx ? 'w-8 bg-blue-600' : 'w-2 bg-slate-300'}`}
+                aria-label={`Mergi la slide ${idx + 1}`}
+              />
             ))}
           </div>
+
         </div>
       </section>
 
-      {/* Procesul (Glisare alternativă stânga/dreapta pentru pași) */}
+      {/* Procesul (4 Pași) */}
       <section className="py-24 bg-[#002B5B] text-white px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
