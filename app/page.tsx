@@ -2,6 +2,7 @@
 import Hero from '@/components/Hero';
 import Services from '@/components/Services';
 import ConsultantSection from '@/components/ConsultantSection';
+import Garantii from '@/components/Garantii'; // 1. Am importat noua secțiune de garanții
 
 export default function Home() {
   return (
@@ -16,7 +17,10 @@ export default function Home() {
       {/* 3. Despre/Consultant - Secțiunea dedicată lui Claudiu */}
       <ConsultantSection />
 
-      {/* 4. Contact/CTA - Apelul la acțiune final */}
+      {/* 4. Garanții - Plasată strategic după prezentare și înainte de apelul la acțiune */}
+      <Garantii />
+
+      {/* 5. Contact/CTA - Apelul la acțiune final */}
       <section className="py-20 bg-stone-700 text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">

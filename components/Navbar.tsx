@@ -18,11 +18,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Am adăugat link-ul către secțiunea de Garanții exact după Portofoliu și înainte de Contact
   const navLinks = [
     { name: "Acasă", href: "/" },
     { name: "Despre", href: "/despre" },
     { name: "Servicii", href: "/servicii" },
     { name: "Portofoliu", href: "/portofoliu" },
+    { name: "Garanții", href: "/#garantii" }, // Trimite către id-ul secțiunii noi
     { name: "Contact", href: "/contact" },
   ];
 
