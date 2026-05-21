@@ -2,27 +2,61 @@
 
 import React from "react";
 import Link from "next/link";
-import { CheckCircle2, Target, Lightbulb, ArrowRight, Zap, ShieldCheck, Laptop } from "lucide-react";
+import { CheckCircle2, Target, Lightbulb, ArrowRight, ShieldCheck, Laptop } from "lucide-react";
 
 export default function Portofoliu() {
   const expertizaLinii = [
     {
-      titlu: "Digitalizare IMM 2026",
-      desc: "Expertiză în scrierea proiectelor pentru adoptarea tehnologiilor AI și Cybersecurity.",
-      icon: <Laptop className="text-blue-500" />,
-      tag: "Monitorizare Activă"
+      titlu: "Garanția de eligibilitate strategică",
+      desc: "Eligibilitatea nu este un formular bifat. Este fundamentul întregului proiect. Analizăm în profunzime structura organizațională, capacitatea financiară, istoricul juridic și obiectivele investiționale pentru a valida conformitatea cu cerințele programului de finanțare.",
+      icon: <ShieldCheck className="text-blue-500" />,
+      tag: "Validare Proiect",
+      bife: [
+        "Analiză completă înainte de depunere",
+        "Identificarea riscurilor de respingere",
+        "Optimizarea structurii proiectului",
+        "Verificare internă multi-nivel"
+      ],
+      rezultat: "Rezultatul: depuneri solide, fără improvizații."
     },
     {
-      titlu: "Eficiență Energetică",
-      desc: "Suport pentru proiecte de panouri fotovoltaice și stocare energie prin programele AFM/PNRR.",
-      icon: <Zap className="text-yellow-500" />,
-      tag: "Expertiză Tehnică"
-    },
-    {
-      titlu: "Producție & Tehnologie",
-      desc: "Analiză amănunțită pentru achiziția de utilaje CNC și linii de producție automatizate.",
+      titlu: "Garanția de conformitate integrală",
+      desc: "Controlăm fiecare etapă: documentație, achiziții publice, implementare, raportare și pregătire pentru audit.",
       icon: <ShieldCheck className="text-green-500" />,
-      tag: "Ghiduri Analizate"
+      tag: "Conformitate Audit",
+      bife: [
+        "Conformitate cu legislația națională și europeană",
+        "Proceduri de achiziții structurate corect",
+        "Documentație auditabilă",
+        "Trasabilitate completă"
+      ],
+      rezultat: "Rezultatul: reducerea riscului de corecții financiare și sancțiuni."
+    },
+    {
+      titlu: "Garanția de protecție a investiției",
+      desc: "Structurăm proiectele astfel încât utilizarea fondurilor să fie eficientă, predictibilă și sustenabilă.",
+      icon: <ShieldCheck className="text-yellow-500" />,
+      tag: "Siguranță Financiară",
+      bife: [
+        "Mecanisme contractuale de protecție",
+        "Control financiar riguros",
+        "Planificare bugetară realistă",
+        "Management al riscului investițional"
+      ],
+      rezultat: "Rezultatul: capital protejat și resurse utilizate strategic."
+    },
+    {
+      titlu: "Garanția de performanță și raport de succes",
+      desc: "Nu livrăm doar documentație — livrăm rezultate.",
+      icon: <ShieldCheck className="text-purple-500" />,
+      tag: "Performanță & Succes",
+      bife: [
+        "Definire KPI relevanți",
+        "Monitorizare continuă",
+        "Măsuri corective rapide",
+        "Aliniere la obiectivele finanțatorului"
+      ],
+      rezultat: "Rezultatul: proiecte implementate cu succes și indicatori îndepliniți."
     }
   ];
 
@@ -82,19 +116,37 @@ export default function Portofoliu() {
       <section className="bg-slate-900 py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-white mb-4">Focus Strategic 2026</h2>
-            <p className="text-slate-400">Suntem specializați pe cele mai competitive linii de finanțare ale acestui an.</p>
+            <h2 className="text-3xl font-bold text-white mb-4">Garanțiile Noastre</h2>
+            <p className="text-slate-400">Reducem riscurile și securizăm finanțarea prin pilonii noștri de performanță.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Am schimbat grid-cols-3 in grid-cols-2 pentru ecrane mari deoarece sunt 4 carduri acum, aratand mult mai simetric */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {expertizaLinii.map((item, i) => (
-              <div key={i} className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-colors">
-                <div className="mb-6">{item.icon}</div>
-                <div className="inline-block px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full mb-4">
-                  {item.tag}
+              <div key={i} className="bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-colors flex flex-col justify-between">
+                <div>
+                  <div className="mb-6">{item.icon}</div>
+                  <div className="inline-block px-3 py-1 bg-blue-900/30 text-blue-400 text-xs font-bold rounded-full mb-4">
+                    {item.tag}
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{item.titlu}</h3>
+                  <p className="text-slate-400 mb-6 text-sm leading-relaxed">{item.desc}</p>
+                  
+                  {/* Afisarea punctelor cu bifa */}
+                  <div className="space-y-2 mb-6">
+                    {item.bife.map((bifa, idx) => (
+                      <div key={idx} className="flex items-start space-x-2 text-sm text-slate-300">
+                        <span className="text-blue-400 font-bold select-none">✔</span>
+                        <span>{bifa}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3">{item.titlu}</h3>
-                <p className="text-slate-400 mb-6">{item.desc}</p>
+
+                {/* Textul de rezultat de la finalul fiecarui card */}
+                <div className="mt-4 pt-4 border-t border-slate-700 text-sm font-semibold text-blue-400">
+                  {item.rezultat}
+                </div>
               </div>
             ))}
           </div>
