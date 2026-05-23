@@ -42,7 +42,7 @@ export default function DespreNoi() {
     },
     {
       titlu: "Instrumente Regionale (Regiunea Nord-Vest)",
-      desc: "Finanțări specific adresate proiectelor și investițiilor implementate local în județele Bihor, Bistrița-Năsăud, Cluj, Maramureș, Satu Mare și Sălaj.",
+      desc: "Finanțări specifice adresate proiectelor și investițiilor implementate local în județele Bihor, Bistrița-Năsăud, Cluj, Maramureș, Satu Mare și Sălaj.",
       link: "#"
     }
   ];
@@ -138,7 +138,7 @@ export default function DespreNoi() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-slate-600 leading-relaxed italic border-l-4 border-blue-600 pl-6 py-2 inline-block text-left bg-white rounded-r-lg shadow-sm"
           >
-            &ldquo;Construim proiecte solide. Implementăm fără vulnerabilități. Livrăm rezultate măsurabile.&ldquo;
+            &bdquo;Construim proiecte solide. Implementăm fără vulnerabilități. Livrăm rezultate măsurabile.&ldquo;
           </motion.p>
         </div>
       </section>
@@ -150,11 +150,11 @@ export default function DespreNoi() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="space-y-6 text-lg leading-relaxed text-slate-700"
+          className="space-y-6 text-lg leading-relaxed text-slate-600"
         >
           <p className="font-semibold text-blue-600 uppercase tracking-wider text-sm">Despre Noi</p>
           <p className="text-slate-900 font-medium text-xl">
-            Într-un domeniu în care o eroare procedurală poate însemna pierderea finanțării sau aplicarea de corecții financiare, alegerea consultantului potrivit face diferența dintre sukses și blocaj administrativ.
+            Într-un domeniu în care o eroare procedurală poate însemna pierderea finanțării sau aplicarea de corecții financiare, alegerea consultantului potrivit face diferența dintre succes și blocaj administrativ.
           </p>
           <p>
             Combinăm experiența în domeniul fondurilor structurale și achizițiilor publice cu o abordare personalizată pentru fiecare client. Construim un parteneriat transparent și eficient: vă sprijinim în elaborarea documentației (plan de afaceri, cereri de finanțare, documentații achiziții, analiză cost-beneficiu), apoi gestionăm procesul de depunere și parcursul verificărilor la autoritățile competente.
@@ -169,10 +169,10 @@ export default function DespreNoi() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="bg-[#002B5B] p-10 rounded-[2rem] text-white shadow-2xl relative overflow-hidden md:sticky md:top-8"
+          className="bg-[#002B5B] p-10 rounded-2xl text-white shadow-xl relative overflow-hidden md:sticky md:top-8"
         >
           <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
-          <h3 className="text-2xl font-bold mb-6 flex items-center gap-2">
+          <h3 className="text-2xl font-bold mb-6 flex items-center gap-2 text-white">
             <ShieldCheck className="text-blue-400" /> Atuurile noastre sunt:
           </h3>
           <ul className="space-y-4">
@@ -192,7 +192,7 @@ export default function DespreNoi() {
         </motion.div>
       </section>
 
-      {/* PROG FINANȚARE: Fundal curat alb și accente albastre */}
+      {/* PROG FINANȚARE: Portofoliu */}
       <section className="py-24 bg-slate-50 px-6 border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
           <motion.div 
@@ -214,7 +214,7 @@ export default function DespreNoi() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: idx * 0.05 }}
-                className="bg-white p-8 rounded-2xl border border-slate-200/60 flex flex-col justify-between hover:border-blue-400 shadow-sm hover:shadow-md transition-all"
+                className="bg-white p-8 rounded-xl border border-slate-200 flex flex-col justify-between hover:border-blue-400 transition-colors shadow-sm"
               >
                 <div>
                   <h4 className="text-lg font-bold text-slate-900 mb-3 flex items-start gap-2">
@@ -231,7 +231,7 @@ export default function DespreNoi() {
                       href={prog.link} 
                       target="_blank" 
                       rel="noopener noreferrer" 
-                      className="text-xs text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-200 transition-all"
+                      className="text-xs text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-1.5 bg-slate-50 px-3 py-1.5 rounded border border-slate-200 shadow-sm hover:shadow transition-all"
                     >
                       Consultă Oportunitatea Oficială <ExternalLink size={12} />
                     </a>
@@ -243,7 +243,7 @@ export default function DespreNoi() {
         </div>
       </section>
 
-      {/* --- CARUSEL: Diferențiatori Competitivi (Albastru) --- */}
+      {/* --- CARUSEL: Diferențiatori Competitivi --- */}
       <section className="py-24 bg-white px-6">
         <div className="max-w-7xl mx-auto">
           
@@ -255,14 +255,14 @@ export default function DespreNoi() {
             <div className="flex gap-3 mt-6 md:mt-0">
               <button 
                 onClick={prevSlide}
-                className="w-12 h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm"
+                className="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm"
                 aria-label="Anteriorul"
               >
                 <ChevronLeft size={24} />
               </button>
               <button 
                 onClick={nextSlide}
-                className="w-12 h-12 rounded-full border border-slate-300 bg-white flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm"
+                className="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm"
                 aria-label="Următorul"
               >
                 <ChevronRight size={24} />
@@ -281,7 +281,7 @@ export default function DespreNoi() {
                     animate={{ opacity: 1, scale: 1, x: 0 }}
                     exit={{ opacity: 0, scale: 0.9, x: -30 }}
                     transition={{ duration: 0.4 }}
-                    className="p-8 border-t-4 border-blue-600 bg-slate-50/50 rounded-xl shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between h-full"
+                    className="p-8 border-t-4 border-blue-600 bg-slate-50/60 rounded-xl shadow-md hover:shadow-xl transition-shadow flex flex-col justify-between h-full"
                   >
                     <div>
                       <h4 className="font-bold text-lg text-slate-900 mb-3">{item.title}</h4>
@@ -307,11 +307,11 @@ export default function DespreNoi() {
         </div>
       </section>
 
-      {/* Procesul (4 Pași pe fundalul tău bleumarin clasic) */}
-      <section className="py-24 bg-[#002B5B] text-white px-6">
+      {/* Procesul (4 Pași) */}
+      <section className="py-24 bg-[#002B5B] text-slate-100 px-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-20">
-            <h2 className="text-3xl font-bold mb-3">Procesul de colaborare (4 pași)</h2>
+            <h2 className="text-3xl font-bold mb-3 text-white">Procesul de colaborare (4 pași)</h2>
             <p className="text-blue-200 uppercase tracking-widest text-xs">O metodologie predictivă și transparentă</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
@@ -328,7 +328,7 @@ export default function DespreNoi() {
                   {pas.nr}
                 </div>
                 <h4 className="text-lg font-bold mb-3 text-white">{pas.titlu}</h4>
-                <p className="text-blue-100/80 leading-relaxed text-sm">{pas.desc}</p>
+                <p className="text-slate-200 leading-relaxed text-sm">{pas.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -342,13 +342,13 @@ export default function DespreNoi() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="max-w-3xl mx-auto bg-slate-50 p-12 rounded-[2rem] border border-slate-200"
+          className="max-w-3xl mx-auto bg-slate-50 p-12 rounded-2xl border border-slate-200"
         >
           <h3 className="text-2xl font-bold mb-3 text-slate-900">Ești gata să începem proiectul tău?</h3>
           <p className="text-slate-600 mb-8 text-base">Vă asigurăm un management integrat, un singur flux coerent și siguranță procedurală totală.</p>
           <Link 
             href="/contact"
-            className="bg-blue-600 text-white px-8 py-4 rounded-full font-bold text-base hover:bg-blue-700 hover:shadow-lg transition-all inline-flex items-center gap-2"
+            className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-blue-700 hover:shadow-lg transition-all inline-flex items-center gap-2"
           >
             Contactează un consultant <ArrowRight size={18} />
           </Link>
