@@ -1,3 +1,5 @@
+"use client"; // <--- Această linie rezolvă eroarea de build!
+
 import React from 'react';
 import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
@@ -83,8 +85,6 @@ export default function Footer() {
           <button 
             type="button"
             onClick={() => {
-              // Aici poți pune funcția ta custom sau cea oferită de modulul de cookie-uri (ex: CookieBot, CookieYes etc.)
-              // Exemplu dacă folosești o metodă globală: window.CookieConsent?.showPreferences();
               console.log('Deschide setările modulelor cookie');
             }}
             className="text-[#486581] underline underline-offset-4 hover:text-[#102a43] transition-colors cursor-pointer"
@@ -106,7 +106,6 @@ export default function Footer() {
               alt="Soluționarea Alternativă a Litigiilor" 
               className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
               onError={(e) => {
-                // Fallback în cazul în care ANPC își schimbă din nou structura link-urilor
                 e.currentTarget.src = "https://anpc.ro/galerie/sal.png";
               }}
             />
@@ -122,7 +121,6 @@ export default function Footer() {
               alt="Soluționarea Online a Litigiilor" 
               className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
               onError={(e) => {
-                // Fallback 
                 e.currentTarget.src = "https://anpc.ro/galerie/sol.png";
               }}
             />
