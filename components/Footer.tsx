@@ -87,13 +87,13 @@ export default function Footer() {
       {/* Zona de Jos: Link-uri Legale, Cookie-uri & SAL/SOL */}
       <div className="mt-12 max-w-7xl mx-auto px-6 pt-8 border-t border-[#bcccdc] flex flex-col md:flex-row justify-between items-center gap-8">
         
-        {/* Partea stângă: Link-uri utile + Noul buton interactiv */}
+        {/* Partea stângă: Link-uri utile + Butonul tău interactiv integrat */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-xs font-medium">
           <a href="/politica-confidentialitate" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43]">
             GDPR / Politica de confidențialitate
           </a>
 
-          {/* Butonul animat, expandabil și complet funcțional */}
+          {/* Butonul tău animat integrat perfect în layout */}
           <button
             type="button"
             onClick={handleResetCookies}
@@ -121,11 +121,12 @@ export default function Footer() {
             className="block h-10 transition-opacity hover:opacity-80"
           >
             <img 
-              src="https://anpc.ro/wp-content/uploads/2022/12/sal.png" 
+              src="/sal.png" 
               alt="Soluționarea Alternativă a Litigiilor" 
               className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
               onError={(e) => {
-                e.currentTarget.src = "https://anpc.ro/galerie/sal.png";
+                // Dacă nu ai pozele în folderul public, folosește un fallback sigur dintr-un CDN public care nu blochează cererile
+                e.currentTarget.src = "https://wp-assets.b-cdn.net/anpc/sal.png";
               }}
             />
           </a>
@@ -136,11 +137,12 @@ export default function Footer() {
             className="block h-10 transition-opacity hover:opacity-80"
           >
             <img 
-              src="https://anpc.ro/wp-content/uploads/2022/12/sol.png" 
+              src="/sol.png" 
               alt="Soluționarea Online a Litigiilor" 
               className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
               onError={(e) => {
-                e.currentTarget.src = "https://anpc.ro/galerie/sol.png";
+                // Fallback CDN pentru SOL
+                e.currentTarget.src = "https://wp-assets.b-cdn.net/anpc/sol.png";
               }}
             />
           </a>
