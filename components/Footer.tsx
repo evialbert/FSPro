@@ -1,11 +1,21 @@
 "use client"; // <--- Această linie rezolvă eroarea de build!
 
 import React from 'react';
-import { Mail, Phone, MapPin, Clock } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, ShieldCheck } from 'lucide-react';
 
 export default function Footer() {
   const startYear = 2024;
   const currentYear = new Date().getFullYear();
+
+  // Funcția care resetează consimțământul și permite re-afișarea bannerului
+  const handleResetCookies = () => {
+    if (typeof window !== "undefined") {
+      // Ștergem alegerea din localStorage
+      localStorage.removeItem("cookie-consent");
+      // Reîncărcăm pagina pentru a declanșa logica din CookieBanner
+      window.location.reload();
+    }
+  };
 
   return (
     <footer className="bg-[#f0f4f8] border-t border-[#d9e2ec] py-16 text-[#334e68]">
@@ -77,19 +87,28 @@ export default function Footer() {
       {/* Zona de Jos: Link-uri Legale, Cookie-uri & SAL/SOL */}
       <div className="mt-12 max-w-7xl mx-auto px-6 pt-8 border-t border-[#bcccdc] flex flex-col md:flex-row justify-between items-center gap-8">
         
-        {/* Partea stângă: Link-uri utile */}
-        <div className="flex flex-wrap justify-center md:justify-start gap-6 text-xs font-medium">
+        {/* Partea stângă: Link-uri utile + Noul buton interactiv */}
+        <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-xs font-medium">
           <a href="/politica-confidentialitate" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43]">
             GDPR / Politica de confidențialitate
           </a>
-          <button 
+
+          {/* Butonul animat, expandabil și complet funcțional */}
+          <button
             type="button"
-            onClick={() => {
-              console.log('Deschide setările modulelor cookie');
-            }}
-            className="text-[#486581] underline underline-offset-4 hover:text-[#102a43] transition-colors cursor-pointer"
+            onClick={handleResetCookies}
+            className="group flex items-center bg-white border border-[#bcccdc] p-1 pr-3 rounded-full shadow-sm hover:shadow-md hover:bg-slate-900 transition-all duration-500 ease-in-out cursor-pointer"
+            aria-label="Setări Cookies"
           >
-            Resetare Preferințe Cookie
+            {/* Iconița cu rotație la hover */}
+            <div className="bg-blue-600 p-1.5 rounded-full text-white shadow-inner group-hover:rotate-[360deg] transition-transform duration-700">
+              <ShieldCheck size={14} strokeWidth={2.5} />
+            </div>
+
+            {/* Textul stilizat */}
+            <span className="pl-2 text-[10px] font-black text-slate-700 group-hover:text-white whitespace-nowrap tracking-wider uppercase transition-colors duration-500">
+              Cookie Settings
+            </span>
           </button>
         </div>
 
