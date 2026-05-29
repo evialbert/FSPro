@@ -1,21 +1,11 @@
 "use client"; // <--- Această linie rezolvă eroarea de build!
 
 import React from 'react';
-import { Mail, Phone, MapPin, Clock, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock } from 'lucide-react';
 
 export default function Footer() {
   const startYear = 2024;
   const currentYear = new Date().getFullYear();
-
-  // Funcția care resetează consimțământul și permite re-afișarea bannerului
-  const handleResetCookies = () => {
-    if (typeof window !== "undefined") {
-      // Ștergem alegerea din localStorage
-      localStorage.removeItem("cookie-consent");
-      // Reîncărcăm pagina pentru a declanșa logica din CookieBanner
-      window.location.reload();
-    }
-  };
 
   return (
     <footer className="bg-[#f0f4f8] border-t border-[#d9e2ec] py-16 text-[#334e68]">
@@ -84,32 +74,14 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Zona de Jos: Link-uri Legale, Cookie-uri & SAL/SOL */}
+      {/* Zona de Jos: Link-uri Legale & SAL/SOL */}
       <div className="mt-12 max-w-7xl mx-auto px-6 pt-8 border-t border-[#bcccdc] flex flex-col md:flex-row justify-between items-center gap-8">
         
-        {/* Partea stângă: Link-uri utile + Butonul tău interactiv integrat */}
+        {/* Partea stângă: Link-uri utile */}
         <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-xs font-medium">
           <a href="/politica-confidentialitate" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43]">
             GDPR / Politica de confidențialitate
           </a>
-
-          {/* Butonul tău animat integrat perfect în layout */}
-          <button
-            type="button"
-            onClick={handleResetCookies}
-            className="group flex items-center bg-white border border-[#bcccdc] p-1 pr-3 rounded-full shadow-sm hover:shadow-md hover:bg-slate-900 transition-all duration-500 ease-in-out cursor-pointer"
-            aria-label="Setări Cookies"
-          >
-            {/* Iconița cu rotație la hover */}
-            <div className="bg-blue-600 p-1.5 rounded-full text-white shadow-inner group-hover:rotate-[360deg] transition-transform duration-700">
-              <ShieldCheck size={14} strokeWidth={2.5} />
-            </div>
-
-            {/* Textul stilizat */}
-            <span className="pl-2 text-[10px] font-black text-slate-700 group-hover:text-white whitespace-nowrap tracking-wider uppercase transition-colors duration-500">
-              Cookie Settings
-            </span>
-          </button>
         </div>
 
         {/* Partea dreaptă: Bannerele obligatorii SAL și SOL */}
@@ -121,11 +93,10 @@ export default function Footer() {
             className="block h-10 transition-opacity hover:opacity-80"
           >
             <img 
-              src="/sal.png" 
+              src="/anpc/sal.png" 
               alt="Soluționarea Alternativă a Litigiilor" 
               className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
               onError={(e) => {
-                // Dacă nu ai pozele în folderul public, folosește un fallback sigur dintr-un CDN public care nu blochează cererile
                 e.currentTarget.src = "https://wp-assets.b-cdn.net/anpc/sal.png";
               }}
             />
@@ -137,11 +108,10 @@ export default function Footer() {
             className="block h-10 transition-opacity hover:opacity-80"
           >
             <img 
-              src="/sol.png" 
+              src="/anpc/sol.png" 
               alt="Soluționarea Online a Litigiilor" 
               className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
               onError={(e) => {
-                // Fallback CDN pentru SOL
                 e.currentTarget.src = "https://wp-assets.b-cdn.net/anpc/sol.png";
               }}
             />
