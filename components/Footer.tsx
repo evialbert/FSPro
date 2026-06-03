@@ -9,7 +9,8 @@ export default function Footer() {
 
   return (
     <footer className="bg-[#f0f4f8] border-t border-[#d9e2ec] py-16 text-[#334e68]">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-12">
+      {/* Structură pe 5 coloane egale - Fără elemente împrăștiate în partea de jos */}
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-5 gap-12 items-start">
         
         {/* Coloana 1: Info Companie */}
         <div className="space-y-4">
@@ -72,64 +73,50 @@ export default function Footer() {
             ></iframe>
           </div>
         </div>
-      </div>
 
-      {/* Zona de Jos: Link-uri Legale & SAL/ANPC */}
-      <div className="mt-12 max-w-7xl mx-auto px-6 pt-8 border-t border-[#bcccdc] flex flex-col lg:flex-row justify-between items-center gap-8">
-        
-        {/* Partea stângă: Link-uri utile din secțiunea LEGAL */}
-        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-xs font-medium">
-          <a href="/termeni-conditii" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43] transition-colors">
-            Termeni și Condiții
-          </a>
-          <a href="/politica-confidentialitate" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43] transition-colors">
-            Politică de confidențialitate (GDPR)
-          </a>
-          <a href="/politica-cookies" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43] transition-colors">
-            Politică module cookie
-          </a>
-        </div>
-
-        {/* Partea dreaptă: Bannerele obligatorii SAL și ANPC (SOL a fost eliminat) */}
-        <div className="flex flex-wrap justify-center gap-4">
-          {/* Banner SAL */}
-          <a 
-            href="https://anpc.ro/ce-este-sal/" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="block h-10 transition-opacity hover:opacity-80"
-          >
-            <img 
-              src="/anpc/sal.png" 
-              alt="Soluționarea Alternativă a Litigiilor" 
-              className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
-              onError={(e) => {
-                e.currentTarget.src = "https://wp-assets.b-cdn.net/anpc/sal.png";
-              }}
-            />
-          </a>
+        {/* Coloana 5: Informații Legale & Doar SAL */}
+        <div className="space-y-4">
+          <h4 className="text-sm font-bold uppercase tracking-wider text-[#102a43]">
+            Informații Legale
+          </h4>
           
-          {/* Banner ANPC Oficial */}
-          <a 
-            href="https://www.anpc.ro" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="block h-10 transition-opacity hover:opacity-80"
-          >
-            <img 
-              src="/anpc/anpc.png" 
-              alt="Autoritatea Națională pentru Protecția Consumatorilor" 
-              className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
-              onError={(e) => {
-                e.currentTarget.src = "https://wp-assets.b-cdn.net/anpc/anpc.png";
-              }}
-            />
-          </a>
+          {/* Link-urile legale */}
+          <div className="flex flex-col space-y-2 text-xs font-semibold">
+            <a href="/termeni-conditii" className="text-[#486581] hover:text-[#102a43] transition-colors">
+              Termeni și Condiții
+            </a>
+            <a href="/politica-confidentialitate" className="text-[#486581] hover:text-[#102a43] transition-colors">
+              Politică de confidențialitate (GDPR)
+            </a>
+            <a href="/politica-cookies" className="text-[#486581] hover:text-[#102a43] transition-colors">
+              Politică module cookie
+            </a>
+          </div>
+
+          {/* Doar banner-ul SAL integrat elegant */}
+          <div className="pt-2">
+            <a 
+              href="https://anpc.ro/ce-este-sal/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="block h-10 transition-opacity hover:opacity-80"
+            >
+              <img 
+                src="/anpc/sal.png" 
+                alt="Soluționarea Alternativă a Litigiilor" 
+                className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
+                onError={(e) => {
+                  e.currentTarget.src = "https://wp-assets.b-cdn.net/anpc/sal.png";
+                }}
+              />
+            </a>
+          </div>
         </div>
+
       </div>
 
-      {/* Drepturi de autor */}
-      <div className="mt-8 text-center text-xs text-[#627d98]/60">
+      {/* Drepturi de autor la bază */}
+      <div className="mt-16 max-w-7xl mx-auto px-6 pt-8 border-t border-[#bcccdc] text-center text-xs text-[#627d98]/60">
         © {startYear} – {currentYear} Fine Solutions Professional. Toate drepturile rezervate.
       </div>
     </footer>
