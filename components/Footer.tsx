@@ -74,18 +74,25 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Zona de Jos: Link-uri Legale & SAL/SOL */}
-      <div className="mt-12 max-w-7xl mx-auto px-6 pt-8 border-t border-[#bcccdc] flex flex-col md:flex-row justify-between items-center gap-8">
+      {/* Zona de Jos: Link-uri Legale & SAL/ANPC */}
+      <div className="mt-12 max-w-7xl mx-auto px-6 pt-8 border-t border-[#bcccdc] flex flex-col lg:flex-row justify-between items-center gap-8">
         
-        {/* Partea stângă: Link-uri utile */}
-        <div className="flex flex-wrap items-center justify-center md:justify-start gap-6 text-xs font-medium">
-          <a href="/politica-confidentialitate" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43]">
-            GDPR / Politica de confidențialitate
+        {/* Partea stângă: Link-uri utile din secțiunea LEGAL */}
+        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-6 gap-y-3 text-xs font-medium">
+          <a href="/termeni-conditii" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43] transition-colors">
+            Termeni și Condiții
+          </a>
+          <a href="/politica-confidentialitate" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43] transition-colors">
+            Politică de confidențialitate (GDPR)
+          </a>
+          <a href="/politica-cookies" className="text-[#486581] underline underline-offset-4 hover:text-[#102a43] transition-colors">
+            Politică module cookie
           </a>
         </div>
 
-        {/* Partea dreaptă: Bannerele obligatorii SAL și SOL */}
+        {/* Partea dreaptă: Bannerele obligatorii SAL și ANPC (SOL a fost eliminat) */}
         <div className="flex flex-wrap justify-center gap-4">
+          {/* Banner SAL */}
           <a 
             href="https://anpc.ro/ce-este-sal/" 
             target="_blank" 
@@ -101,18 +108,20 @@ export default function Footer() {
               }}
             />
           </a>
+          
+          {/* Banner ANPC Oficial */}
           <a 
-            href="https://ec.europa.eu/consumers/odr/main/index.cfm?event=main.home2.show&lng=RO" 
+            href="https://www.anpc.ro" 
             target="_blank" 
             rel="noopener noreferrer"
             className="block h-10 transition-opacity hover:opacity-80"
           >
             <img 
-              src="/anpc/sol.png" 
-              alt="Soluționarea Online a Litigiilor" 
+              src="/anpc/anpc.png" 
+              alt="Autoritatea Națională pentru Protecția Consumatorilor" 
               className="h-full w-auto object-contain rounded border border-[#bcccdc] bg-white p-1"
               onError={(e) => {
-                e.currentTarget.src = "https://wp-assets.b-cdn.net/anpc/sol.png";
+                e.currentTarget.src = "https://wp-assets.b-cdn.net/anpc/anpc.png";
               }}
             />
           </a>
