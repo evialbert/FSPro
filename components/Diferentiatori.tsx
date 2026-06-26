@@ -32,10 +32,10 @@ const diferentiatori = [
 
 export default function Diferentiatori() {
   return (
-    <section className="bg-slate-50 py-20 border-y border-slate-100 overflow-hidden">
+    <section className="bg-slate-50 py-20 border-y border-slate-100 block w-full clear-both">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Antet Secțiune - Cu accente de Albastru */}
+        {/* Antet Secțiune - Albastru Brand */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-3">
             <Sparkles className="h-3.5 w-3.5 text-blue-600" />
@@ -46,12 +46,12 @@ export default function Diferentiatori() {
           </h2>
         </div>
 
-        {/* Varianta DESKTOP: Rămâne Grid Fix (Fără glisare, se văd toate cele 4 carduri pe ecran) */}
+        {/* Varianta DESKTOP: Grid fix cu 4 coloane stabile */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
           {diferentiatori.map((item) => (
             <div 
               key={item.id} 
-              className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300"
+              className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm"
             >
               <div className="p-3 bg-blue-50 border border-blue-100 rounded-xl w-fit mb-4">
                 {item.icon}
@@ -62,31 +62,31 @@ export default function Diferentiatori() {
           ))}
         </div>
 
-        {/* Varianta MOBILE: Glisare nativă cu degetul */}
-        <div className="block md:hidden -mx-4 px-4">
-          <div className="flex gap-4 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory scroll-smooth">
+        {/* Varianta MOBILE: Carusel cu glisare pur mecanică și fluidă */}
+        <div className="block md:hidden">
+          <div 
+            className="w-full flex gap-4 overflow-x-auto overflow-y-hidden py-4" 
+            style={{ WebkitOverflowScrolling: 'touch' }}
+          >
             {diferentiatori.map((item) => (
               <div 
                 key={item.id} 
-                className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm min-w-[85vw] sm:min-w-[320px] snap-center flex flex-col justify-between first:ml-4 last:mr-4"
+                className="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm min-w-[280px] w-[280px] shrink-0"
               >
-                <div>
-                  <div className="p-3 bg-blue-50 border border-blue-100 rounded-xl w-fit mb-4">
-                    {item.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-slate-800 mb-2 tracking-tight">
-                    {item.titlu}
-                  </h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">
-                    {item.descriere}
-                  </p>
+                <div className="p-3 bg-blue-50 border border-blue-100 rounded-xl w-fit mb-4">
+                  {item.icon}
                 </div>
+                <h3 className="text-xl font-bold text-slate-800 mb-2 tracking-tight">
+                  {item.titlu}
+                </h3>
+                <p className="text-slate-600 text-sm leading-relaxed">
+                  {item.descriere}
+                </p>
               </div>
             ))}
           </div>
-
-          {/* Sugestie vizuală pentru glisare */}
-          <div className="text-center text-xs font-medium text-slate-400 tracking-wide mt-2">
+          
+          <div className="text-center text-xs font-medium text-slate-400 mt-4">
             ‹ Glisează stânga / dreapta ›
           </div>
         </div>
