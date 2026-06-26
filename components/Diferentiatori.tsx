@@ -35,7 +35,7 @@ export default function Diferentiatori() {
     <section className="bg-slate-50 py-20 border-y border-slate-100 overflow-hidden">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Antet Secțiune */}
+        {/* Antet Secțiune - Cu accente de Albastru */}
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full mb-3">
             <Sparkles className="h-3.5 w-3.5 text-blue-600" />
@@ -46,7 +46,7 @@ export default function Diferentiatori() {
           </h2>
         </div>
 
-        {/* Varianta DESKTOP: Grid fix standard (De la ecran mediu 'md' în sus) */}
+        {/* Varianta DESKTOP: Rămâne Grid Fix (Fără glisare, se văd toate cele 4 carduri pe ecran) */}
         <div className="hidden md:grid grid-cols-2 lg:grid-cols-4 gap-6">
           {diferentiatori.map((item) => (
             <div 
@@ -62,10 +62,9 @@ export default function Diferentiatori() {
           ))}
         </div>
 
-        {/* Varianta MOBILE: Glisare fluidă nativă, fără butoane și fără blocaje la scroll */}
-        {/* Adăugăm padding negativ pe margini pentru ca cardurile să treacă elegant până în marginea ecranului la glisare */}
+        {/* Varianta MOBILE: Glisare nativă cu degetul */}
         <div className="block md:hidden -mx-4 px-4">
-          <div className="flex gap-4 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory scrollbar-none scroll-smooth">
+          <div className="flex gap-4 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory scroll-smooth">
             {diferentiatori.map((item) => (
               <div 
                 key={item.id} 
@@ -86,7 +85,7 @@ export default function Diferentiatori() {
             ))}
           </div>
 
-          {/* Sugestie vizuală subtilă: text discret sub carusel */}
+          {/* Sugestie vizuală pentru glisare */}
           <div className="text-center text-xs font-medium text-slate-400 tracking-wide mt-2">
             ‹ Glisează stânga / dreapta ›
           </div>
