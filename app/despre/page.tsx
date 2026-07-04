@@ -252,7 +252,9 @@ export default function DespreNoi() {
               <p className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">De ce noi?</p>
               <h3 className="text-3xl font-bold text-slate-900">Diferențiatori Competitivi</h3>
             </div>
-            <div className="flex gap-3 mt-6 md:mt-0">
+            
+            {/* Săgeți Navigație Desktop */}
+            <div className="hidden md:flex gap-3 mt-6 md:mt-0">
               <button 
                 onClick={prevSlide}
                 className="w-12 h-12 rounded-full border border-slate-200 bg-white flex items-center justify-center text-slate-700 hover:bg-blue-600 hover:text-white hover:border-blue-600 transition-all shadow-sm"
@@ -270,7 +272,8 @@ export default function DespreNoi() {
             </div>
           </div>
 
-          <div className="overflow-hidden py-4">
+          {/* Varianta DESKTOP */}
+          <div className="hidden md:block overflow-hidden py-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <AnimatePresence mode="popLayout">
                 {getVisibleItems().map((item, index) => (
@@ -293,7 +296,32 @@ export default function DespreNoi() {
             </div>
           </div>
 
-          <div className="flex justify-center gap-2 mt-8">
+          {/* Varianta MOBILE: Toți cei 7 diferențiatori sunt păstrați, stilizați la fel */}
+          <div className="block md:hidden">
+            <div 
+              className="w-full flex gap-4 overflow-x-auto overflow-y-hidden py-4 snap-x snap-mandatory" 
+              style={{ WebkitOverflowScrolling: 'touch' }}
+            >
+              {diferentiatori.map((item, idx) => (
+                <div 
+                  key={idx} 
+                  className="p-8 border-t-4 border-blue-600 bg-slate-50/60 rounded-xl shadow-md min-w-[280px] w-[280px] shrink-0 snap-center flex flex-col justify-between"
+                >
+                  <div>
+                    <h4 className="font-bold text-lg text-slate-900 mb-3">{item.title}</h4>
+                    <p className="text-slate-600 leading-relaxed text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center text-xs font-medium text-slate-400 mt-4">
+              ‹ Glisează stânga / dreapta ›
+            </div>
+          </div>
+
+          {/* Dots Indicator Desktop */}
+          <div className="hidden md:flex justify-center gap-2 mt-8">
             {diferentiatori.map((_, idx) => (
               <button
                 key={idx}
