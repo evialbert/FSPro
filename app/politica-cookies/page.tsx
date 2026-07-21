@@ -16,7 +16,7 @@ export default function PoliticaCookies() {
             {"POLITICA DE UTILIZARE MODULE COOKIE"}
           </h1>
           <p className="text-blue-200 text-sm sm:text-base">
-            {"Versiunea actualizată la zi: Anul 2026 (Aliniată ePrivacy și GDPR)"}
+            {"Versiunea actualizată la zi: Iulie 2026 (Aliniată ePrivacy și GDPR)"}
           </p>
         </div>
 
@@ -42,14 +42,14 @@ export default function PoliticaCookies() {
               <div className="sm:col-span-2 text-slate-800">{"Înregistrată la Registrul Comerțului: J12/792/2024, C.U.I. 49574499"}</div>
               
               <div className="font-bold text-slate-600">{"Contact Date:"}</div>
-              <div className="sm:col-span-2 text-blue-700 font-semibold">{"protectiadatelor@finesolutions.ro"}</div>
+              <div className="sm:col-span-2 text-blue-700 font-semibold">{"protectiadatelor@finesolutionspro.ro"}</div>
             </div>
           </div>
 
           {/* Sectiunea 1 */}
           <section className="space-y-3">
             <h2 className="text-xl font-bold text-blue-900 border-b border-slate-100 pb-2">
-              {"1. Introducere și context legal (Actualizat 2026)"}
+              {"1. Introducere și context legal (Actualizat Iulie 2026)"}
             </h2>
             <p className="text-justify leading-relaxed">
               {"Prezenta Politică privind modulele cookie se aplică tuturor utilizatorilor acestui website operat de "}
@@ -204,7 +204,7 @@ export default function PoliticaCookies() {
               <strong>{"FINE SOLUTIONS PROFESSIONAL S.R.L."}</strong>
               {", vă rugăm să ne contactați direct la adresa de e-mail: "}
               <span className="font-semibold text-blue-900 border-b border-blue-200">
-                {"protectiadatelor@finesolutions.ro"}
+                {"protectiadatelor@finesolutionspro.ro"}
               </span>
               {"."}
             </p>

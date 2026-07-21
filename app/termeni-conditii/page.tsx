@@ -10,7 +10,7 @@ const COMPANIE = {
   nume: 'FINE SOLUTIONS PROFESSIONAL S.R.L.',
   sediu: 'Cluj-Napoca, Str. CIOCANULUI, Nr. 15B, Ap. 2, Judetul CLUJ',
   identificare: 'C.U.I. 49574499 | J12/792/2024',
-  email: 'protectiadatelor@finesolutions.ro'
+  email: 'protectiadatelor@finesolutionspro.ro'
 };
 
 const SECTIUNI = [
@@ -62,7 +62,7 @@ export default function TermeniConditii() {
             {"TERMENI SI CONDITII DE UTILIZARE"}
           </h1>
           <p className="text-blue-200 text-sm sm:text-base">
-            {"Ultima actualizare: Anul 2026"}
+            {"Ultima actualizare: Iulie 2026"}
           </p>
         </div>
 
