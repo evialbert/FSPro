@@ -106,7 +106,7 @@ export default function ContactPage() {
           <div>
             <h2 className="text-2xl font-bold text-slate-900 mb-6">Informații de contact</h2>
             <p className="text-slate-600 mb-8">
-              Echipa Fine Solutions Pro este gata să vă ofere consultanță specializată pentru proiecte de digitalizare, energie verde și achiziții publice.
+              Echipa Fine Solutions Professional este gata să vă ofere consultanță specializată pentru proiecte de digitalizare, energie verde și achiziții publice.
             </p>
           </div>
 
