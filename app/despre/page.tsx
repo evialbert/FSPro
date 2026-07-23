@@ -43,7 +43,7 @@ export default function DespreNoi() {
     {
       titlu: "Instrumente Regionale (Regiunea Nord-Vest)",
       desc: "Finanțări specifice adresate proiectelor și investițiilor implementate local în județele Bihor, Bistrița-Năsăud, Cluj, Maramureș, Satu Mare și Sălaj.",
-      link: "#"
+      link: "#https://regionordvest.ro/"
     }
   ];
 
