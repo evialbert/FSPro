@@ -42,8 +42,12 @@ export default function CookieSettings() {
   }, [isOpen]);
 
   // Schimbarea stării bifelor la click / tap
-  const handleCheckboxChange = (key: keyof CookiePreferences) => {
+  const togglePreference = (key: keyof CookiePreferences, e?: React.SyntheticEvent) => {
+    if (e) {
+      e.stopPropagation(); // Oprește dublarea click-ului pe mobil
+    }
     if (key === "necessary") return;
+
     setPreferences((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
@@ -87,7 +91,7 @@ export default function CookieSettings() {
 
   return (
     <>
-      {/* 1. Bula ta discretă din colț */}
+      {/* 1. Bula ta discretă din colț (neschimbată, cu toate animațiile ei) */}
       <div className="fixed bottom-6 left-6 z-[9998]">
         <button
           onClick={() => setIsOpen(true)}
@@ -137,7 +141,7 @@ export default function CookieSettings() {
               
               {/* Necesare */}
               <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 select-none">
-                <div className="pr-2">
+                <div>
                   <span className="font-semibold block text-sm text-slate-800">Necesare</span>
                   <span className="text-[11px] text-slate-400 block max-w-[320px]">Esențiale pentru funcționarea și securitatea site-ului dumneavoastră.</span>
                 </div>
@@ -150,46 +154,58 @@ export default function CookieSettings() {
               </div>
 
               {/* Preferințe */}
-              <label className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer select-none">
-                <div className="pr-2">
+              <div 
+                onClick={(e) => togglePreference("preferences", e)}
+                className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer select-none"
+              >
+                <div>
                   <span className="font-semibold block text-sm text-slate-800">Preferinţe</span>
                   <span className="text-[11px] text-slate-500 block max-w-[320px]">Permit site-ului să își amintească alegerile pe care le faceți (ex: limba utilizată).</span>
                 </div>
                 <input
                   type="checkbox"
                   checked={preferences.preferences}
-                  onChange={() => handleCheckboxChange("preferences")}
+                  onChange={(e) => togglePreference("preferences", e)}
+                  onClick={(e) => e.stopPropagation()}
                   className="w-4 h-4 accent-blue-600 cursor-pointer flex-shrink-0"
                 />
-              </label>
+              </div>
 
               {/* Statistici */}
-              <label className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer select-none">
-                <div className="pr-2">
+              <div 
+                onClick={(e) => togglePreference("statistics", e)}
+                className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer select-none"
+              >
+                <div>
                   <span className="font-semibold block text-sm text-slate-800">Statistici</span>
                   <span className="text-[11px] text-slate-500 block max-w-[320px]">Ne ajută să înțelegem modul în care interacționați cu site-ul prin colectarea de date anonime.</span>
                 </div>
                 <input
                   type="checkbox"
                   checked={preferences.statistics}
-                  onChange={() => handleCheckboxChange("statistics")}
+                  onChange={(e) => togglePreference("statistics", e)}
+                  onClick={(e) => e.stopPropagation()}
                   className="w-4 h-4 accent-blue-600 cursor-pointer flex-shrink-0"
                 />
-              </label>
+              </div>
 
               {/* Marketing */}
-              <label className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer select-none">
-                <div className="pr-2">
+              <div 
+                onClick={(e) => togglePreference("marketing", e)}
+                className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer select-none"
+              >
+                <div>
                   <span className="font-semibold block text-sm text-slate-800">Marketing</span>
                   <span className="text-[11px] text-slate-500 block max-w-[320px]">Utilizate pentru a urmări vizitatorii pe site-uri web în scopul afișării de reclame relevante.</span>
                 </div>
                 <input
                   type="checkbox"
                   checked={preferences.marketing}
-                  onChange={() => handleCheckboxChange("marketing")}
+                  onChange={(e) => togglePreference("marketing", e)}
+                  onClick={(e) => e.stopPropagation()}
                   className="w-4 h-4 accent-blue-600 cursor-pointer flex-shrink-0"
                 />
-              </label>
+              </div>
 
             </div>
 
