@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { ShieldCheck, Settings2, X } from "lucide-react";
+import { ShieldCheck, Settings2, X, Check } from "lucide-react";
 
 interface CookiePreferences {
   necessary: boolean;
@@ -42,7 +42,7 @@ export default function CookieSettings() {
   }, [isOpen]);
 
   // Schimbarea stării bifelor la click / tap
-  const handleCheckboxChange = (key: keyof CookiePreferences) => {
+  const togglePreference = (key: keyof CookiePreferences) => {
     if (key === "necessary") return;
     setPreferences((prev) => ({ ...prev, [key]: !prev[key] }));
   };
@@ -90,6 +90,7 @@ export default function CookieSettings() {
       {/* 1. Bula ta discretă din colț (neschimbată, cu toate animațiile ei) */}
       <div className="fixed bottom-6 left-6 z-[9998]">
         <button
+          type="button"
           onClick={() => setIsOpen(true)}
           className="group flex items-center bg-white/70 backdrop-blur-md border border-slate-200 p-1.5 rounded-full shadow-lg hover:shadow-xl hover:bg-slate-900 transition-all duration-500 ease-in-out"
           aria-label="Setări Cookies"
@@ -117,10 +118,11 @@ export default function CookieSettings() {
           <div className="absolute inset-0" onClick={() => setIsOpen(false)} />
 
           {/* Corpul Panoului */}
-          <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 overflow-hidden transform transition-all">
+          <div className="relative w-full max-w-lg bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 overflow-hidden transform transition-all z-10">
             
             {/* Buton Închidere X */}
             <button 
+              type="button"
               onClick={() => setIsOpen(false)}
               className="absolute top-4 right-4 p-1.5 text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-full transition-colors"
               aria-label="Închide"
@@ -137,65 +139,91 @@ export default function CookieSettings() {
               
               {/* Necesare */}
               <div className="flex items-center justify-between p-3 rounded-xl bg-slate-50 border border-slate-100 select-none">
-                <div>
+                <div className="pr-3">
                   <span className="font-semibold block text-sm text-slate-800">Necesare</span>
                   <span className="text-[11px] text-slate-400 block max-w-[320px]">Esențiale pentru funcționarea și securitatea site-ului dumneavoastră.</span>
                 </div>
-                <input
-                  type="checkbox"
-                  checked={preferences.necessary}
+                <button
+                  type="button"
                   disabled
-                  className="w-4 h-4 accent-blue-600 cursor-not-allowed opacity-60 flex-shrink-0"
-                />
+                  className="w-5 h-5 rounded bg-blue-600 border border-blue-600 flex items-center justify-center text-white opacity-60 flex-shrink-0 cursor-not-allowed"
+                  aria-label="Necesare (obligatoriu)"
+                >
+                  <Check size={14} strokeWidth={3} />
+                </button>
               </div>
 
               {/* Preferințe */}
-              <label className="relative flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer select-none">
-                <div>
+              <div 
+                onClick={() => togglePreference("preferences")}
+                className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 active:bg-blue-100/50 transition-all cursor-pointer select-none touch-manipulation"
+              >
+                <div className="pr-3 pointer-events-none">
                   <span className="font-semibold block text-sm text-slate-800">Preferinţe</span>
                   <span className="text-[11px] text-slate-500 block max-w-[320px]">Permit site-ului să își amintească alegerile pe care le faceți (ex: limba utilizată).</span>
                 </div>
-                <div className="relative flex items-center justify-center">
-                  <input
-                    type="checkbox"
-                    checked={preferences.preferences}
-                    onChange={() => handleCheckboxChange("preferences")}
-                    className="w-4 h-4 accent-blue-600 cursor-pointer flex-shrink-0"
-                  />
-                </div>
-              </label>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    togglePreference("preferences");
+                  }}
+                  className={`w-5 h-5 rounded flex items-center justify-center transition-all flex-shrink-0 border ${
+                    preferences.preferences ? "bg-blue-600 border-blue-600 text-white" : "border-slate-300 bg-white"
+                  }`}
+                  aria-checked={preferences.preferences}
+                >
+                  {preferences.preferences && <Check size={14} strokeWidth={3} />}
+                </button>
+              </div>
 
               {/* Statistici */}
-              <label className="relative flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer select-none">
-                <div>
+              <div 
+                onClick={() => togglePreference("statistics")}
+                className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 active:bg-blue-100/50 transition-all cursor-pointer select-none touch-manipulation"
+              >
+                <div className="pr-3 pointer-events-none">
                   <span className="font-semibold block text-sm text-slate-800">Statistici</span>
                   <span className="text-[11px] text-slate-500 block max-w-[320px]">Ne ajută să înțelegem modul în care interacționați cu site-ul prin colectarea de date anonime.</span>
                 </div>
-                <div className="relative flex items-center justify-center">
-                  <input
-                    type="checkbox"
-                    checked={preferences.statistics}
-                    onChange={() => handleCheckboxChange("statistics")}
-                    className="w-4 h-4 accent-blue-600 cursor-pointer flex-shrink-0"
-                  />
-                </div>
-              </label>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    togglePreference("statistics");
+                  }}
+                  className={`w-5 h-5 rounded flex items-center justify-center transition-all flex-shrink-0 border ${
+                    preferences.statistics ? "bg-blue-600 border-blue-600 text-white" : "border-slate-300 bg-white"
+                  }`}
+                  aria-checked={preferences.statistics}
+                >
+                  {preferences.statistics && <Check size={14} strokeWidth={3} />}
+                </button>
+              </div>
 
               {/* Marketing */}
-              <label className="relative flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 transition-all cursor-pointer select-none">
-                <div>
+              <div 
+                onClick={() => togglePreference("marketing")}
+                className="flex items-center justify-between p-3 rounded-xl border border-slate-100 hover:border-blue-200 hover:bg-blue-50/30 active:bg-blue-100/50 transition-all cursor-pointer select-none touch-manipulation"
+              >
+                <div className="pr-3 pointer-events-none">
                   <span className="font-semibold block text-sm text-slate-800">Marketing</span>
                   <span className="text-[11px] text-slate-500 block max-w-[320px]">Utilizate pentru a urmări vizitatorii pe site-uri web în scopul afișării de reclame relevante.</span>
                 </div>
-                <div className="relative flex items-center justify-center">
-                  <input
-                    type="checkbox"
-                    checked={preferences.marketing}
-                    onChange={() => handleCheckboxChange("marketing")}
-                    className="w-4 h-4 accent-blue-600 cursor-pointer flex-shrink-0"
-                  />
-                </div>
-              </label>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    togglePreference("marketing");
+                  }}
+                  className={`w-5 h-5 rounded flex items-center justify-center transition-all flex-shrink-0 border ${
+                    preferences.marketing ? "bg-blue-600 border-blue-600 text-white" : "border-slate-300 bg-white"
+                  }`}
+                  aria-checked={preferences.marketing}
+                >
+                  {preferences.marketing && <Check size={14} strokeWidth={3} />}
+                </button>
+              </div>
 
             </div>
 
@@ -209,12 +237,14 @@ export default function CookieSettings() {
             {/* Butoanele Principale Solicitate (Albastre & Grilă perfectă) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <button
+                type="button"
                 onClick={handleWithdrawConsent}
                 className="px-4 py-2.5 text-xs font-bold text-blue-600 bg-blue-50 hover:bg-blue-100 border border-blue-100 rounded-xl transition-all text-center uppercase tracking-wider"
               >
                 Retragere consimțământ
               </button>
               <button
+                type="button"
                 onClick={handleSaveConsent}
                 className="px-4 py-2.5 text-xs font-bold text-white bg-blue-600 hover:bg-blue-700 rounded-xl shadow-md shadow-blue-200 transition-all text-center uppercase tracking-wider"
               >
