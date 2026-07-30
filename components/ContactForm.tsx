@@ -1,8 +1,47 @@
-// components/ContactForm.tsx
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import { Send, User, Mail, MessageSquare } from 'lucide-react';
 
 export default function ContactForm() {
+  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState<'idle' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+    setStatus('idle');
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      nume: formData.get('name'),
+      email: formData.get('email'),
+      telefon: 'Nespecificat',
+      companie: 'Nespecificată',
+      serviciu: 'Contact General',
+      mesaj: formData.get('message'),
+    };
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        (e.target as HTMLFormElement).reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (err) {
+      setStatus('error');
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <section className="py-20 bg-white" id="contact">
       <div className="max-w-4xl mx-auto px-6">
@@ -19,7 +58,7 @@ export default function ContactForm() {
           </div>
 
           {/* Formular */}
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div className="grid md:grid-cols-2 gap-6">
               {/* Nume */}
               <div className="space-y-2">
@@ -73,10 +112,23 @@ export default function ContactForm() {
             {/* Buton Submit */}
             <button 
               type="submit"
-              className="w-full flex items-center justify-center gap-2 bg-blue-900 hover:bg-blue-800 text-white py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-900/20 active:scale-95"
+              disabled={loading}
+              className="w-full flex items-center justify-center gap-2 bg-blue-900 hover:bg-blue-800 text-white py-4 rounded-xl font-bold transition-all shadow-lg hover:shadow-blue-900/20 active:scale-95 disabled:opacity-50"
             >
-              Trimite solicitarea <Send className="w-4 h-4" />
+              {loading ? "Se trimite..." : "Trimite solicitarea"} <Send className="w-4 h-4" />
             </button>
+
+            {/* Mesaje de notificare */}
+            {status === 'success' && (
+              <p className="text-green-600 font-bold text-center mt-4">
+                Mesajul tău a fost trimis cu succes! Te vom contacta în curând.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="text-red-600 font-bold text-center mt-4">
+                A apărut o eroare la trimitere. Te rugăm să încerci din nou.
+              </p>
+            )}
           </form>
         </div>
       </div>
