@@ -11,8 +11,9 @@ export async function POST(request: Request) {
     const { nume, email, telefon, companie, serviciu, mesaj } = body;
 
     const data = await resend.emails.send({
-      from: 'Fine Solutions Website <onboarding@resend.dev>',
-      to: ['finesolutionspro@gmail.com'], // 👈 Noua adresă
+      from: 'Fine Solutions Website <contact@finesolutionspro.ro>',
+      to: ['finesolutionspro@gmail.com'],
+      replyTo: email,
       subject: `Lead Nou: ${serviciu} - ${nume}`,
       html: `
         <div style="font-family: sans-serif; line-height: 1.5;">
