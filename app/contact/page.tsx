@@ -95,7 +95,7 @@ export default function ContactPage() {
       <div className="bg-[#003366] text-white py-16 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Contactați-ne</h1>
         <p className="text-blue-200 max-w-2xl mx-auto text-lg">
-          Suntem aici să vă ajutăm să accesați finanțările de care afacerea dumneavoastră are nevoie în 2026.
+          Suntem aici pentru a-ți oferi răspunsuri rapide și soluții eficiente. în 2026.Oferim suport complet în achiziții publice inclusiv pentru procedurile derulate în SEAP.
         </p>
       </div>
 
