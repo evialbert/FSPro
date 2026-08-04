@@ -68,8 +68,7 @@ export default function ContactPage() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "8edc9fa9-b44b-4f06-b19b-fcfebe27ff81", // Înlocuiți cu cheia gratuită de la web3forms.com
-          to_email: "contact@finesolutionspro.ro",
+          access_key: "8edc9fa9-b44b-4f06-b19b-fcfebe27ff81",
           from_name: formData.nume,
           subject: `[Contact Fine Solutions] ${formData.subiect}`,
           message: `Nume: ${formData.nume}\nEmail: ${formData.email}\nSubiect: ${formData.subiect}\n\nMesaj:\n${formData.mesaj}`,
@@ -95,7 +94,7 @@ export default function ContactPage() {
       <div className="bg-[#003366] text-white py-16 px-4 text-center">
         <h1 className="text-4xl font-bold mb-4">Contactați-ne</h1>
         <p className="text-blue-200 max-w-2xl mx-auto text-lg">
-          Suntem aici pentru a-ți oferi răspunsuri rapide și soluții eficiente. în 2026.Oferim suport complet în achiziții publice inclusiv pentru procedurile derulate în SEAP.
+          Suntem aici să vă ajutăm să accesați finanțările de care afacerea dumneavoastră are nevoie în 2026.Oferim suport complet în achiziții publice inclusiv pentru procedurile derulate în SEAP.
         </p>
       </div>
 
