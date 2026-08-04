@@ -68,7 +68,7 @@ export default function ContactPage() {
           Accept: "application/json",
         },
         body: JSON.stringify({
-          access_key: "f81f6769-c3ba-43e5-97ae-2cd1046bd30b", // Înlocuiți cu cheia gratuită de la web3forms.com
+          access_key: "8edc9fa9-b44b-4f06-b19b-fcfebe27ff81", // Înlocuiți cu cheia gratuită de la web3forms.com
           to_email: "contact@finesolutionspro.ro",
           from_name: formData.nume,
           subject: `[Contact Fine Solutions] ${formData.subiect}`,
