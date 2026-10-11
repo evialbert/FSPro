@@ -59,65 +59,21 @@ export default function Hero() {
             
             {/* Statement Evidențiat (Fundal albastru extrem de fin, text albastru închis) */}
             <div className="p-6 bg-blue-50/50 border-l-4 border-blue-600 rounded-r-2xl shadow-sm italic text-blue-950 font-medium">
-              "Transformăm provocările birocratice în oportunități reale de creștere. Maximizăm controlul riscului în proiectele finanțate din fonduri europene și achiziții publice."
+              "Transformăm provocările birocratice în oportunități reale de creștere. Maximizăm controlul 
+              total al riscului în proiectele finanțate din fonduri europene și achiziții publice."
             </div>
           </div>
 
-          {/* Coloana Dreaptă: Beneficii / Angajamente */}
+          {/* Coloana Dreaptă: Beneficii */}
           <div className="lg:col-span-5 bg-white p-8 rounded-[2rem] border border-stone-200 shadow-sm space-y-6 text-left">
             <h3 className="text-xl font-bold text-stone-900 tracking-tight">
-              Garanții și standarde oferite:
+              De ce să lucrăm împreună:
             </h3>
-            
-            {/* Textul nou adăugat deasupra */}
-            <p className="text-stone-700 font-medium text-sm md:text-base">
-              Angajamentele și standardele noastre descriu modul în care lucrăm și riscurile pe care le reducem pentru a maximiza rezultatul. Nu garantăm decizia de finanțare, care aparține autorității de management, și nici atingerea indicatorilor, care depinde de modul în care beneficiarul implementează proiectul.
-            </p>
-
             <ul className="space-y-4">
               {[
-                <>
-                  <strong className="text-stone-900 block mb-1">1. Angajamentul și standardul privind eligibilitatea</strong>
-                  <p className="text-stone-600 text-xs md:text-sm mb-2">Verificăm eligibilitatea înainte de a începe elaborarea proiectului. Nu redactăm o cerere de finanțare fără o analiză prealabilă a solicitantului și fără verificarea conformității cu cerințele programului.</p>
-                  <ul className="list-disc pl-5 space-y-1 text-stone-600 text-xs md:text-sm mb-2">
-                    <li>Analizăm informațiile și documentele primite înainte de depunere</li>
-                    <li>Identificăm riscurile de respingere sau de declarare ca neeligibil</li>
-                    <li>Optimizăm structura proiectului după verificarea internă</li>
-                  </ul>
-                  <p className="font-semibold text-stone-800 text-xs md:text-sm">Rezultat: cereri de finanțare fundamentate, construite pe verificări, nu pe presupuneri.</p>
-                </>,
-                <>
-                  <strong className="text-stone-900 block mb-1">2. Angajamentul și standardul privind conformitatea</strong>
-                  <p className="text-stone-600 text-xs md:text-sm mb-2">Pregătim achizițiile și documentele proiectului ținând seama de verificările efectuate de OI/AM și de organismele de control, audit sau ANAP, pentru a reduce vulnerabilitățile administrative ale beneficiarului.</p>
-                  <ul className="list-disc pl-5 space-y-1 text-stone-600 text-xs md:text-sm mb-2">
-                    <li>Verificăm conformitatea cu legislația națională și europeană aplicabilă</li>
-                    <li>Structurăm corect procedurile de achiziție</li>
-                    <li>Asigurăm trasabilitatea documentelor, în vederea auditului</li>
-                  </ul>
-                  <p className="font-semibold text-stone-800 text-xs md:text-sm">Rezultat: reducerea riscului de corecții financiare, sancțiuni și contestații.</p>
-                </>,
-                <>
-                  <strong className="text-stone-900 block mb-1">3. Angajamentul și standardul privind protecția investiției</strong>
-                  <p className="text-stone-600 text-xs md:text-sm mb-2">Structurăm proiectele astfel încât utilizarea fondurilor să fie eficientă, previzibilă și sustenabilă. Încă din faza de fundamentare, beneficiarul cunoaște valoarea cofinanțării proprii și etapele estimate de rambursare, pe baza termenelor din contractul de finanțare.</p>
-                  <ul className="list-disc pl-5 space-y-1 text-stone-600 text-xs md:text-sm mb-2">
-                    <li>Clauze contractuale care protejează interesele beneficiarului</li>
-                    <li>Control financiar riguros, prin urmărirea cheltuielilor față de bugetul aprobat</li>
-                    <li>Planificare bugetară realistă, corelată cu fluxul de numerar</li>
-                    <li>Managementul riscurilor pe toată durata proiectului</li>
-                  </ul>
-                  <p className="font-semibold text-stone-800 text-xs md:text-sm">Rezultat: protejarea capitalului și a resurselor utilizate.</p>
-                </>,
-                <>
-                  <strong className="text-stone-900 block mb-1">4. Angajamentul și standardul privind performanța și raportarea</strong>
-                  <p className="text-stone-600 text-xs md:text-sm mb-2">Nu livrăm doar documentație, ci urmărim rezultatele. Monitorizăm indicatorii pe toată durata proiectului, semnalăm din timp riscul de neîndeplinire și propunem măsuri corective. Atingerea indicatorilor depinde de beneficiar, care răspunde de implementarea efectivă.</p>
-                  <ul className="list-disc pl-5 space-y-1 text-stone-600 text-xs md:text-sm mb-2">
-                    <li>Definirea indicatorilor relevanți (KPI)</li>
-                    <li>Monitorizare pe toată perioada contractuală</li>
-                    <li>Propunerea de măsuri corective</li>
-                    <li>Alinierea activităților la obiectivele proiectului</li>
-                  </ul>
-                  <p className="font-semibold text-stone-800 text-xs md:text-sm">Rezultat: proiecte implementate coerent, cu indicatori urmăriți și riscuri semnalate din timp.</p>
-                </>
+                "Analiză rapidă și obiectivă a nevoilor dvs.",
+                "Strategie integrată pentru fiecare proiect / procedură",
+                "Asistență permanentă, de la idee până la raportarea finală"
               ].map((beneficiu, index) => (
                 <li key={index} className="flex items-start gap-3">
                   <CheckCircle2 className="text-blue-600 shrink-0 mt-1" size={20} />
