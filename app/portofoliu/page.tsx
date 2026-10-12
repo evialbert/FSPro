@@ -14,29 +14,29 @@ import {
 } from "lucide-react";
 
 export default function Portofoliu() {
-  // Matrice nouă de servicii/portofoliu strategic axată pe soluții concrete
+  // Matrice de servicii/portofoliu strategic actualizată cu noile descrieri
   const serviciiPortofoliu = [
     {
-      titlu: "Elaborare Documentații Complexe",
-      desc: "Scrierea integrală a cererilor de finanțare, planurilor de afaceri, analizelor cost-beneficiu și a studiilor de oportunitate pentru linii de finanțare diverse.",
+      titlu: "Elaborarea proiectelor - Documentații complexe",
+      desc: "Redactarea cererilor de finanțare, a planurilor de afaceri, a analizelor cost-beneficiu și a studiilor de oportunitate, în funcție de cerințele fiecărui program de finanțare.",
       icon: <FileText className="text-blue-600" size={24} />,
       tag: "Scriere Proiecte"
     },
     {
-      titlu: "Management Integrat de Proiect",
-      desc: "Asistență tehnică și financiară pe tot parcursul implementării: elaborare de notificări, acte adiționale, cereri de plată, rambursare și monitorizare indicatori.",
+      titlu: "Implementare - Management integrat de proiect",
+      desc: "Asistență tehnică și financiară pe toată durata implementării: notificări, acte adiționale, cereri de plată și de rambursare, monitorizarea indicatorilor.",
       icon: <Layers className="text-blue-600" size={24} />,
       tag: "Implementare"
     },
     {
-      titlu: "Consultanță Achiziții Publice (SEAP)",
-      desc: "Structurarea procedurilor de atribuire de la zero: definire strategii, realizare documentații de atribuire, răspunsuri la clarificări și managementul dosarului în SEAP.",
+      titlu: "Achiziții publice (SEAP) - Consultanță pentru autorități și ofertanți",
+      desc: "Structurarea procedurilor de atribuire, de la strategia de contractare și documentația de atribuire până la răspunsurile la clarificări și gestionarea dosarului achiziției; pentru ofertanți, pregătirea ofertei și a documentelor de calificare.",
       icon: <Briefcase className="text-blue-600" size={24} />,
       tag: "Proceduri SEAP"
     },
     {
-      titlu: "Analiză de Risc și Optimizare",
-      desc: "Evaluarea prealabilă a ideii de business în raport cu ghidurile condițiilor specifice pentru a asigura o rată maximă de succes la depunere.",
+      titlu: "Strategie - Analiză de risc și fundamentare",
+      desc: "Evaluarea prealabilă a ideii de proiect în raport cu ghidul solicitantului și condițiile specifice ale apelului, pentru a reduce riscul de neeligibilitate sau de respingere la evaluare.",
       icon: <TrendingUp className="text-blue-600" size={24} />,
       tag: "Strategie"
     }
@@ -47,12 +47,12 @@ export default function Portofoliu() {
       {/* Hero Section */}
       <section className="bg-slate-50 py-24 border-b border-slate-100">
         <div className="max-w-4xl mx-auto px-6 text-center">
-          <span className="text-blue-600 font-bold tracking-widest uppercase text-sm">Expertiză & Viziune</span>
+          <span className="text-blue-600 font-bold tracking-widest uppercase text-sm">Expertiză și viziune</span>
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-6 leading-tight">
-            Pregătim Următoarea Generație de Proiecte de Succes
+            Pregătim următoarea generație de proiecte de succes
           </h1>
           <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Deși suntem o echipă tânără sub acest brand, consultanții noștri aduc ani de experiență în analiza tehnică și financiară a fondurilor europene.
+            Deși Fine Solutions Professional este un brand tânăr, consultanții noștri aduc ani de experiență în analiza tehnică și financiară a proiectelor finanțate din fonduri europene și în procedurile de atribuire din domeniul achizițiilor publice.
           </p>
         </div>
       </section>
@@ -61,13 +61,13 @@ export default function Portofoliu() {
       <section className="py-24 max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-3xl font-bold mb-6 text-slate-900 tracking-tight">Cum garantăm calitatea?</h2>
+            <h2 className="text-3xl font-bold mb-6 text-slate-900 tracking-tight">Cum asigurăm calitatea</h2>
             <div className="space-y-4">
               {[
-                "Analiză de eligibilitate gratuită înainte de semnarea contractului.",
-                "Echipă dedicată pentru monitorizarea zilnică a SEAP și a ghidurilor noi.",
-                "Rapoarte periodice de progres pentru fiecare etapă a scrierii.",
-                "Colaborări cu experți tehnici pentru soluții verzi și digitale."
+                "Analiza preliminară a eligibilității, înainte de semnarea contractului de prestări servicii",
+                "Monitorizarea zilnică a SEAP, a ghidurilor noi și a modificărilor legislative",
+                "Rapoarte periodice de progres pe fiecare etapă de elaborare a documentației",
+                "Colaborare cu experți tehnici pentru componentele de mediu, digitalizare sau alte domenii"
               ].map((text, i) => (
                 <div key={i} className="flex items-start space-x-3">
                   <CheckCircle2 className="text-blue-600 shrink-0 mt-0.5" size={20} />
@@ -80,12 +80,12 @@ export default function Portofoliu() {
           <div className="bg-blue-600 rounded-3xl p-10 text-white shadow-xl relative overflow-hidden">
             <div className="relative z-10">
               <Lightbulb size={48} className="mb-6 text-blue-200" />
-              <h3 className="text-2xl font-bold mb-4">Abordarea Noastră</h3>
+              <h3 className="text-2xl font-bold mb-4">Abordarea noastră</h3>
               <p className="text-blue-100 mb-8 text-base leading-relaxed">
-                În 2026, nu mai este suficient doar să depui un dosar. Proiectul trebuie să fie sustenabil, digital și să respecte principiul DNSH (Do No Significant Harm). Noi ne ocupăm de toate aceste detalii.
+                În 2026, depunerea unui dosar complet nu mai este suficientă. Proiectele trebuie să demonstreze sustenabilitate, contribuție la tranziția digitală, conformitatea cu principiul DNSH („Do No Significant Harm”) și alte cerințe specifice, iar cheltuielile și achizițiile aferente trebuie să reziste verificărilor și auditului. Integrăm aceste cerințe în fiecare etapă, de la fundamentare până la închiderea proiectului.
               </p>
               <Link href="/contact" className="inline-flex items-center space-x-2 bg-white text-blue-600 px-6 py-3 rounded-full font-bold hover:bg-blue-50 hover:shadow-lg transition-all">
-                <span>Discută un proiect</span>
+                <span>Discutați un proiect</span>
                 <ArrowRight size={18} />
               </Link>
             </div>
@@ -99,9 +99,9 @@ export default function Portofoliu() {
       <section className="bg-slate-50 py-24 px-6 border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-blue-600 font-bold tracking-widest uppercase text-sm">Ce Oferim</span>
-            <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-4 tracking-tight">Portofoliu de Soluții Structurale</h2>
-            <p className="text-slate-600 max-w-xl mx-auto text-base">Asigurăm un spectru complet de servicii pentru companii și instituții publice dornice să acceseze fonduri nerambursabile.</p>
+            <span className="text-blue-600 font-bold tracking-widest uppercase text-sm">Ce oferim</span>
+            <h2 className="text-3xl font-bold text-slate-900 mt-2 mb-4 tracking-tight">Portofoliu de servicii pentru finanțări nerambursabile</h2>
+            <p className="text-slate-600 max-w-xl mx-auto text-base">Oferim un spectru complet de servicii pentru companii și instituții publice care doresc să acceseze fonduri nerambursabile sau servicii specifice achizițiilor publice.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -130,12 +130,12 @@ export default function Portofoliu() {
       <section className="py-24 text-center px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <Target size={48} className="mx-auto mb-6 text-blue-600" />
-          <h2 className="text-3xl font-bold mb-4 text-slate-900 tracking-tight">Începe transformarea afacerii tale</h2>
+          <h2 className="text-3xl font-bold mb-4 text-slate-900 tracking-tight">Începeți transformarea afacerii dumneavoastră</h2>
           <p className="text-slate-600 mb-10 max-w-xl mx-auto text-base leading-relaxed">
-            Chiar dacă ești la primul tău proiect european, te ghidăm pas cu pas pentru a minimiza riscurile și a maximiza șansele de aprobare.
+            Chiar dacă este primul dumneavoastră proiect cu finanțare europeană sau prima procedură de achiziție, vă ghidăm pas cu pas, pentru a reduce riscurile și a crește calitatea dosarului depus.
           </p>
           <Link href="/contact" className="bg-blue-600 text-white px-10 py-4 rounded-full font-bold hover:bg-blue-700 shadow-lg hover:shadow-blue-600/20 transition-all inline-block">
-            Vreau o analiză de eligibilitate
+            Solicitați o analiză de eligibilitate
           </Link>
         </div>
       </section>
