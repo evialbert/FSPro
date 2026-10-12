@@ -7,52 +7,50 @@ import { motion } from 'framer-motion';
 export default function Garantii() {
   const garantii = [
     {
-      title: "1. Garanția de eligibilitate strategică",
-      intro: "Eligibilitatea nu este un formular bifat. Este fundamentul întregului proiect.",
-      desc: "Analizăm în profunzime structura organizațională, capacitatea financiară, istoricul juridic și obiectivele investiționale pentru a valida conformitatea cu cerințele programului de finanțare.",
+      title: "1. Angajamentul și standardul privind eligibilitatea",
+      intro: "Verificăm eligibilitatea înainte de a începe elaborarea proiectului.",
+      desc: "Nu redactăm o cerere de finanțare fără o analiză prealabilă a solicitantului și fără verificarea conformității cu cerințele programului.",
       bullets: [
-        "Analiză completă înainte de depunere",
-        "Identificarea riscurilor de respingere",
-        "Optimizarea structurii proiectului",
-        "Verificare internă multi-nivel"
+        "Analizăm informațiile și documentele primite înainte de depunere",
+        "Identificăm riscurile de respingere sau de declarare ca neeligibil",
+        "Optimizăm structura proiectului după verificarea internă"
       ],
-      result: "Rezultatul: depuneri solide, fără improvizații."
+      result: "Rezultat: cereri de finanțare fundamentate, construite pe verificări, nu pe presupuneri."
     },
     {
-      title: "2. Garanția de conformitate integrală",
-      intro: "Controlăm fiecare etapă: documentație, achiziții publice, implementare, raportare și pregătire pentru audit.",
-      desc: "Ne asigurăm că absolut fiecare pas respectă normele rigide, eliminând vulnerabilitățile administrative din fața organismelor de control.",
+      title: "2. Angajamentul și standardul privind conformitatea",
+      intro: "Pregătim achizițiile și documentele proiectului ținând seama de verificările efectuate de OI/AM și de organismele de control, audit sau ANAP.",
+      desc: "Scopul nostru este de a reduce vulnerabilitățile administrative ale beneficiarului.",
       bullets: [
-        "Conformitate cu legislația națională și europeană",
-        "Proceduri de achiziții structurate corect",
-        "Documentație auditabilă",
-        "Trasabilitate completă"
+        "Verificăm conformitatea cu legislația națională și europeană aplicabilă",
+        "Structurăm corect procedurile de achiziție",
+        "Asigurăm trasabilitatea documentelor, în vederea auditului"
       ],
-      result: "Rezultatul: reducerea riscului de corecții financiare și sancțiuni."
+      result: "Rezultat: reducerea riscului de corecții financiare, sancțiuni și contestații."
     },
     {
-      title: "3. Garanția de protecție a investiției",
-      intro: "Structurăm proiectele astfel încât utilizarea fondurilor să fie eficientă, predictibilă și sustenabilă.",
-      desc: " Protejăm capitalul propriu implicat și maximizăm randamentul fiecărui euro atras prin monitorizarea strictă a fluxului de numerar.",
+      title: "3. Angajamentul și standardul privind protecția investiției",
+      intro: "Structurăm proiectele astfel încât utilizarea fondurilor să fie eficientă, previzibilă și sustenabilă.",
+      desc: "Încă din faza de fundamentare, beneficiarul cunoaște valoarea cofinanțării proprii și etapele estimate de rambursare, pe baza termenelor din contractul de finanțare.",
       bullets: [
-        "Mecanisme contractuale de protecție",
-        "Control financiar riguros",
-        "Planificare bugetară realistă",
-        "Management al riscului investițional"
+        "Clauze contractuale care protejează interesele beneficiarului",
+        "Control financiar riguros, prin urmărirea cheltuielilor față de bugetul aprobat",
+        "Planificare bugetară realistă, corelată cu fluxul de numerar",
+        "Managementul riscurilor pe toată durata proiectului"
       ],
-      result: "Rezultatul: capital protejat și resurse utilizate strategic."
+      result: "Rezultat: protejarea capitalului și a resurselor utilizate."
     },
     {
-      title: "4. Garanția de performanță și raport de succes",
-      intro: "Nu livrăm doar documentație — livrăm rezultate.",
-      desc: "Urmărim atingerea indicatorilor asumați prin contractul de finanțare, oferind siguranță pe termen lung chiar și în faza de monitorizare post-implementare.",
+      title: "4. Angajamentul și standardul privind performanța și raportarea",
+      intro: "Nu livrăm doar documentație, ci urmărim rezultatele.",
+      desc: "Monitorizăm indicatorii pe toată durata proiectului, semnalăm din timp riscul de neîndeplinire și propunem măsuri corective. Atingerea indicatorilor depinde de beneficiar, care răspunde de implementarea efectivă.",
       bullets: [
-        "Definire KPI relevanți",
-        "Monitorizare continuă",
-        "Măsuri corective rapide",
-        "Aliniere la obiectivele finanțatorului"
+        "Definirea indicatorilor relevanți (KPI)",
+        "Monitorizare pe toată perioada contractuală",
+        "Propunerea de măsuri corective",
+        "Alinierea activităților la obiectivele proiectului"
       ],
-      result: "Rezultatul: proiecte implementate cu succes și indicatori îndepliniți."
+      result: "Rezultat: proiecte implementate coerent, cu indicatori urmăriți și riscuri semnalate din timp."
     }
   ];
 
@@ -78,8 +76,19 @@ export default function Garantii() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-3xl md:text-5xl font-extrabold text-stone-900 mt-4 tracking-tight"
           >
-            GARANȚII OFERITE
+            STANDARDELE NOASTRE
           </motion.h2>
+
+          <motion.p
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="text-stone-600 text-base md:text-lg mt-4 leading-relaxed"
+          >
+            Angajamentele și standardele noastre descriu modul în care lucrăm și riscurile pe care le reducem pentru a maximiza rezultatul. Nu garantăm decizia de finanțare, care aparține autorității de management, și nici atingerea indicatorilor, care depinde de modul în care beneficiarul implementează proiectul.
+          </motion.p>
+
           <motion.div 
             initial={{ scaleX: 0 }}
             whileInView={{ scaleX: 1 }}

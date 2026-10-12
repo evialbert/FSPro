@@ -59,8 +59,7 @@ export default function Hero() {
             
             {/* Statement Evidențiat (Fundal albastru extrem de fin, text albastru închis) */}
             <div className="p-6 bg-blue-50/50 border-l-4 border-blue-600 rounded-r-2xl shadow-sm italic text-blue-950 font-medium">
-              "Transformăm provocările birocratice în oportunități reale de creștere. Maximizăm controlul 
-              total al riscului în proiectele finanțate din fonduri europene și achiziții publice."
+              "Transformăm provocările birocratice în oportunități reale de creștere. Maximizăm controlul riscului în proiectele finanțate din fonduri europene și achiziții publice."
             </div>
           </div>
 
