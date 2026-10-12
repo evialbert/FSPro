@@ -50,10 +50,14 @@ export default function Footer() {
           <h4 className="text-sm font-bold uppercase tracking-wider text-[#102a43]">
             Program de lucru
           </h4>
-          <div className="flex items-center gap-2 text-sm text-[#486581]">
-            <Clock className="h-4 w-4 text-[#102a43]" />
-            <p>Luni – Vineri: 15:00 – 19:00</p>
-            <p>Sâmbătă: 12:00 – 16:00</p>
+          <div className="space-y-2 text-sm text-[#486581]">
+            <div className="flex items-center gap-2">
+              <Clock className="h-4 w-4 text-[#102a43] shrink-0" />
+              <span>Luni – Vineri: 15:00 – 19:00</span>
+            </div>
+            <div className="pl-6">
+              <span>Sâmbătă: 12:00 – 16:00</span>
+            </div>
           </div>
         </div>
 
