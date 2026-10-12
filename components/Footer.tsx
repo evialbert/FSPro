@@ -52,7 +52,8 @@ export default function Footer() {
           </h4>
           <div className="flex items-center gap-2 text-sm text-[#486581]">
             <Clock className="h-4 w-4 text-[#102a43]" />
-            <p>Luni – Vineri: 12:30 – 19:30</p>
+            <p>Luni – Vineri: 15:00 – 19:00</p>
+            <p>Sâmbătă: 12:00 – 16:00</p>
           </div>
         </div>
 
