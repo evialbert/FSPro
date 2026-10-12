@@ -13,7 +13,7 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export default function DespreNoi() {
-  // Matricea cu oportunitățile și programele de finanțare solicitate
+  // Matricea cu oportunitățile și programele de finanțare (NESCHIMBATĂ)
   const categoriiFinantare = [
     {
       titlu: "Programe Naționale din Bugetul de Stat",
@@ -50,54 +50,54 @@ export default function DespreNoi() {
   const diferentiatori = [
     { 
       title: "1. Analiză strategică înainte de ofertare", 
-      desc: "Nu acceptăm proiecte fără evaluare prealabilă de risc. Optimizăm proiectul înainte de depunere." 
+      desc: "Nu preluăm un proiect fără o evaluare prealabilă a riscurilor. Verificăm eligibilitatea, maturitatea proiectului și capacitatea de implementare, iar apoi optimizăm dosarul înainte de depunere." 
     },
     { 
-      title: "2. Dublu filtru de verificare internă", 
-      desc: "Fiecare document major este verificat în două etape separate pentru eroare zero." 
+      title: "2. Dublă verificare internă", 
+      desc: "Fiecare document major trece prin două etape distincte de verificare, realizate de persoane diferite, pentru a reduce la minimum riscul de erori și de neconformități." 
     },
     { 
-      title: "3. Expertiză reală în accesare și SEAP", 
-      desc: "Nu doar teorie, deținem experiență practică în proiecte și proceduri de achiziții publice complexe." 
+      title: "3. Experiență practică în accesarea fondurilor și în SEAP", 
+      desc: "Ne bazăm pe experiență aplicată, nu doar pe cunoaștere teoretică, în proiecte cu finanțare europeană și proceduri de achiziție publică de complexitate ridicată derulate prin SEAP." 
     },
     { 
       title: "4. Orientare către audit", 
-      desc: "Structurăm proiectele ca și cum ar fi verificate de la început. Proiectele sunt construite pentru a rezista controalelor, iar achizițiile respectă strict legislația în vigoare." 
+      desc: "Construim fiecare proiect ca și cum ar fi verificat din prima zi. Documentația este structurată pentru a rezista controalelor, iar achizițiile respectă riguros legislația aplicabilă." 
     },
     { 
       title: "5. Management integrat", 
-      desc: "Finanțare + achiziții + implementare. Un singur flux coerent. Nu concurăm pe preț, concurăm pe siguranță." 
+      desc: "Finanțare, achiziții și implementare, într-un singur flux coerent. Nu concurăm pe preț, ci pe siguranța și predictibilitatea rezultatului." 
     },
     { 
-      title: "6. Abordare predictivă a riscurilor", 
-      desc: "Identificăm vulnerabilitățile și riscurile înainte ca ele să apară și să devină probleme administrative." 
+      title: "6. Abordare preventivă a riscurilor", 
+      desc: "Identificăm vulnerabilitățile și riscurile din timp, înainte ca ele să genereze probleme administrative, corecții financiare sau contestații." 
     },
     { 
-      title: "7. Comunicare transparentă și directă", 
-      desc: "Fără promisiuni nerealiste. Fără supraestimări artificiale. Parteneriat bazat pe adevăr." 
+      title: "7. Comunicare transparentă", 
+      desc: "Nu facem promisiuni nerealiste și nu supraestimăm șansele de succes. Colaborarea se bazează pe informații corecte și pe asumarea realistă a riscurilor." 
     }
   ];
 
   const pasi = [
     { 
       nr: "01", 
-      titlu: "Analiză & Eligibilitate", 
-      desc: "Definim obiectivul și verificăm încadrarea în apel / cerințe / proceduri și cadrul legal aplicabil." 
+      titlu: "Analiză, eligibilitate și fundamentare", 
+      desc: "Definim obiectivul și verificăm încadrarea proiectului în apelul de finanțare, în condițiile de eligibilitate și în cerințele Ghidului Solicitantului. În paralel, evaluăm de la început implicațiile achizițiilor necesare implementării: estimăm valorile, identificăm procedurile aplicabile potrivit legislației naționale în achiziții publice și verificăm coerența dintre bugetul proiectului și valorile estimate ale achizițiilor." 
     },
     { 
       nr: "02", 
-      titlu: "Plan & Structurare", 
-      desc: "Stabilim activități, buget, calendar și documente; pentru achiziții, definim procedura (SEAP)." 
+      titlu: "Planificare, buget și pregătirea achizițiilor", 
+      desc: "Structurăm activitățile, bugetul, calendarul și documentele cererii de finanțare. Elaborăm planul/programul de achiziții corelat cu graficul de implementare, stabilim procedurile de atribuire și pregătim documentațiile aferente (fișa de date, caiet de sarcini, criterii de calificare și atribuire, proiectul de contract, formulare, strategia de contractare), astfel încât cerințele de achiziție să fie compatibile cu eligibilitatea cheltuielilor." 
     },
     { 
       nr: "03", 
-      titlu: "Implementare", 
-      desc: "Gestionăm depunerea, clarificările și publicarea/derularea procedurii cu monitorizare de conformitate." 
+      titlu: "Depunere, contractare și derularea procedurilor de achiziție", 
+      desc: "Coordonăm depunerea cererii de finanțare, răspundem la solicitările de clarificări și susținem etapa de contractare. După semnarea contractului de finanțare, putem derula procedurile de achiziție prin SEAP: publicare, clarificări, evaluarea ofertelor, atribuire și, la nevoie, gestionarea contestațiilor, cu verificarea permanentă a conformității față de contractul de finanțare și legislația aplicabilă." 
     },
     { 
       nr: "04", 
-      titlu: "Închidere & Raportare", 
-      desc: "Raportare tehnică/financiară, recepții și arhivare; pregătim pașii pentru monitorizare." 
+      titlu: "Implementare, raportare și închidere", 
+      desc: "Monitorizăm executarea contractelor de achiziție, sprijinim recepțiile și întocmim cererile de plată/rambursare și rapoartele tehnice și financiare. Constituim dosarul complet al proiectului și al achizițiilor, pregătit pentru verificări și audit, și asigurăm pregătirea etapelor de monitorizare ulterioară (durabilitate)." 
     }
   ];
 
@@ -138,12 +138,12 @@ export default function DespreNoi() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl text-slate-600 leading-relaxed italic border-l-4 border-blue-600 pl-6 py-2 inline-block text-left bg-white rounded-r-lg shadow-sm"
           >
-            &bdquo;Construim proiecte solide. Implementăm fără vulnerabilități. Livrăm rezultate măsurabile.&ldquo;
+            &bdquo;Proiecte bine fundamentate. Implementare conformă. Rezultate măsurabile.&ldquo;
           </motion.p>
         </div>
       </section>
 
-      {/* Intro Section */}
+      {/* Intro Section - Despre Noi & Atuuri */}
       <section className="py-20 px-6 max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         <motion.div 
           initial={{ opacity: 0, x: -60 }}
@@ -152,16 +152,38 @@ export default function DespreNoi() {
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="space-y-6 text-lg leading-relaxed text-slate-600"
         >
-          <p className="font-semibold text-blue-600 uppercase tracking-wider text-sm">Despre Noi</p>
+          <p className="font-semibold text-blue-600 uppercase tracking-wider text-sm">Despre noi</p>
           <p className="text-slate-900 font-medium text-xl">
-            Într-un domeniu în care o eroare procedurală poate însemna pierderea finanțării sau aplicarea de corecții financiare, alegerea consultantului potrivit face diferența dintre succes și blocaj administrativ.
+            Fine Solutions Professional oferă consultanță în accesarea fondurilor europene și în achizițiile publice, pe baza unei documentații riguroase și a unei aplicări corecte a cadrului legislativ și procedural.
           </p>
           <p>
-            Combinăm experiența în domeniul fondurilor structurale și achizițiilor publice cu o abordare personalizată pentru fiecare client. Construim un parteneriat transparent și eficient: vă sprijinim în elaborarea documentației (plan de afaceri, cereri de finanțare, documentații achiziții, analiză cost-beneficiu), apoi gestionăm procesul de depunere și parcursul verificărilor la autoritățile competente.
+            Vă însoțim de la fundamentarea proiectului până la finalizarea implementării, astfel încât fiecare etapă să fie conformă și verificabilă.
           </p>
-          <p>
-            Ne diferențiem prin expertiză multidisciplinară, monitorizare legislativă permanentă și colaborare strânsă, astfel încât clientul nostru să aibă un consultant dedicat și o comunicare clară pe tot parcursul colaborării.
-          </p>
+          
+          <div className="pt-4 space-y-4">
+            <h4 className="font-bold text-slate-900 text-lg">Trei motive pentru a ne alege</h4>
+            
+            <div className="space-y-4">
+              <div>
+                <p className="font-semibold text-slate-900 text-base">1. Fundamentare solidă</p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Analizăm eligibilitatea, pregătim documentația și structurăm cererea de finanțare sau dosarul de achiziție în raport cu ghidul solicitantului, legislația aplicabilă și cerințele autorității de management sau ale autorității contractante.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900 text-base">2. Implementare conformă</p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Monitorizăm respectarea contractului de finanțare și a procedurilor aplicabile, identificăm din timp riscurile de neconformitate și propunem măsuri corective, pentru a reduce expunerea la corecții financiare și la contestații.
+                </p>
+              </div>
+              <div>
+                <p className="font-semibold text-slate-900 text-base">3. Rezultate măsurabile</p>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Urmărim indicatorii de realizare și de rezultat asumați și raportăm periodic stadiul proiectului, astfel încât să aveți o imagine clară asupra progresului și a obiectivelor atinse.
+                </p>
+              </div>
+            </div>
+          </div>
         </motion.div>
         
         <motion.div 
@@ -177,22 +199,22 @@ export default function DespreNoi() {
           </h3>
           <ul className="space-y-4">
             {[
-              'Experiență reală în accesare fonduri europene și realizare achiziții publice (proceduri de atribuire)', 
+              'Experiența reală de 4 ani în accesare și implementare proiecte din fonduri europene și de 16 ani în achiziții publice pentru produse, servicii și lucrări (proceduri de atribuire: licitații deschise, proceduri simplificate, negocieri fără publicare; achiziții directe, consultarea pieței și anunțuri publicitare în SEAP)', 
               'Înțelegere a controalelor instituționale', 
               'Metodologie proprie', 
-              'Abordare orientată pe audit',
+              'Abordare orientată pe audit cu reducerea riscurilor',
               'Protecția beneficiarului'
             ].map((item, idx) => (
               <li key={idx} className="flex items-start gap-3">
                 <CheckCircle2 size={18} className="text-blue-400 mt-1 flex-shrink-0" />
-                <span className="font-medium text-slate-100 text-base">{item}</span>
+                <span className="font-medium text-slate-100 text-base leading-relaxed">{item}</span>
               </li>
             ))}
           </ul>
         </motion.div>
       </section>
 
-      {/* PROG FINANȚARE: Portofoliu */}
+      {/* PROG FINANȚARE: Portofoliu (NESCHIMBAT) */}
       <section className="py-24 bg-slate-50 px-6 border-y border-slate-100">
         <div className="max-w-7xl mx-auto">
           <motion.div 
@@ -250,7 +272,7 @@ export default function DespreNoi() {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
               <p className="text-blue-600 font-bold uppercase tracking-widest text-sm mb-2">De ce noi?</p>
-              <h3 className="text-3xl font-bold text-slate-900">Diferențiatori Competitivi</h3>
+              <h3 className="text-3xl font-bold text-slate-900">Diferențiatori competitivi</h3>
             </div>
             
             {/* Săgeți Navigație Desktop */}
@@ -296,7 +318,7 @@ export default function DespreNoi() {
             </div>
           </div>
 
-          {/* Varianta MOBILE: Toți cei 7 diferențiatori sunt păstrați, stilizați la fel */}
+          {/* Varianta MOBILE */}
           <div className="block md:hidden">
             <div 
               className="w-full flex gap-4 overflow-x-auto overflow-y-hidden py-4 snap-x snap-mandatory" 
@@ -338,9 +360,11 @@ export default function DespreNoi() {
       {/* Procesul (4 Pași) */}
       <section className="py-24 bg-[#002B5B] text-slate-100 px-6">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl font-bold mb-3 text-white">Procesul de colaborare (4 pași)</h2>
-            <p className="text-blue-200 uppercase tracking-widest text-xs">O metodologie predictivă și transparentă</p>
+          <div className="text-center mb-20 max-w-3xl mx-auto">
+            <h2 className="text-3xl font-bold mb-3 text-white">Procesul de colaborare în 4 pași</h2>
+            <p className="text-blue-200 text-sm leading-relaxed">
+              Un flux integrat: de la fundamentarea proiectului la achiziția publică și închiderea contractului de finanțare
+            </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
             {pasi.map((pas, idx) => (
@@ -350,13 +374,15 @@ export default function DespreNoi() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
-                className="bg-blue-950/40 p-6 rounded-xl border border-blue-500/20 group hover:border-blue-400/40 transition-colors relative"
+                className="bg-blue-950/40 p-6 rounded-xl border border-blue-500/20 group hover:border-blue-400/40 transition-colors relative flex flex-col justify-between"
               >
-                <div className="text-6xl font-black text-blue-400/10 mb-4 group-hover:text-blue-400/20 transition-colors">
-                  {pas.nr}
+                <div>
+                  <div className="text-6xl font-black text-blue-400/10 mb-4 group-hover:text-blue-400/20 transition-colors">
+                    {pas.nr}
+                  </div>
+                  <h4 className="text-lg font-bold mb-3 text-white">{pas.titlu}</h4>
+                  <p className="text-slate-200 leading-relaxed text-sm">{pas.desc}</p>
                 </div>
-                <h4 className="text-lg font-bold mb-3 text-white">{pas.titlu}</h4>
-                <p className="text-slate-200 leading-relaxed text-sm">{pas.desc}</p>
               </motion.div>
             ))}
           </div>
