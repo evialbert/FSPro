@@ -24,7 +24,7 @@ export default function Navbar() {
     { name: "Despre", href: "/despre" },
     { name: "Servicii", href: "/servicii" },
     { name: "Portofoliu", href: "/portofoliu" },
-    { name: "Garanții", href: "/#garantii" }, // Trimite către id-ul secțiunii noi
+    { name: "Standarde", href: "/#garantii" }, // Trimite către id-ul secțiunii noi
     { name: "Contact", href: "/contact" },
   ];
 
