@@ -51,9 +51,24 @@ export default function Portofoliu() {
           <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 mt-4 mb-6 leading-tight">
             Pregătim următoarea generație de proiecte de succes
           </h1>
-          <p className="text-xl text-slate-600 leading-relaxed max-w-2xl mx-auto">
-            Deși Fine Solutions Professional este un brand tânăr, consultanții noștri aduc ani de experiență în analiza tehnică și financiară a proiectelor finanțate din fonduri europene și în procedurile de atribuire din domeniul achizițiilor publice.
-          </p>
+          <div className="text-xl text-slate-600 leading-relaxed max-w-3xl mx-auto space-y-4 text-left md:text-center">
+            <p>
+              Consultantul coordonator are o experiență reală de 16 ani în achiziții publice pentru produse, servicii și lucrări (proceduri de atribuire: licitații deschise, proceduri simplificate, negocieri fără publicare; achiziții directe, consultarea pieței și anunțuri publicitare în SEAP, contestații la CNSC); experiență de 4 ani în accesare și implementare proiecte din fonduri europene și experiență de 8 ani în logistică.
+            </p>
+            <div className="pt-2">
+              <p className="font-semibold text-slate-900 mb-2 text-center md:text-center">Certificări și cursuri finalizate:</p>
+              <ul className="list-disc list-inside space-y-1 text-base text-slate-600 max-w-xl mx-auto text-left inline-block">
+                <li>Formator (2016)</li>
+                <li>Expert achiziții publice (2018)</li>
+                <li>Expert accesare fonduri structurale și de coeziune europene (2020)</li>
+                <li>Etică, integritate și anticorupție (2023)</li>
+                <li>Managementul proiectelor și programelor (2024)</li>
+                <li>Planificarea, programarea, bugetarea resurselor (2025)</li>
+                <li>Etică și integritate în sistemul de sănătate (2025)</li>
+                <li>Managementul serviciilor de sănătate (2025)</li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
