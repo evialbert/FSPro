@@ -5,7 +5,6 @@ import Link from "next/link";
 import { 
   ChevronRight, 
   CheckCircle2, 
-  Megaphone, 
   Calendar, 
   GraduationCap, 
   FileText, 
@@ -65,7 +64,7 @@ export default function Servicii() {
                   "Organizarea implementării și coordonarea echipei",
                   "Coordonarea achizițiilor aferente proiectului",
                   "Monitorizare financiară și cereri de plată",
-                  "Asistență privind conformitatea și pregătirea"
+                  "Asistență privind conformitatea și pregătirea verificărilor"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start space-x-3 text-slate-700 text-sm font-medium">
                     <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
@@ -104,7 +103,7 @@ export default function Servicii() {
                 {[
                   "Fundamentarea necesității și estimarea valorii",
                   "Alegerea și justificarea procedurii de atribuire",
-                  "Elaborare strategiei și caietului de sarcini",
+                  "Elaborarea strategiei și caietului de sarcini",
                   "Inițierea procedurii în SEAP și clarificări",
                   "Analiza documentației de atribuire pentru ofertanți",
                   "Completare DUAE și propunere tehnică/financiară"
@@ -147,7 +146,7 @@ export default function Servicii() {
                 <h4 className="font-bold text-slate-900 text-lg mb-3">Pentru autorități contractante</h4>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Analiza riscului de contestare a documentației și a deciziilor</span></li>
-                  <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Redactarea punctelor de vedere și a solicitărilor CNSC</span></li>
+                  <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Fundamentarea temeinică a punctelor de vedere și a solicitărilor CNSC</span></li>
                   <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Fundamentarea și motivarea deciziilor privind rezultatul</span></li>
                   <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Suport în implementarea măsurilor dispuse de CNSC</span></li>
                 </ul>
@@ -157,9 +156,9 @@ export default function Servicii() {
                 <h4 className="font-bold text-slate-900 text-lg mb-3">Pentru ofertanți</h4>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Analiza legalității documentației și a rezultatului procedurii</span></li>
-                  <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Evaluarea șanselor de succes ale unei contestații</span></li>
-                  <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Redactarea contestației și a susținerilor ulterioare</span></li>
-                  <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Respectarea termenelor legale și a condițiilor de admisibilitate</span></li>
+                  <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Evaluarea temeiurilor și a oportunității unei contestații</span></li>
+                  <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Fundamentarea tehnică a argumentelor privind conformitatea ofertei și aplicarea criteriilor</span></li>
+                  <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Sprijin pentru documentarea contestației, formulată sub semnătura reprezentantului legal al ofertantului sau prin avocatul acestuia</span></li>
                 </ul>
               </div>
             </div>
@@ -175,33 +174,10 @@ export default function Servicii() {
         </div>
       </section>
 
-      {/* --- SECTIUNEA ORIZONTALĂ: PUBLICITATE & ABONAMENTE --- */}
+      {/* --- SECTIUNEA ORizontală: ABONAMENTE LUNARE --- */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            
-            {/* Anunțuri & Publicitate */}
-            <div className="bg-slate-50 p-10 rounded-[2rem] shadow-sm border border-slate-200">
-              <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
-                <Megaphone size={30} />
-              </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Anunțuri & Publicitate</h3>
-              <p className="text-slate-600 mb-6">Creștem vizibilitatea proiectelor și ofertelor prin prezență media, cu raportare clară și optimizare continuă.</p>
-              <div className="space-y-4 mb-8">
-                <div className="p-4 bg-white rounded-xl border border-slate-100">
-                  <span className="font-bold block text-slate-900">Servicii Publicitate</span>
-                  <p className="text-sm text-slate-500">Publicare comunicate presă, mass media online și publicitate online.</p>
-                </div>
-                <div className="p-4 bg-white rounded-xl border border-slate-100">
-                  <span className="font-bold block text-slate-900">Anunțuri Imobile / Terenuri</span>
-                  <p className="text-sm text-slate-500">Publicare în Monitorul Oficial al României și presă scrisă.</p>
-                </div>
-              </div>
-              <Link href="/contact" className="text-blue-600 font-bold hover:underline inline-flex items-center">
-                Vrei un serviciu personalizat? Solicită ofertă <ChevronRight size={16} />
-              </Link>
-            </div>
-
+          <div className="max-w-xl mx-auto">
             {/* Abonamente Lunare */}
             <div className="bg-slate-50 p-10 rounded-[2rem] shadow-sm border border-slate-200">
               <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
@@ -226,7 +202,6 @@ export default function Servicii() {
                 Aflați care este pachetul potrivit <ChevronRight size={16} />
               </Link>
             </div>
-
           </div>
         </div>
       </section>
@@ -285,7 +260,7 @@ export default function Servicii() {
             ))}
           </div>
           <Link href="/contact" className="bg-blue-600 text-white px-12 py-5 rounded-full font-extrabold text-xl hover:bg-blue-700 shadow-2xl transition-all inline-block hover:scale-105 active:scale-95">
-            Solicitați consultanță ACUM.
+            Solicitați o analiză inițială
           </Link>
         </div>
       </section>
