@@ -9,7 +9,7 @@ export const metadata = {
 const COMPANIE = {
   nume: 'FINE SOLUTIONS PROFESSIONAL S.R.L.',
   sediu: 'Cluj-Napoca, Str. CIOCANULUI, Nr. 15B, Ap. 2, Judetul CLUJ',
-  identificare: 'C.U.I. 49574499 | J12/792/2024',
+  identificare: 'C.U.I. 49574499 | J2024000792123',
   email: 'protectiadatelor@finesolutionspro.ro'
 };
 

@@ -39,7 +39,7 @@ export default function PoliticaCookies() {
               <div className="sm:col-span-2 text-slate-800">{"Cluj-Napoca, Str. CIOCANULUI, Nr. 15B, Ap. 2, Județul CLUJ"}</div>
               
               <div className="font-bold text-slate-600">{"Identificare:"}</div>
-              <div className="sm:col-span-2 text-slate-800">{"Înregistrată la Registrul Comerțului: J12/792/2024, C.U.I. 49574499"}</div>
+              <div className="sm:col-span-2 text-slate-800">{"Înregistrată la Registrul Comerțului: J2024000792123, C.U.I. 49574499"}</div>
               
               <div className="font-bold text-slate-600">{"Contact Date:"}</div>
               <div className="sm:col-span-2 text-blue-700 font-semibold">{"protectiadatelor@finesolutionspro.ro"}</div>

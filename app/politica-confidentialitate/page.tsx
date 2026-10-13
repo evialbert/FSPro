@@ -15,7 +15,7 @@ const txt = {
   titlu: "Politică de Confidențialitate și Protecția Datelor (GDPR)",
   actualizare: "Ultima actualizare: Mai 2026",
   s1_titlu: "1. Informații generale",
-  s1_p1: "Confidențialitatea datelor dumneavoastră cu caracter personal reprezintă mai mult decât o obligație legală pentru noi; este o prioritate. FINE SOLUTIONS PROFESSIONAL S.R.L., cu sediul în Cluj-Napoca, Str. CIOCANULUI, Nr. 15B, Ap. 2, Județul CLUJ, înregistrată la Registrul Comerțului cu numărul J12/792/2024, C.U.I. 49574499, acționează în calitate de operator de date.",
+  s1_p1: "Confidențialitatea datelor dumneavoastră cu caracter personal reprezintă mai mult decât o obligație legală pentru noi; este o prioritate. FINE SOLUTIONS PROFESSIONAL S.R.L., cu sediul în Cluj-Napoca, Str. CIOCANULUI, Nr. 15B, Ap. 2, Județul CLUJ, înregistrată la Registrul Comerțului cu numărul J2024000792123, C.U.I. 49574499, acționează în calitate de operator de date.",
   s1_p2: "Acest document are rolul de a vă informa în mod transparent cu privire la colectarea, prelucrarea și protecția datelor dumneavoastră cu caracter personal, în contextul utilizării paginii de internet www.finesolutionspro.ro (denumit în continuare „Site-ul”).",
   
   s2_titlu: "2. Categoriile de date cu caracter personal prelucrate",
