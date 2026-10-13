@@ -20,7 +20,7 @@ export default function Footer() {
           <div className="flex items-start gap-2 text-sm text-[#486581]">
             <MapPin className="mt-0.5 h-5 w-5 shrink-0 text-[#102a43]" />
             <p>
-              Strada Ciocanului nr. 15B, Ap. 2
+              Strada Ciocanului nr. 15B, Ap. 2,
               <br />
               Cluj-Napoca, România
             </p>
