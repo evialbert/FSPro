@@ -15,8 +15,8 @@ import {
 export default function Servicii() {
   const beneficii = [
     "Analiză de eligibilitate",
-    "Suport SEAP",
-    "Management Proiect",
+    "Achiziții SEAP",
+    "Management de proiect",
     "Contestații"
   ];
 
@@ -257,7 +257,7 @@ export default function Servicii() {
                   <div className="bg-white/10 p-3 rounded-lg text-blue-400"><GraduationCap size={24} /></div>
                   <div>
                     <h4 className="text-white font-bold">Workshop achiziții publice</h4>
-                    <p className="text-slate-500 text-sm">Legislație, proceduri de atribuire și bune practici în SEAP.</p>
+                    <p className="text-slate-500 text-sm">Legislație, proceduri de atribuire și bune practici în SEAP/SICAP.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
@@ -284,7 +284,7 @@ export default function Servicii() {
       <section className="py-24 text-center">
         <div className="max-w-3xl mx-auto px-4">
           <h2 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight">Pregătiți să transformăm ideile dumneavoastră în proiecte realizate?</h2>
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-4 mb-10">
             {beneficii.map((b, i) => (
               <div key={i} className="bg-blue-50 text-blue-700 px-6 py-2 rounded-full text-sm font-semibold flex items-center space-x-2">
                 <ShieldCheck size={16} />
@@ -292,7 +292,6 @@ export default function Servicii() {
               </div>
             ))}
           </div>
-          <p className="text-slate-600 mb-8 font-medium">Analiză de eligibilitate · Achiziții SEAP · Management de proiect · Contestații</p>
           <Link href="/contact" className="bg-blue-600 text-white px-12 py-5 rounded-full font-extrabold text-xl hover:bg-blue-700 shadow-2xl transition-all inline-block hover:scale-105 active:scale-95">
             Solicitați o analiză inițială
           </Link>
