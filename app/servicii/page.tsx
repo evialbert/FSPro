@@ -9,9 +9,7 @@ import {
   GraduationCap, 
   FileText, 
   ShieldCheck,
-  Scale,
-  Briefcase,
-  Coins
+  Scale
 } from "lucide-react";
 
 export default function Servicii() {
@@ -37,136 +35,133 @@ export default function Servicii() {
         </div>
       </section>
 
-      {/* --- SECTIUNEA 1: FINANȚĂRI NERAMBURSABILE --- */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-slate-50 rounded-[2.5rem] p-10 md:p-16 shadow-sm border border-slate-200">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 shrink-0">
-                <Coins size={30} />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900">Finanțări nerambursabile</h2>
-                <p className="text-slate-600 mt-2">
-                  Vă oferim suport integral, de la identificarea oportunităților de finanțare până la închiderea proiectului, cu accent pe conformitatea cu ghidul solicitantului și contractul de finanțare și pe atingerea indicatorilor asumați.
-                </p>
+      {/* --- SERVICII PRINCIPALE (CARDS CU IMAGINI) --- */}
+      <section className="py-24 max-w-7xl mx-auto px-4">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          
+          {/* Card 1: Finanțări Nerambursabile */}
+          <div className="group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 transition-all hover:shadow-2xl flex flex-col">
+            <div className="h-80 overflow-hidden relative">
+              <img 
+                src="/fonduri.jpg" 
+                alt="Finanțări nerambursabile" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-8 left-8">
+                <h3 className="text-3xl font-bold text-white">Finanțări Nerambursabile</h3>
               </div>
             </div>
-
-            <div className="my-8 pt-6 border-t border-slate-200">
-              <ul className="grid md:grid-cols-2 gap-3 text-sm text-slate-700">
-                <li className="flex items-start space-x-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                  <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
-                  <span>Analiza eligibilității solicitantului și a proiectului</span>
-                </li>
-                <li className="flex items-start space-x-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                  <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
-                  <span>Elaborarea cererii de finanțare și a anexelor</span>
-                </li>
-                <li className="flex items-start space-x-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                  <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
-                  <span>Depunerea documentației în sistemul informatic al finanțatorului</span>
-                </li>
-                <li className="flex items-start space-x-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                  <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
-                  <span>Organizarea implementării și coordonarea echipei de proiect</span>
-                </li>
-                <li className="flex items-start space-x-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                  <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
-                  <span>Coordonarea achizițiilor aferente proiectului</span>
-                </li>
-                <li className="flex items-start space-x-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm">
-                  <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
-                  <span>Monitorizare financiară și cereri de plată/rambursare</span>
-                </li>
-                <li className="flex items-start space-x-3 bg-white p-4 rounded-xl border border-slate-100 shadow-sm md:col-span-2">
-                  <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
-                  <span>Asistență privind conformitatea și pregătirea pentru verificări</span>
-                </li>
+            <div className="p-10 flex-grow flex flex-col">
+              <p className="text-slate-600 text-lg leading-relaxed mb-8">
+                Vă oferim suport integral, de la identificarea oportunităților de finanțare până la închiderea proiectului, cu accent pe conformitatea cu ghidul solicitantului și contractul de finanțare și pe atingerea indicatorilor asumați.
+              </p>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10">
+                {[
+                  "Analiza eligibilității solicitantului și a proiectului",
+                  "Elaborarea cererii de finanțare și a anexelor",
+                  "Depunerea documentației în sistemul informatic al finanțatorului",
+                  "Organizarea implementării și coordonarea echipei de proiect",
+                  "Coordonarea achizițiilor aferente proiectului",
+                  "Monitorizare financiară și cereri de plată/rambursare",
+                  "Asistență privind conformitatea și pregătirea pentru verificări"
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start space-x-3 text-slate-700 text-sm font-medium">
+                    <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
-            </div>
-
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200">
-              <p className="text-sm text-slate-500 italic">Doriți să verificăm eligibilitatea și să identificăm apelul potrivit pentru proiectul dumneavoastră?</p>
-              <Link href="/contact" className="inline-flex items-center space-x-2 text-blue-600 font-bold hover:underline">
-                <span>Solicitați ofertă</span>
-                <ChevronRight size={18} />
-              </Link>
+              <div className="mt-auto pt-6 border-t border-slate-50">
+                <p className="text-sm text-slate-500 mb-4 italic">Doriți să verificăm eligibilitatea și să identificăm apelul potrivit pentru proiectul dumneavoastră?</p>
+                <Link href="/contact" className="inline-flex items-center space-x-2 text-blue-600 font-bold text-lg hover:translate-x-2 transition-all">
+                  <span>Solicitați ofertă</span>
+                  <ChevronRight size={20} />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* --- SECTIUNEA 2: ACHIZIȚII PUBLICE ÎN SEAP SAU OFF-LINE --- */}
-      <section className="py-16 bg-slate-50 border-y border-slate-100">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-white rounded-[2.5rem] p-10 md:p-16 shadow-sm border border-slate-200">
-            <div className="flex items-center space-x-4 mb-6">
-              <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 shrink-0">
-                <Briefcase size={30} />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold text-slate-900">Achiziții publice în SEAP sau off-line</h2>
+          {/* Card 2: Achiziții Publice (SEAP) */}
+          <div className="group bg-white rounded-[2.5rem] overflow-hidden shadow-xl border border-slate-100 transition-all hover:shadow-2xl flex flex-col">
+            <div className="h-80 overflow-hidden relative">
+              <img 
+                src="/achizitii.jpg" 
+                alt="Achiziții publice SEAP sau off-line" 
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" 
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"></div>
+              <div className="absolute bottom-8 left-8">
+                <h3 className="text-3xl font-bold text-white">Achiziții Publice în SEAP sau off-line</h3>
               </div>
             </div>
-
-            <div className="grid md:grid-cols-2 gap-8 my-8 pt-6 border-t border-slate-100">
+            <div className="p-10 flex-grow flex flex-col">
               
               {/* Pentru autorități contractante */}
-              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col justify-between">
-                <div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">Pentru autorități contractante care inițiază procedurile</h4>
-                  <p className="text-xs text-slate-500 mb-4 leading-relaxed">
-                    Vă sprijinim de la fundamentarea necesității până la atribuirea și încheierea contractului, cu respectarea Legii nr. 98/2016, a HG nr. 395/2016 și a legislației subsecvente, astfel încât procedura să fie legală, transparentă și rezistentă la contestații.
-                  </p>
-                  <ul className="space-y-2 text-sm text-slate-600">
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Fundamentarea necesității și estimarea valorii contractului</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Alegerea și justificarea procedurii de atribuire</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Elaborarea strategiei de contractare și a programului anual al achizițiilor publice</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Elaborarea instrucțiunilor către ofertanți, caietului de sarcini, a criteriilor de calificare și selecție, a factorilor de evaluare, a proiectului de contract și a formularelor</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Inițierea procedurii în SEAP, publicarea anunțurilor și răspunsurile la solicitările de clarificări</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Coordonarea echipei de achiziții și a comisiei de evaluare, inclusiv întocmirea proceselor verbale și a raportului procedurii</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Suport pentru atribuirea și încheierea contractului, precum și pentru urmărirea executării acestuia</span></li>
-                  </ul>
-                </div>
+              <div className="mb-6">
+                <h4 className="font-bold text-slate-900 text-base mb-2">Pentru autorități contractante care inițiază procedurile</h4>
+                <p className="text-xs text-slate-500 mb-4 leading-relaxed">
+                  Vă sprijinim de la fundamentarea necesității până la atribuirea și încheierea contractului, cu respectarea Legii nr. 98/2016, a HG nr. 395/2016 și a legislației subsecvente, astfel încât procedura să fie legală, transparentă și rezistentă la contestații.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Fundamentarea necesității și estimarea valorii contractului",
+                    "Alegerea și justificarea procedurii de atribuire",
+                    "Elaborarea strategiei de contractare și a programului anual al achizițiilor publice",
+                    "Elaborarea instrucțiunilor către ofertanți, caietului de sarcini, a criteriilor de calificare și selecție, a factorilor de evaluare, a proiectului de contract și a formularelor",
+                    "Inițierea procedurii în SEAP, publicarea anunțurilor și răspunsurile la solicitările de clarificări",
+                    "Coordonarea echipei de achiziții și a comisiei de evaluare, inclusiv întocmirea proceselor verbale și a raportului procedurii",
+                    "Suport pentru atribuirea și încheierea contractului, precum și pentru urmărirea executării acestuia"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start space-x-2 text-slate-700 text-xs font-medium">
+                      <span className="text-blue-600 font-bold">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
               {/* Pentru ofertanți */}
-              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100 flex flex-col justify-between">
-                <div>
-                  <h4 className="font-bold text-slate-900 text-lg mb-3">Pentru ofertanți</h4>
-                  <p className="text-xs text-slate-500 mb-4 leading-relaxed">
-                    Vă ajutăm să depuneți o ofertă conformă și bine fundamentată, reducând riscul de respingere ca neconformă sau inacceptabilă și sprijinind participarea dumneavoastră de la analiza documentației până la semnarea contractului.
-                  </p>
-                  <ul className="space-y-2 text-sm text-slate-600">
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Analiza documentației de atribuire și a oportunității participării</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Evaluarea condițiilor de calificare și selecție și identificarea riscurilor de respingere</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Completarea DUAE și pregătirea documentelor de calificare</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Suport în elaborarea propunerii tehnice și financiare</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Fundamentarea strategiei de preț, cu justificarea elementelor de cost</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Formularea solicitărilor de clarificări și pregătirea răspunsurilor la clarificările autorității contractante</span></li>
-                    <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Suport la semnarea și derularea contractului</span></li>
-                  </ul>
-                </div>
+              <div className="mb-6 pt-4 border-t border-slate-100">
+                <h4 className="font-bold text-slate-900 text-base mb-2">Pentru ofertanți</h4>
+                <p className="text-xs text-slate-500 mb-4 leading-relaxed">
+                  Vă ajutăm să depuneți o ofertă conformă și bine fundamentată, reducând riscul de respingere ca neconformă sau inacceptabilă și sprijinind participarea dumneavoastră de la analiza documentației până la semnarea contractului.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Analiza documentației de atribuire și a oportunității participării",
+                    "Evaluarea condițiilor de calificare și selecție și identificarea riscurilor de respingere",
+                    "Completarea DUAE și pregătirea documentelor de calificare",
+                    "Suport în elaborarea propunerii tehnice și financiare",
+                    "Fundamentarea strategiei de preț, cu justificarea elementelor de cost",
+                    "Formularea solicitărilor de clarificări și pregătirea răspunsurilor la clarificările autorității contractante",
+                    "Suport la semnarea și derularea contractului"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start space-x-2 text-slate-700 text-xs font-medium">
+                      <span className="text-blue-600 font-bold">•</span>
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
 
-            </div>
-
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-100">
-              <p className="text-sm text-slate-500 italic">Aveți o procedură în pregătire sau o ofertă de depus?</p>
-              <Link href="/contact" className="inline-flex items-center space-x-2 text-blue-600 font-bold hover:underline">
-                <span>Solicitați ofertă</span>
-                <ChevronRight size={18} />
-              </Link>
+              <div className="mt-auto pt-6 border-t border-slate-50">
+                <p className="text-sm text-slate-500 mb-4 italic">Aveți o procedură în pregătire sau o ofertă de depus?</p>
+                <Link href="/contact" className="inline-flex items-center space-x-2 text-blue-600 font-bold text-lg hover:translate-x-2 transition-all">
+                  <span>Solicitați ofertă</span>
+                  <ChevronRight size={20} />
+                </Link>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* --- SECTIUNEA 3: CONTESTAȚII ÎN ACHIZIȚII PUBLICE --- */}
-      <section className="py-16 bg-white">
+      {/* --- CONTESTAȚII ÎN ACHIZIȚII PUBLICE --- */}
+      <section className="py-20 bg-slate-50 border-y border-slate-100">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="bg-slate-50 rounded-[2.5rem] p-10 md:p-16 shadow-sm border border-slate-200">
+          <div className="bg-white rounded-[2.5rem] p-10 md:p-16 shadow-sm border border-slate-200">
             <div className="flex items-center space-x-4 mb-6">
               <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 shrink-0">
                 <Scale size={30} />
@@ -179,8 +174,8 @@ export default function Servicii() {
               </div>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-8 my-8 pt-6 border-t border-slate-200">
-              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+            <div className="grid md:grid-cols-2 gap-8 my-8 pt-6 border-t border-slate-100">
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
                 <h4 className="font-bold text-slate-900 text-lg mb-3">Pentru autorități contractante</h4>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Analiza riscului de contestare a documentației de atribuire și a deciziilor</span></li>
@@ -190,7 +185,7 @@ export default function Servicii() {
                 </ul>
               </div>
 
-              <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
+              <div className="bg-slate-50 p-6 rounded-2xl border border-slate-100">
                 <h4 className="font-bold text-slate-900 text-lg mb-3">Pentru ofertanți</h4>
                 <ul className="space-y-2 text-sm text-slate-600">
                   <li className="flex items-start space-x-2"><span className="text-blue-600 font-bold">•</span><span>Analiza legalității documentației de atribuire și a comunicării rezultatului procedurii</span></li>
@@ -201,7 +196,7 @@ export default function Servicii() {
               </div>
             </div>
 
-            <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-200">
+            <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-100">
               <p className="text-sm text-slate-500 italic">Aveți o contestație de formulat sau de apărat?</p>
               <Link href="/contact" className="inline-flex items-center space-x-2 text-blue-600 font-bold hover:underline">
                 <span>Solicitați ofertă</span>
@@ -212,11 +207,11 @@ export default function Servicii() {
         </div>
       </section>
 
-      {/* --- SECTIUNEA 4: ABONAMENTE LUNARE --- */}
-      <section className="py-16 bg-slate-50 border-y border-slate-100">
+      {/* --- ABONAMENTE LUNARE --- */}
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <div className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-slate-200">
+            <div className="bg-slate-50 p-10 rounded-[2.5rem] shadow-sm border border-slate-200">
               <div className="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 mb-6">
                 <Calendar size={30} />
               </div>
@@ -262,7 +257,7 @@ export default function Servicii() {
                   <div className="bg-white/10 p-3 rounded-lg text-blue-400"><GraduationCap size={24} /></div>
                   <div>
                     <h4 className="text-white font-bold">Workshop achiziții publice</h4>
-                    <p className="text-slate-500 text-sm">Legislație, proceduri de atribuire și bune practici în SEAP/SICAP.</p>
+                    <p className="text-slate-500 text-sm">Legislație, proceduri de atribuire și bune practici în SEAP.</p>
                   </div>
                 </div>
                 <div className="flex items-start space-x-4">
