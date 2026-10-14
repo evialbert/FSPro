@@ -17,25 +17,25 @@ export default function Portofoliu() {
   // Matrice de servicii/portofoliu strategic actualizată cu noile descrieri
   const serviciiPortofoliu = [
     {
-      titlu: "Elaborarea proiectelor - Documentații complexe",
+      titlu: "Documentații complexe",
       desc: "Redactarea cererilor de finanțare, a planurilor de afaceri, a analizelor cost-beneficiu și a studiilor de oportunitate, în funcție de cerințele fiecărui program de finanțare.",
       icon: <FileText className="text-blue-600" size={24} />,
-      tag: "Scriere Proiecte"
+      tag: "Elaborarea proiectelor"
     },
     {
-      titlu: "Implementare - Management integrat de proiect",
+      titlu: "Management integrat de proiect",
       desc: "Asistență tehnică și financiară pe toată durata implementării: notificări, acte adiționale, cereri de plată și de rambursare, monitorizarea indicatorilor.",
       icon: <Layers className="text-blue-600" size={24} />,
       tag: "Implementare"
     },
     {
-      titlu: "Achiziții publice (SEAP) - Consultanță pentru autorități și ofertanți",
+      titlu: "Consultanță pentru autorități și ofertanți",
       desc: "Structurarea procedurilor de atribuire, de la strategia de contractare și documentația de atribuire până la răspunsurile la clarificări și gestionarea dosarului achiziției; pentru ofertanți, pregătirea ofertei și a documentelor de calificare.",
       icon: <Briefcase className="text-blue-600" size={24} />,
-      tag: "Proceduri SEAP"
+      tag: "Achiziții publice (SEAP)"
     },
     {
-      titlu: "Strategie - Analiză de risc și fundamentare",
+      titlu: "Analiză de risc și fundamentare",
       desc: "Evaluarea prealabilă a ideii de proiect în raport cu ghidul solicitantului și condițiile specifice ale apelului, pentru a reduce riscul de neeligibilitate sau de respingere la evaluare.",
       icon: <TrendingUp className="text-blue-600" size={24} />,
       tag: "Strategie"

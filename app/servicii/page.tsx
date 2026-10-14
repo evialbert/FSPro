@@ -17,7 +17,7 @@ import {
 export default function Servicii() {
   const beneficii = [
     "Analiză de eligibilitate",
-    "Suport SEAP / SICAP",
+    "Suport SEAP",
     "Management Proiect",
     "Contestații"
   ];
