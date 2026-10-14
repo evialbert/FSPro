@@ -136,7 +136,7 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-semibold text-slate-900">Adresă</p>
-                <p className="text-slate-600">Strada Ciocanului nr. 15B, Cluj-Napoca</p>
+                <p className="text-slate-600">Strada Ciocanului nr. 15B, ap.2, Cluj-Napoca</p>
               </div>
             </div>
 
@@ -146,7 +146,8 @@ export default function ContactPage() {
               </div>
               <div>
                 <p className="font-semibold text-slate-900">Program</p>
-                <p className="text-slate-600">Luni - Vineri: 12:30–19:30</p>
+                <p className="text-slate-600">Luni - Vineri: 15:00–19:00</p>
+                <p className="text-slate-600">Sâmbătă: 12:00–16:00</p>
               </div>
             </div>
           </div>
