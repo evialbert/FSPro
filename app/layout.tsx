@@ -9,8 +9,31 @@ import CookieSettings from '@/components/CookieSettings';
 import FloatingContact from '@/components/FloatingContact';
 
 export const metadata: Metadata = {
-  title: 'Fine Solutions Professional',
-  description: 'Soluții profesionale pentru afacerea ta',
+  metadataBase: new URL('https://www.finesolutionspro.ro'),
+  title: 'Fine Solutions Professional | Consultanță Finanțări & Achiziții',
+  description: 'Consultanță integrată în finanțări nerambursabile, achiziții publice, contestații și management de proiect.',
+  openGraph: {
+    title: 'Fine Solutions Professional',
+    description: 'Consultanță integrată în finanțări nerambursabile, achiziții publice, contestații și management de proiect.',
+    url: 'https://www.finesolutionspro.ro',
+    siteName: 'Fine Solutions Professional',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Fine Solutions Professional Logo',
+      },
+    ],
+    locale: 'ro_RO',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Fine Solutions Professional',
+    description: 'Consultanță integrată în finanțări nerambursabile, achiziții publice, contestații și management de proiect.',
+    images: ['/og-image.png'],
+  },
 };
 
 export default function RootLayout({
