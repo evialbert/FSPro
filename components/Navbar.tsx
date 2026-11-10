@@ -40,15 +40,12 @@ export default function Navbar() {
         <div className="flex justify-between items-center">
           
           {/* --- LOGO --- */}
-          <Link href="/" className="flex items-center space-x-2 group">
-            <div className="bg-blue-600 p-1.5 rounded-lg group-hover:rotate-6 transition-transform">
-              <div className="w-6 h-6 border-2 border-white rounded-sm flex items-center justify-center font-bold text-white text-xs">
-                FS
-              </div>
-            </div>
-            <span className="text-xl font-black text-slate-900 tracking-tighter">
-              FINE SOLUTIONS <span className="text-blue-600">PRO</span>
-            </span>
+          <Link href="/" className="logo flex items-center group">
+            <img 
+              src="/logo-full.svg" 
+              alt="Fine Solutions Pro" 
+              className="h-10 w-auto transition-transform duration-200 group-hover:scale-104" 
+            />
           </Link>
 
           {/* --- DESKTOP NAVIGATION --- */}
