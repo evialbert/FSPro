@@ -1,217 +1,215 @@
+"use client"; // Permite funcționalitatea interactivă și resetarea consimțământului
+
 import React from 'react';
+import { Cookie, Info, ShieldCheck } from 'lucide-react';
 
-export const metadata = {
-  title: 'Politica de Utilizare Cookie-uri | FINE SOLUTIONS PROFESSIONAL S.R.L.',
-  description: 'Politica privind modulele cookie aplicabilă utilizatorilor website-ului FINE SOLUTIONS PROFESSIONAL S.R.L. în conformitate cu GDPR și ePrivacy.',
-};
+export default function CookiePolicy() {
+  // Funcția care resetează consimțământul (șterge cheile și reîncarcă pagina)
+  const handleResetCookies = () => {
+    if (typeof window !== "undefined") {
+      localStorage.removeItem("fsp-consent");
+      localStorage.removeItem("fsp-consent-at");
+      localStorage.removeItem("cookie-consent"); // Compatibilitate cu versiunea anterioară
+      window.location.reload();
+    }
+  };
 
-export default function PoliticaCookies() {
   return (
-    <div className="bg-slate-50 min-h-screen py-12 px-4 sm:px-6 lg:px-8 text-slate-700">
-      <div className="max-w-4xl mx-auto bg-white shadow-md border border-slate-100 rounded-xl overflow-hidden">
-        
-        {/* Header / Banner Albastru */}
-        <div className="bg-blue-900 text-white p-8 sm:p-10">
-          <h1 className="text-3xl font-bold tracking-tight mb-2">
-            {"POLITICA DE UTILIZARE MODULE COOKIE"}
-          </h1>
-          <p className="text-blue-200 text-sm sm:text-base">
-            {"Versiunea actualizată la zi: Iulie 2026 (Aliniată ePrivacy și GDPR)"}
-          </p>
+    <main className="max-w-4xl mx-auto px-6 py-24 selection:bg-blue-100">
+      {/* Titlu */}
+      <div className="mb-12 border-b border-blue-100 pb-8">
+        <div className="flex items-center gap-3 mb-4 text-blue-500">
+          <Cookie className="h-6 w-6 text-blue-600" />
+          <span className="text-sm font-semibold uppercase tracking-wider text-blue-500">Document Legal</span>
         </div>
+        <h1 className="text-4xl md:text-5xl font-black text-slate-800 tracking-tight mb-4">
+          Politica privind modulele cookie
+        </h1>
+        <p className="text-sm text-slate-400 font-medium">Versiune revizuită – Noiembrie 2026</p>
+      </div>
 
-        {/* Conținutul Principal */}
-        <div className="p-8 sm:p-10 space-y-8">
-          
-          {/* Caseta Companie / Operator - Accent Albastru */}
-          <div className="bg-blue-50/50 border-l-4 border-blue-600 p-6 rounded-r-lg space-y-3">
-            <h2 className="text-sm font-semibold text-blue-900 uppercase tracking-wide">
-              {"Preambul & Operator de date"}
-            </h2>
-            <p className="text-sm leading-relaxed text-slate-600">
-              {"Prezenta politică reglementează utilizarea modulelor cookie și a tehnologiilor similare pe website-ul nostru și stabilește temeiul legal pentru prelucrarea datelor cu caracter personal în conformitate cu legislația națională și europeană în vigoare."}
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2 text-sm pt-2 border-t border-blue-100">
-              <div className="font-bold text-slate-600">{"Operator:"}</div>
-              <div className="sm:col-span-2 font-medium text-slate-900">{"FINE SOLUTIONS PROFESSIONAL S.R.L."}</div>
+      {/* Conținut text */}
+      <div className="text-slate-700 space-y-10 text-base md:text-lg leading-relaxed">
+        
+        {/* Preambul / Operator */}
+        <section className="bg-blue-50/60 border border-blue-100 rounded-2xl p-6 md:p-8 shadow-sm space-y-4">
+          <div className="flex gap-4">
+            <Info className="h-6 w-6 text-blue-500 shrink-0 mt-1" />
+            <div className="space-y-3">
+              <h2 className="text-xl font-bold text-slate-800">Preambul și operatorul de date</h2>
+              <p className="text-slate-600 text-sm md:text-base">
+                Prezenta politică reglementează utilizarea modulelor cookie și a tehnologiilor similare (de exemplu, stocarea locală a browserului – <code className="bg-white px-1.5 py-0.5 rounded text-xs border border-blue-100 font-mono">localStorage</code>) pe website-ul <strong className="text-slate-800">www.finesolutionspro.ro</strong> și informează utilizatorii cu privire la prelucrarea datelor cu caracter personal asociate, în conformitate cu legislația națională și europeană în vigoare.
+              </p>
               
-              <div className="font-bold text-slate-600">{"Sediu Social:"}</div>
-              <div className="sm:col-span-2 text-slate-800">{"Cluj-Napoca, Str. CIOCANULUI, Nr. 15B, Ap. 2, Județul CLUJ"}</div>
-              
-              <div className="font-bold text-slate-600">{"Identificare:"}</div>
-              <div className="sm:col-span-2 text-slate-800">{"Înregistrată la Registrul Comerțului: J2024000792123, C.U.I. 49574499"}</div>
-              
-              <div className="font-bold text-slate-600">{"Contact Date:"}</div>
-              <div className="sm:col-span-2 text-blue-700 font-semibold">{"protectiadatelor@finesolutionspro.ro"}</div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3 pt-2 text-sm text-slate-700">
+                <div className="bg-white p-3 rounded-xl border border-blue-100">
+                  <strong className="block text-slate-900 font-semibold mb-1">Operator:</strong>
+                  FINE SOLUTIONS PROFESSIONAL S.R.L.
+                </div>
+                <div className="bg-white p-3 rounded-xl border border-blue-100">
+                  <strong className="block text-slate-900 font-semibold mb-1">Sediu social:</strong>
+                  Cluj-Napoca, Str. Ciocanului, Nr. 15B, Ap. 2, Județul Cluj
+                </div>
+                <div className="bg-white p-3 rounded-xl border border-blue-100">
+                  <strong className="block text-slate-900 font-semibold mb-1">Identificare:</strong>
+                  J2024000792123 | C.U.I. 49574499
+                </div>
+                <div className="bg-white p-3 rounded-xl border border-blue-100">
+                  <strong className="block text-slate-900 font-semibold mb-1">Contact Date Personale:</strong>
+                  <a href="mailto:protectiadatelor@finesolutionspro.ro" className="text-blue-600 underline font-medium">protectiadatelor@finesolutionspro.ro</a>
+                </div>
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* Sectiunea 1 */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-blue-900 border-b border-slate-100 pb-2">
-              {"1. Introducere și context legal (Actualizat Iulie 2026)"}
-            </h2>
-            <p className="text-justify leading-relaxed">
-              {"Prezenta Politică privind modulele cookie se aplică tuturor utilizatorilor acestui website operat de "}
-              <strong>{"FINE SOLUTIONS PROFESSIONAL S.R.L."}</strong>
-              {" Informațiile prezentate în continuare au scopul de a aduce la cunoștința utilizatorilor detalii clare despre plasarea, utilizarea și administrarea cookie-urilor în contextul navigării pe paginile noastre web."}
-            </p>
-            <p className="text-justify leading-relaxed">
-              {"În conformitate cu reglementările stricte aplicabile în anul 2026 (Directiva ePrivacy consolidată, Regulamentul General privind Protecția Datelor - GDPR și jurisprudența europeană recentă), plasarea modulelor cookie non-esențiale este strict condiționată de obținerea "}
-              <strong>{"consimțământului prealabil, explicit, liber exprimat și informat"}</strong>
-              {" al utilizatorului, manifestat prin acțiuni afirmative clare în bannerul de cookies."}
-            </p>
-          </section>
+        {/* 1. Cadrul legal */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-slate-800">1. Cadrul legal</h2>
+          <p className="text-slate-600 text-sm md:text-base">
+            Prezenta politică se aplică tuturor utilizatorilor website-ului și are la bază:
+          </p>
+          <ul className="list-disc pl-6 space-y-2 text-slate-600 text-sm md:text-base">
+            <li><strong>Legea nr. 506/2004</strong> privind prelucrarea datelor cu caracter personal și protecția vieții private în sectorul comunicațiilor electronice;</li>
+            <li><strong>Regulamentul (UE) 2016/679</strong> (Regulamentul general privind protecția datelor – GDPR);</li>
+            <li>Jurisprudența CJUE (cauza C-673/17 Planet49) privind consimțământul activ.</li>
+          </ul>
+        </section>
 
-          {/* Sectiunea 2 */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-blue-900 border-b border-slate-100 pb-2">
-              {"2. Ce este un \"cookie\"?"}
-            </h2>
-            <p className="text-justify leading-relaxed">
-              {"Un \"Internet Cookie\" (termen cunoscut și sub denumirea de \"browser cookie\" sau \"HTTP cookie\") este un fișier de mici dimensiuni, format din litere și numere, care va fi stocat pe computerul, terminalul mobil sau pe alte echipamente ale unui utilizator de pe care se accesează internetul."}
-            </p>
-            <p className="text-justify leading-relaxed">
-              {"Cookie-ul este instalat prin solicitarea emisă de către un web-server unui browser (ex: Chrome, Firefox, Safari) și este complet \"pasiv\" – nu conține programe software, viruși sau spyware și nu poate accesa informațiile de pe hard drive-ul utilizatorului. Tehnic, doar webserverul care a trimis cookie-ul îl poate accesa din nou când utilizatorul revine pe site."}
-            </p>
-          </section>
+        {/* 2. Ce este un cookie */}
+        <section className="space-y-3">
+          <h2 className="text-2xl font-bold text-slate-800">2. Ce este un cookie</h2>
+          <p className="text-slate-600 text-sm md:text-base">
+            Un cookie este un fișier de mici dimensiuni, format din litere și cifre, stocat pe echipamentul utilizatorului. Tehnologiile similare, precum stocarea locală (<code className="bg-slate-100 px-1.5 py-0.5 rounded text-xs font-mono">localStorage</code>), funcționează pe același principiu. Cookie-urile nu conțin viruși și nu pot accesa informațiile de pe dispozitivul dumneavoastră.
+          </p>
+        </section>
 
-          {/* Sectiunea 3 */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-blue-900 border-b border-slate-100 pb-2">
-              {"3. Categorii majore de cookie-uri"}
-            </h2>
-            <ul className="list-disc pl-5 space-y-2 text-justify">
-              <li>
-                <strong>{"Cookie-uri de sesiune:"}</strong>
-                {" Stocate temporar în dosarul de cookie-uri al browser-ului până când utilizatorul părăsește website-ul sau închide fereastra browser-ului."}
-              </li>
-              <li>
-                <strong>{"Cookie-uri persistente:"}</strong>
-                {" Rămân stocate pe dispozitiv pentru o durată de viață preconfigurată. Ele includ și cookie-urile plasate de alte site-uri, cunoscute sub numele de "}
-                <em>{"\"third party cookies\""}</em>
-                {" (cookie-uri plasate de terți)."}
-              </li>
-            </ul>
-          </section>
-
-          {/* Sectiunea 4 */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-blue-900 border-b border-slate-100 pb-2">
-              {"4. Clasificarea cookie-urilor după funcționalitate și esențialitate"}
-            </h2>
-            <div className="space-y-4">
-              <div>
-                <h3 className="font-semibold text-blue-900 text-base">{"4.1. Cookie-uri Strict Necesare (Esențiale)"}</h3>
-                <p className="text-justify text-sm mt-1 leading-relaxed">
-                  {"Sunt indispensabile pentru buna funcționare a site-ului, securitatea sesiunilor și reținerea opțiunilor de bază (cum ar fi coșul sau starea autentificării)."}
-                </p>
-                <div className="mt-2 text-xs bg-amber-50 border border-amber-200 text-amber-900 p-3 rounded-lg">
-                  <strong>{"Temei juridic:"}</strong>
-                  {" Prelucrarea se bazează pe "}
-                  <strong>{"interesul legitim"}</strong>
-                  {" (Art. 6 (1) (f) GDPR). Acestea nu pot fi dezactivate deoarece site-ul nu poate rula corect în lipsa lor."}
-                </div>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-blue-900 text-base">{"4.2. Cookie-uri de Analiză și Performanță (Non-esențiale)"}</h3>
-                <p className="text-justify text-sm mt-1 leading-relaxed">
-                  {"Colectează informații agregate și anonime despre modul în care utilizatorii interacționează cu paginile noastre (ex. Google Analytics). Ne ajută exclusiv la îmbunătățirea tehnică a platformei."}
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-blue-900 text-base">{"4.3. Cookie-uri de Targetare și Publicitate (Non-esențiale)"}</h3>
-                <p className="text-justify text-sm mt-1 leading-relaxed">
-                  {"Sunt folosite pentru a crea profiluri de interese și a vă afișa reclame relevante pe alte site-uri partenere (ex. rețele publicitare, YouTube integrat)."}
-                </p>
-                <div className="mt-2 text-xs bg-blue-50 border border-blue-100 text-blue-900 p-3 rounded-lg">
-                  <strong>{"Notă consimțământ:"}</strong>
-                  {" Modulele non-esențiale (analitice și publicitare) se încarcă pe dispozitiv "}
-                  <strong>{"DOAR după acordul dumneavoastră explicit"}</strong>
-                  {" (Art. 6 (1) (a) GDPR)."}
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Sectiunea 5 - Tabelul de Cookies cu design Albastru */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-blue-900 border-b border-slate-100 pb-2">
-              {"5. Centralizatorul modulelor cookie utilizate de website"}
-            </h2>
-            <p className="text-sm text-slate-600">
-              {"Mai jos sunt listate în mod transparent modulele cookie specifice pe care website-ul nostru le poate utiliza (inclusiv cele provenite de la terți integrați precum YouTube):"}
-            </p>
-            <div className="overflow-x-auto border border-blue-100 rounded-lg shadow-sm">
-              <table className="min-w-full divide-y divide-blue-100 text-sm">
-                <thead className="bg-blue-50">
-                  <tr>
-                    <th className="px-4 py-3 text-left font-semibold text-blue-950">{"Denumire Cookie"}</th>
-                    <th className="px-4 py-3 text-left font-semibold text-blue-950">{"Furnizor / Domeniu"}</th>
-                    <th className="px-4 py-3 text-left font-semibold text-blue-950">{"Durată de viață"}</th>
-                    <th className="px-4 py-3 text-left font-semibold text-blue-950">{"Tip / Scop"}</th>
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100 bg-white">
-                  {[
-                    { name: 'IDE', domain: 'doubleclick.net (Terț)', scope: 'Publicitate / Targetare', life: '1 an' },
-                    { name: 'test_cookie', domain: 'doubleclick.net (Terț)', scope: 'Verificare suport cookies', life: '1 zi' },
-                    { name: 'VISITOR_INFO1_LIVE', domain: 'youtube.com (Terț)', scope: 'Analiză lățime bandă video', life: '179 zile' },
-                    { name: 'YSC', domain: 'youtube.com (Terț)', scope: 'Urmărire vizualizări video', life: 'Sesiune' },
-                    { name: 'innertube::nextId', domain: 'youtube.com (Terț)', scope: 'Funcțional / Preferințe HTML5', life: 'Persistent' },
-                    { name: 'innertube::requests', domain: 'youtube.com (Terț)', scope: 'Funcțional / Înregistrare interacțiuni', life: 'Persistent' },
-                    { name: 'yt-remote-connected-devices', domain: 'youtube.com (Terț)', scope: 'Detectare dispozitive rețea', life: 'Persistent' },
-                    { name: 'yt-remote-device-id', domain: 'youtube.com (Terț)', scope: 'Stocare ID dispozitiv redare', life: 'Persistent' },
-                    { name: 'yt-remote-session-app', domain: 'youtube.com (Terț)', scope: 'Sincronizare sesiune video', life: 'Sesiune' },
-                  ].map((cookie, idx) => (
-                    <tr key={idx} className={idx % 2 === 0 ? 'bg-white' : 'bg-slate-50/50'}>
-                      <td className="px-4 py-3 font-mono font-bold text-blue-700">{cookie.name}</td>
-                      <td className="px-4 py-3 text-slate-600">{cookie.domain}</td>
-                      <td className="px-4 py-3 text-slate-600">{cookie.life}</td>
-                      <td className="px-4 py-3 text-slate-600">{cookie.scope}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </section>
-
-          {/* Sectiunea 6 */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-blue-900 border-b border-slate-100 pb-2">
-              {"6. Gestionarea, controlul și oprirea modulelor cookie"}
-            </h2>
-            <p className="text-justify leading-relaxed">
-              {"Utilizatorii își pot modifica opțiunile privind modulele cookie în orice moment direct din bannerul / centrul de setări integrat pe site-ul nostru, având posibilitatea de a-și retrage consimțământul la fel de ușor cum l-au oferit."}
-            </p>
-            <p className="text-justify leading-relaxed">
-              {"Alternativ, dezactivarea completă din setările browser-ului dumneavoastră (Chrome, Firefox, Safari, Edge) poate afecta navigarea pe anumite site-uri mari. Setările se găsesc de regulă în meniul „Opțiuni” sau „Preferințe -> Confidențialitate”."}
-            </p>
-          </section>
-
-          {/* Sectiunea 7 */}
-          <section className="space-y-3">
-            <h2 className="text-xl font-bold text-blue-900 border-b border-slate-100 pb-2">
-              {"7. Drepturile dumneavoastră și informații de contact"}
-            </h2>
-            <p className="text-justify leading-relaxed">
-              {"În calitate de persoană vizată conform GDPR, beneficiați de dreptul de acces, rectificare, ștergere („de a fi uitat”), restricționarea prelucrării, portabilitatea datelor și retragerea consimțământului. De asemenea, aveți dreptul de a depune o plângere la Autoritatea Națională de Supraveghere (ANSPDCP)."}
-            </p>
-            <p className="text-justify leading-relaxed">
-              {"Pentru orice fel de solicitări sau neclarități metodologice cu privire la prelucrarea datelor dumneavoastră prin intermediul modulelor cookie de către operatorul "}
-              <strong>{"FINE SOLUTIONS PROFESSIONAL S.R.L."}</strong>
-              {", vă rugăm să ne contactați direct la adresa de e-mail: "}
-              <span className="font-semibold text-blue-900 border-b border-blue-200">
-                {"protectiadatelor@finesolutionspro.ro"}
+        {/* 3 & 4. Categorii */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-slate-800">3 & 4. Categorii și scopuri</h2>
+          <div className="grid gap-4 mt-2">
+            <div className="p-5 border border-slate-200 rounded-xl bg-white space-y-2 shadow-sm">
+              <span className="inline-block bg-slate-100 text-slate-700 text-xs px-2.5 py-1 rounded-md font-bold uppercase tracking-wider">
+                Obligatoriu
               </span>
-              {"."}
-            </p>
-          </section>
+              <h3 className="font-bold text-slate-800 text-base">Strict necesare</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Indispensabile funcționării website-ului și reținerii opțiunii privind cookie-urile (Temei: art. 4 alin. 6 din Legea nr. 506/2004 și interesul legitim). Nu pot fi dezactivate.
+              </p>
+            </div>
 
-        </div>
+            <div className="p-5 border border-blue-100 rounded-xl bg-blue-50/30 space-y-2 shadow-sm">
+              <span className="inline-block bg-blue-100 text-blue-700 text-xs px-2.5 py-1 rounded-md font-bold uppercase tracking-wider">
+                Opțional
+              </span>
+              <h3 className="font-bold text-blue-900 text-base">De analiză și performanță (Google Analytics 4)</h3>
+              <p className="text-blue-950/70 text-sm leading-relaxed">
+                Măsoară traficul prin date pseudonimizate. Se activează exclusiv după exprimarea consimțământului (Temei: art. 6 alin. 1 lit. a GDPR).
+              </p>
+            </div>
+
+            <div className="p-5 border border-slate-200 rounded-xl bg-white space-y-2 shadow-sm">
+              <span className="inline-block bg-emerald-100 text-emerald-800 text-xs px-2.5 py-1 rounded-md font-bold uppercase tracking-wider">
+                Fără cookie-uri
+              </span>
+              <h3 className="font-bold text-slate-800 text-base">Statistici fără cookie-uri (Cloudflare Web Analytics)</h3>
+              <p className="text-slate-500 text-sm leading-relaxed">
+                Măsoară vizitele fără a plasa cookie-uri pe dispozitiv, având la bază interesul legitim al operatorului.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. Tabel cookie-uri */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-slate-800">5. Lista modulelor cookie</h2>
+          <div className="overflow-x-auto border border-slate-200 rounded-xl shadow-sm">
+            <table className="w-full text-left border-collapse text-sm">
+              <thead>
+                <tr className="bg-slate-100 text-slate-700 border-b border-slate-200">
+                  <th className="p-3 font-bold">Denumire</th>
+                  <th className="p-3 font-bold">Furnizor</th>
+                  <th className="p-3 font-bold">Durată</th>
+                  <th className="p-3 font-bold">Scop</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 text-slate-600">
+                <tr>
+                  <td className="p-3 font-mono text-xs font-semibold text-blue-600">fsp-consent</td>
+                  <td className="p-3">Propriu (localStorage)</td>
+                  <td className="p-3">12 luni</td>
+                  <td className="p-3">Reține opțiunea cookie-urilor</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-mono text-xs font-semibold text-blue-600">fsp-consent-at</td>
+                  <td className="p-3">Propriu (localStorage)</td>
+                  <td className="p-3">12 luni</td>
+                  <td className="p-3">Reține data opțiunii</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-mono text-xs font-semibold text-blue-600">_ga</td>
+                  <td className="p-3">Google Analytics</td>
+                  <td className="p-3">2 ani</td>
+                  <td className="p-3">Distinge vizitatorii unici</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-mono text-xs font-semibold text-blue-600">_ga_&lt;ID&gt;</td>
+                  <td className="p-3">Google Analytics</td>
+                  <td className="p-3">2 ani</td>
+                  <td className="p-3">Păstrează starea sesiunii</td>
+                </tr>
+                <tr>
+                  <td className="p-3 font-mono text-xs font-semibold text-slate-500">—</td>
+                  <td className="p-3">Cloudflare Web Analytics</td>
+                  <td className="p-3">—</td>
+                  <td className="p-3">Analitică fără cookie-uri</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        {/* 6 & 7. Transferuri și Durata */}
+        <section className="space-y-4">
+          <h2 className="text-2xl font-bold text-slate-800">6 & 7. Transferuri și Păstrarea datelor</h2>
+          <p className="text-slate-600 text-sm md:text-base">
+            Datele pot fi transferate către SUA în baza cadrului <em>EU-U.S. Data Privacy Framework</em> (Google Ireland, Cloudflare). Găzduirea este asigurată de Hosterion S.R.L. (România). Opțiunea dumneavoastră privind cookie-urile este salvată timp de 12 luni.
+          </p>
+        </section>
+
+        {/* Gestionarea consimțământului & Butonul de Reset */}
+        <section className="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-200">
+          <h2 className="text-2xl font-bold text-slate-800 flex items-center gap-2">
+            8. Gestionarea și retragerea consimțământului
+          </h2>
+          <p className="text-slate-600 text-sm md:text-base">
+            Vă puteți modifica sau retrage oricând opțiunea exprimată apăsând butonul de mai jos pentru a reafișa bannerul:
+          </p>
+          
+          <div className="pt-2">
+            <button
+              type="button"
+              onClick={handleResetCookies}
+              className="inline-flex items-center gap-2 bg-blue-600 text-white text-xs font-bold uppercase tracking-wider px-6 py-3 rounded-xl hover:bg-blue-700 transition-all shadow-md hover:shadow-lg active:scale-95 cursor-pointer"
+            >
+              <ShieldCheck className="h-4 w-4" />
+              Schimbă Setările Cookies
+            </button>
+          </div>
+        </section>
+
+        {/* Drepturi și Contact */}
+        <section className="space-y-3 pt-6 border-t border-blue-100">
+          <h2 className="text-2xl font-bold text-slate-800">9 & 10. Drepturi și Contact</h2>
+          <p className="text-slate-600 text-sm md:text-base">
+            Beneficiați de drepturile prevăzute de GDPR (acces, rectificare, ștergere, portabilitate, opoziție). Pentru orice solicitare, ne puteți contacta la:
+            <a href="mailto:protectiadatelor@finesolutionspro.ro" className="text-blue-600 underline font-bold ml-1 hover:text-blue-800 transition-colors">
+              protectiadatelor@finesolutionspro.ro
+            </a>. De asemenea, puteți depune plângere la <strong className="text-slate-800">ANSPDCP</strong> (www.dataprotection.ro).
+          </p>
+        </section>
+
       </div>
-    </div>
+    </main>
   );
 }
